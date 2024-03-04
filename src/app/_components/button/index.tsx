@@ -1,10 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-function Button( buttonText: String ) {
-
-    return (
-        
-    )
+interface ButtonProps {
+ text: string;
+ onClick: () => void;
 }
 
-export default Button
+const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
+ return (
+    <button className='px-7 py-3 rounded-full bg-primary text-black' onClick={onClick}>
+      {text}
+    </button>
+ );
+};
+
+export default Button;
