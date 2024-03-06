@@ -11,7 +11,7 @@ module.exports = {
         primary: '#BAFF17',
         primaryHover: '#D9FF80'
       }
-    },
-  },
-  plugins: [],
+    
+    }
+  }
 }
