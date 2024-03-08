@@ -2,7 +2,7 @@ import React from "react";
 
 const NavLinks = ({ width }) => {
   const containerWidth = width ? `${width}rem` : `${width}rem`;
-  
+
   return (
     <div
       className={`lg:absolute top-full left-0 bg-white border-[1px] border-solid border-gray shadow-lg mt-6`}
