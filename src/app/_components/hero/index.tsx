@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <>
       <section className="h-[600px] bg-white">
-        <div className="h-[600px] flex justify-center items-center mt-[80px]">
+        <div className="h-[600px] flex justify-center items-center mt-[80px] pl-10 pr-10 md:pl-0 md:pr-0 ">
           <div>
             <Image
               alt="home-image"
@@ -36,7 +36,7 @@ const Hero = () => {
 
         {/* Non-mobile view */}
         <div className=" hidden md:flex md:w-full md:flex-row md:items-center md:justify-start md:gap-[0px_16px] md:text-left md:text-[15px] md:text-bk-black md:font-inter">
-          <div className="ml-10 h-14 w-16 bg-primary flex flex-row items-center justify-center p-2.5 box-border">
+          <div className="ml-20 h-14 w-16 bg-primary flex flex-row items-center justify-center p-2.5 box-border">
             <Image
               className="h-[30px] w-[30px]  overflow-hidden shrink-"
               loading="lazy"

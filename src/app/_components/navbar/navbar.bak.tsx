@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "./logo.svg";
@@ -11,6 +11,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [companyHover, setCompanyHover] = useState(false);
   const [sidebarAction, setSidebarAction] = useState(false);
+
   const router = useRouter();
 
   const handleCompanyHover = () => {
@@ -29,7 +30,7 @@ export default function Navbar() {
   return (
     <section>
       <div className="fixed top-0 left-0 right-0 w-full bg-white h-[120px]">
-        <div className="container my-10 mx-auto p-[10px] bg-white flex flex-row items-center justify-between w-3/4 shadow-lg z-100">
+        <div className=" container my-10 mx-auto p-[10px] bg-white flex flex-row items-center justify-between w-3/4 shadow-lg z-100">
           <Link href="/">
             <Image
               src={logo}
@@ -38,58 +39,38 @@ export default function Navbar() {
               className={`mx-[30px]`}
             />
           </Link>
-          {/* Mobile menu */}
-          <div className="flex flex-row items-center justify-center w-[60px] md:hidden h-full px-4 py-6 bg-primary ml-16">
+          <div className="lg:hidden">
             <button
-              onClick={() => {
-                setMenuOpen(!menuOpen);
-                setSidebarAction(false);
-              }}
-              className="flex items-center"
+              onClick={() => setMenuOpen(!menuOpen)}
+              className={`block text-gray-800 focus:outline-none focus:text-gray-500 bg-primary  `}
             >
               <svg
-                width="25"
-                height="20"
-                viewBox="0 0 25 25"
+                className="h-6 w-6"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
                 {menuOpen ? (
                   <path
-                    d="M19.7083 19.7083L5.29167 5.29169M19.7083 5.29169L5.29167 19.7083"
-                    stroke="black"
-                    strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
                   />
                 ) : (
                   <path
-                    d="M1 1H24M1 11H24"
-                    stroke="black"
-                    strokeWidth="2"
                     strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
                   />
                 )}
               </svg>
             </button>
           </div>
           {menuOpen && (
-            <div
-              style={{
-                zIndex: -10,
-                position: "absolute",
-                top: '-50px',
-                left: 0,
-                width: "100%",
-                height: "100vh",
-                backgroundColor: "white",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <main className="top-50 bottom-0 flex flex-col items-center justify-start w-[230px] h-[400px]   box-border gap-[16px]  text-left text-base p-0 pb-10">
+            <div className="w-full h-[50px] lg:hidden ">
+              <main className="top-50 bottom-0  flex flex-col items-center justify-start  w-[230px] h-[400px]   box-border gap-[16px]  text-left text-base  p-0 pb-10">
                 <div className="self-stretch flex flex-row items-center justify-between py-0 pl-0 pr-0 gap-[20px] pt-10  ">
                   <div className="relative leading-[21px] ">Work</div>
                   <svg
@@ -109,14 +90,11 @@ export default function Navbar() {
                 </div>
                 <div className="self-stretch h-px relative box-border border-t-[1px] border-solid border-whitesmoke" />
                 <div
-                  className={`self-stretch flex ${
+                  className={`${!sidebarAction && "self-stretch"} flex ${
                     sidebarAction && "flex-row"
                   } items-center justify-between py-0 pr-px pl-0 gap-[20px] mq450:flex-wrap`}
                 >
-                  <div className="relative leading-[21px]">
-                    Company 
-                  </div>
-
+                  <div className="relative leading-[21px]">Company</div>
                   {sidebarAction ? (
                     <>
                       <svg
@@ -134,7 +112,9 @@ export default function Navbar() {
                           d="M20 12H4"
                         />
                       </svg>
-                     
+                      <div className="flex flex-wrap ">
+                        <NavLinks width={20} />
+                      </div>
                     </>
                   ) : (
                     <svg
@@ -154,13 +134,6 @@ export default function Navbar() {
                     </svg>
                   )}
                 </div>
-              {
-                sidebarAction && (
-                  <div className="flex flex-wrap ">
-                  <NavLinks width={20} />
-                </div>
-                )
-              }
 
                 <div className="self-stretch h-px relative box-border border-t-[1px] border-solid border-whitesmoke" />
                 <div className="self-stretch flex flex-row items-center justify-between py-0 pr-px pl-0 gap-[20px]">
@@ -207,7 +180,7 @@ export default function Navbar() {
               </main>
             </div>
           )}
-          <div className={`lg:flex ${menuOpen ? "hidden" : "hidden"}`}>
+          <div className={`lg:flex  ${menuOpen ? "hidden" : "hidden"}`}>
             <div className="lg:relative">
               <div
                 className="m-[15px] relative"
@@ -217,7 +190,6 @@ export default function Navbar() {
                 <Link href="/company" className="cursor-pointer">
                   Company
                 </Link>
-
                 {companyHover && <NavLinks width={23} />}
               </div>
             </div>

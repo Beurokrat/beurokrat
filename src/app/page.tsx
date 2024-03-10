@@ -1,6 +1,6 @@
-import AboutBeurokrat from "./_components/About-Beurokrat";
-import AboutCompany from "./_components/About-company";
-import Hero from "./_components/Hero";
+import AboutBeurokrat from "./_components/about-beurokrat";
+import AboutCompany from "./_components/about-company";
+import Hero from "./_components/hero";
 import Service from "./_components/services-section";
 
 export default function Home() {
