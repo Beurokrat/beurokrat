@@ -1,29 +1,29 @@
-"use client";
-import Image from "next/image";
-import React, { useState } from "react";
-import image1 from "./hover-title-top (1).svg";
-import image2 from "./hover-title-top (2).svg";
-import image3 from "./hover-title-top.svg";
-import Container from "../Container";
+'use client';
+import Image from 'next/image';
+import React, { useState } from 'react';
+import image1 from './hover-title-top (1).svg';
+import image2 from './hover-title-top (2).svg';
+import image3 from './hover-title-top.svg';
+import Container from '../Container';
 
 const Service = () => {
   const [showText, setShowText] = useState(false);
 
   return (
-    <section className="w-full bg-black text-white flex flex-col mt-24 md:h-[700px]">
+    
       <Container>
-        <div className="text-center pt-28">
+        <div className='text-center pt-28'>
           <p>FROM TOUCHSCREENS TO TACTILE ROBOTS</p>
         </div>
-        <div className="text-center mt-10">
-          <h1 className="text-4xl">
+        <div className='text-center mt-10'>
+          <h1 className='text-4xl'>
             We deliver customized digital products,
             <br />
-            <span className="block">tailored to your needs</span>
+            <span className='block'>tailored to your needs</span>
           </h1>
         </div>
-        <div className="flex flex-col md:flex-row items-center text-wrap pt-16 ">
-          <div className="md:w-[330px] md:mr-10 mb-10 md:mb-0">
+        <div className='flex justify-between  flex-col md:flex-row items-center text-wrap pt-16 '>
+          <div className='md:w-[25%] md:mr-10 mb-10 md:mb-0'>
             <p>
               As a research and development company focused on services, we
               evaluate our clients' needs, whether they involve design
@@ -32,59 +32,47 @@ const Service = () => {
               effectively.
             </p>
           </div>
-          <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-20 ml-20 mb-6">
+          <div className='flex sm:w-full md:w-[75%] flex-col md:flex-row justify-center gap-4 md:gap-20 md:ml-20 mb-6'>
             <div
-              className="flex flex-col items-center"
+              className='flex flex-col items-center'
               onMouseEnter={() => setShowText(true)}
               onMouseLeave={() => setShowText(false)}
             >
-              <div
-                className={`bg-blue-500 text-center text-white py-2 hover-text ${
-                  showText || window.innerWidth < 768 ? "block" : "hidden"
-                }`}
-              >
+              {/* <div className='bg-blue-500 text-center text-white py-2 hover-text sm:hidden md:block'>
                 Data Science
-              </div>
+              </div> */}
               <Image
-                alt="service-image"
+                alt='service-image'
                 width={200}
                 height={200}
                 src={image3}
               />
             </div>
             <div
-              className="flex flex-col items-center"
+              className='flex flex-col items-center'
               onMouseEnter={() => setShowText(true)}
               onMouseLeave={() => setShowText(false)}
             >
-              <div
-                className={`bg-blue-500 text-center text-white py-2 hover-text ${
-                  showText || window.innerWidth < 768 ? "block" : "hidden"
-                }`}
-              >
+              {/* <div className='bg-blue-500 text-center text-white py-2 hover-text sm:hidden md:block'>
                 Robotics
-              </div>
+              </div> */}
               <Image
-                alt="service-image"
+                alt='service-image'
                 width={200}
                 height={200}
                 src={image1}
               />
             </div>
             <div
-              className="flex flex-col items-center"
+              className='flex flex-col items-center'
               onMouseEnter={() => setShowText(true)}
               onMouseLeave={() => setShowText(false)}
             >
-              <div
-                className={`bg-blue-500 text-center text-white py-2 hover-text ${
-                  showText || window.innerWidth < 768 ? "block" : "hidden"
-                }`}
-              >
+              {/* <div className='bg-blue-500 text-center text-white py-2 hover-text sm:hidden md:block'>
                 Robotics
-              </div>
+              </div> */}
               <Image
-                alt="service-image"
+                alt='service-image'
                 width={200}
                 height={200}
                 src={image2}
@@ -93,7 +81,6 @@ const Service = () => {
           </div>
         </div>
       </Container>
-    </section>
   );
 };
 

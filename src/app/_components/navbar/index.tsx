@@ -1,236 +1,107 @@
-"use client";
-import React, { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import logo from "./logo.svg";
-import Button from "../button";
-import { useRouter } from "next/navigation";
-import NavLinks from "../nav-links";
+'use client';
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+
+import Image from 'next/image';
+import Link from 'next/link';
+import logo from './logo.svg';
+import Button from '../button';
+import NavLinks from './nav-links';
+import MobileMenu from './mobile-menu';
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [companyHover, setCompanyHover] = useState(false);
-  const [sidebarAction, setSidebarAction] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [onHover, setOnHover] = useState(false);
+  const [overlayAction, setOverlayAction] = useState(false);
   const router = useRouter();
 
   const handleCompanyHover = () => {
-    setCompanyHover(true);
+    setOnHover(true);
   };
 
   const handleCompanyLeave = () => {
-    setCompanyHover(false);
+    setOnHover(false);
   };
 
   const handleClick = () => {
-    console.log("Button clicked!");
-    router.push("/careers");
+    console.log('Button clicked!');
+    router.push('/careers');
   };
 
   return (
-    <section>
-      <div className="fixed top-0 left-0 right-0 w-full bg-white h-[120px]">
-        <div className="container my-10 mx-auto p-[10px] bg-white flex flex-row items-center justify-between w-3/4 shadow-lg z-100">
-          <Link href="/">
+    <div className='fixed top-0 left-0 right-0 w-full'>
+      <div className='my-10 mx-auto md:h-[70px] sm:h-[70px] flex flex-row items-center justify-between bg-white sm:w-[80%] md:w-3/4 shadow-lg'>
+        <div className='p-5 flex flex-row items-center justify-between w-full'>
+          <Link href='/'>
             <Image
               src={logo}
-              alt="Beurokrat logo"
+              alt='Beurokrat logo'
               quality={100}
-              className={`mx-[30px]`}
+              className='mx-3 h-[35px]'
             />
           </Link>
-          {/* Mobile menu */}
-          <div className="flex flex-row items-center justify-center w-[60px] md:hidden h-full px-4 py-6 bg-primary ml-16">
-            <button
-              onClick={() => {
-                setMenuOpen(!menuOpen);
-                setSidebarAction(false);
-              }}
-              className="flex items-center"
-            >
-              <svg
-                width="25"
-                height="20"
-                viewBox="0 0 25 25"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {menuOpen ? (
-                  <path
-                    d="M19.7083 19.7083L5.29167 5.29169M19.7083 5.29169L5.29167 19.7083"
-                    stroke="black"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                ) : (
-                  <path
-                    d="M1 1H24M1 11H24"
-                    stroke="black"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                  />
-                )}
-              </svg>
-            </button>
-          </div>
-          {menuOpen && (
-            <div
-              style={{
-                zIndex: -10,
-                position: "absolute",
-                top: '-50px',
-                left: 0,
-                width: "100%",
-                height: "100vh",
-                backgroundColor: "white",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <main className="top-50 bottom-0 flex flex-col items-center justify-start w-[230px] h-[400px]   box-border gap-[16px]  text-left text-base p-0 pb-10">
-                <div className="self-stretch flex flex-row items-center justify-between py-0 pl-0 pr-0 gap-[20px] pt-10  ">
-                  <div className="relative leading-[21px] ">Work</div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 4v16m8-8H4"
-                    />
-                  </svg>
-                </div>
-                <div className="self-stretch h-px relative box-border border-t-[1px] border-solid border-whitesmoke" />
+          {/* Desktop menu */}
+          <div className='sm:hidden md:block'>
+            {/* <Link href='/careers' className="m-[15px]">Work</Link>
+            <Link href='/careers' className="m-[15px]">Company</Link>
+            <Link href='/careers' className="m-[15px]">Careers</Link>
+            <Link href='/careers' className="m-[15px]">Blog</Link>
+            <Button text="Contact" onClick={handleClick} /> */}
+            <div className={`lg:flex ${isOpen ? 'hidden' : 'hidden'}`}>
+              <Link href='/work' className='m-[15px]'>
+                Work
+              </Link>
                 <div
-                  className={`self-stretch flex ${
-                    sidebarAction && "flex-row"
-                  } items-center justify-between py-0 pr-px pl-0 gap-[20px] mq450:flex-wrap`}
+                  className='m-[15px] relative'
+                  onMouseEnter={handleCompanyHover}
+                  onMouseLeave={handleCompanyLeave}
                 >
-                  <div className="relative leading-[21px]">
-                    Company 
-                  </div>
+                  <Link href='/company' className='cursor-pointer'>
+                    Company
+                  </Link>
 
-                  {sidebarAction ? (
-                    <>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        onClick={() => setSidebarAction(!sidebarAction)}
-                        className="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M20 12H4"
-                        />
-                      </svg>
-                     
-                    </>
-                  ) : (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      onClick={() => setSidebarAction(!sidebarAction)}
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M12 4v16m8-8H4"
-                      />
-                    </svg>
-                  )}
+                  {onHover && <NavLinks width={23} />}
                 </div>
-              {
-                sidebarAction && (
-                  <div className="flex flex-wrap ">
-                  <NavLinks width={20} />
-                </div>
-                )
-              }
-
-                <div className="self-stretch h-px relative box-border border-t-[1px] border-solid border-whitesmoke" />
-                <div className="self-stretch flex flex-row items-center justify-between py-0 pr-px pl-0 gap-[20px]">
-                  <div className="relative leading-[21px]">Careers</div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </div>
-                <div className="self-stretch h-px relative box-border border-t-[1px] border-solid border-whitesmoke" />
-                <div className="self-stretch flex flex-row items-center justify-between py-0 pr-px pl-0 gap-[20px] mq450:flex-wrap">
-                  <div className="relative leading-[21px]">Blog</div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </div>
-                <div className="self-stretch h-px relative box-border border-t-[1px] border-solid border-whitesmoke" />
-                <button className="cursor-pointer [border:none] p-5 bg-primary self-stretch rounded-[35px] flex flex-row flex-wrap items-center justify-center hover:bg-greenyellow">
-                  <div className="relative text-base leading-[21px] capitalize font-cta-button-text-title-case-mob text-bk-black text-center">
-                    Contact
-                  </div>
-                </button>
-              </main>
+              <Link href='/careers' className='m-[15px]'>
+                Careers
+              </Link>
+              <Link href='/blog' className='m-[15px]'>
+                Blog
+              </Link>
+              <Button text='Contact' onClick={handleClick} />
             </div>
-          )}
-          <div className={`lg:flex ${menuOpen ? "hidden" : "hidden"}`}>
-            <div className="lg:relative">
-              <div
-                className="m-[15px] relative"
-                onMouseEnter={handleCompanyHover}
-                onMouseLeave={handleCompanyLeave}
-              >
-                <Link href="/company" className="cursor-pointer">
-                  Company
-                </Link>
-
-                {companyHover && <NavLinks width={23} />}
-              </div>
-            </div>
-            <Link href="/careers" className="m-[15px]">
-              Careers
-            </Link>
-            <Link href="/blog" className="m-[15px]">
-              Blog
-            </Link>
-            <Button text="Contact" onClick={handleClick} />
           </div>
         </div>
+        {/* Mobile menu */}
+        <div className='flex items-center justify-center w-[70px] md:hidden h-full px-4 py-6 bg-primary'>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className='flex items-center '
+          >
+            <svg
+              width='25'
+              height='12'
+              viewBox='0 0 25 12'
+              fill='none'
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              <path
+                d='M1 1H24M1 11H24'
+                stroke='black'
+                strokeWidth='2'
+                strokeLinecap='round'
+              />
+            </svg>
+          </button>
+        </div>
       </div>
-    </section>
+      {isOpen && (
+        // <div style={{zIndex: -10}} className="absolute top-0 left-0 w-full h-screen bg-white"></div>
+        <MobileMenu
+          overlayAction={overlayAction}
+          setOverlayAction={setOverlayAction}
+        />
+      )}
+    </div>
   );
 }
