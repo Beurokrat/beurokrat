@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import NavLinks from './nav-links';
 
 // Define the type for the props
@@ -9,6 +9,9 @@ interface MobileMenuProps {
 
 // Use the defined type in your component
 const MobileMenu: React.FC<MobileMenuProps> = ({ overlayAction, setOverlayAction }) => {
+  
+
+ 
   return (
     <div
       style={{
@@ -24,6 +27,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ overlayAction, setOverlayAction
         justifyContent: 'center',
         alignItems: 'center',
       }}
+      className="md:hidden"
     >
       <main className='top-50 bottom-0 flex flex-col items-center justify-start w-[80%] h-[400px]   box-border gap-[16px]  text-left text-base p-0 pb-10'>
         <div className='self-stretch flex flex-row items-center justify-between py-[16px] border-b-[1px] border-solid border-whitesmoke'>
