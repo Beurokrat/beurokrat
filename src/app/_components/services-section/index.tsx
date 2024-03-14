@@ -13,13 +13,11 @@ const Service = () => {
     
       <Container>
         <div className='text-center pt-28'>
-          <p>FROM TOUCHSCREENS TO TACTILE ROBOTS</p>
+          <h3>FROM TOUCHSCREENS TO TACTILE ROBOTS</h3>
         </div>
-        <div className='text-center mt-10'>
-          <h1 className='text-4xl'>
-            We deliver customized digital products,
-            <br />
-            <span className='block'>tailored to your needs</span>
+        <div className='flex justify-center text-center mt-10 w-full'>
+          <h1 className='md:w-3/4'>
+            We deliver customized digital products, tailored to your needs
           </h1>
         </div>
         <div className='flex justify-between  flex-col md:flex-row items-center text-wrap pt-16 '>

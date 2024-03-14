@@ -57,12 +57,7 @@ export default function Navbar() {
           </Link>
           {/* Desktop menu */}
           <div className="sm:hidden md:block">
-            {/* <Link href='/careers' className="m-[15px]">Work</Link>
-            <Link href='/careers' className="m-[15px]">Company</Link>
-            <Link href='/careers' className="m-[15px]">Careers</Link>
-            <Link href='/careers' className="m-[15px]">Blog</Link>
-            <Button text="Contact" onClick={handleClick} /> */}
-            <div className={`lg:flex ${isOpen ? 'hidden' : 'hidden'}`}>
+            <div className="lg:flex hidden">
               <Link href="/work" className="m-[15px]">
                 Work
               </Link>

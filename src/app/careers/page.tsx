@@ -1,3 +1,9 @@
 export default function Careers() {
-  return <div></div>;
+  return 
+  <>
+    <section className="bg-black text-white">
+      
+
+    </section>
+  </>
 }
