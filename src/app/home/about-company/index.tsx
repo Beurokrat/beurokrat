@@ -1,8 +1,8 @@
 "use client"
 import React from "react";
-import Button from "../button";
+import Button from "../../_components/button";
 import { useRouter } from 'next/navigation'
-import Container from "../Container";
+import Container from "../../_components/Container";
 
 const AboutCompany = () => {
   const router = useRouter()

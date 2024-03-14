@@ -31,7 +31,7 @@ const Hero = () => {
               height={30}
             />
           </div>
-          <div className="leading-[21px] font-medium">SCROLL TO EXPLORE</div>
+          <h3>SCROLL TO EXPLORE</h3>
         </div>
 
         {/* Non-mobile view */}
@@ -46,7 +46,7 @@ const Hero = () => {
               height={30}
             />
           </div>
-          <div className=" leading-[21px] font-medium">SCROLL TO EXPLORE</div>
+          <h3>SCROLL TO EXPLORE</h3>
         </div>
       </section>
     </>

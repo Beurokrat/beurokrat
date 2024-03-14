@@ -1,9 +1,12 @@
-export default function Careers() {
-  return 
-  <>
-    <section className="bg-black text-white">
-      
+import Container from '../_components/Container'
+import CareerList from './career-list'
+import CareersTitle from './title'
 
-    </section>
-  </>
+export default function Careers() {
+  return (
+    <>
+      <CareersTitle />
+      <CareerList />
+    </>
+  )
 }

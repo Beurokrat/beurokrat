@@ -3,8 +3,8 @@ import React from 'react'
 import image from './Rectangle 7.svg'
 import Image from 'next/image'
 import Link from 'next/link'
-import Button from '../button'
-import Container from '../Container'
+import Button from '../../_components/button'
+import Container from '../../_components/Container'
 import { useRouter } from 'next/navigation'
 
 const AboutBeurokrat = () => {

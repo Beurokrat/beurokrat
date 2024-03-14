@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import image1 from './hover-title-top (1).svg';
 import image2 from './hover-title-top (2).svg';
 import image3 from './hover-title-top.svg';
-import Container from '../Container';
+import Container from '../../_components/Container';
 
 const Service = () => {
   const [showText, setShowText] = useState(false);
