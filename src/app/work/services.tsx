@@ -48,19 +48,19 @@ function Services() {
                 <div className="sm:w-full md:w-1/3 gap-4 flex flex-col justify-center">
                     <h3 className="mb-[5px]">WE DO DESIGN</h3>
                     {design.map((i) => (
-                        <Card service={i.service} desc={i.description} />
+                        <Card key={i.id} service={i.service} desc={i.description} />
                     ))}
                 </div>
                 <div className="sm:w-full md:w-1/3 gap-4 flex flex-col justify-center">
                     <h3 className="mb-[5px]">WEB DEVELOPMENT</h3>
                     {development.map((i) => (
-                        <Card service={i.service} desc={i.description} />
+                        <Card key={i.id} service={i.service} desc={i.description} />
                     ))}
                 </div>
                 <div className="sm:w-full md:w-1/3 gap-4 flex flex-col justify-center">
                     <h3 className="mb-[5px]">EMBEDDED SYSTEMS DEVELOPMENT</h3>
                     {robotics.map((i) => (
-                        <Card service={i.service} desc={i.description} />
+                        <Card key={i.id} service={i.service} desc={i.description} />
                     ))}
                 </div>
             </div>

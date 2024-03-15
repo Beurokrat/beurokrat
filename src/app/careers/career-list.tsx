@@ -4,6 +4,7 @@ import CareerItem from '../_components/career-item'
 function CareerList() {
     const careerData = [
         {
+            id:1,
             title: 'UI/UX Designer',
             position: 'Full Time',
             description:
@@ -11,6 +12,7 @@ function CareerList() {
             link: '/careers'
         },
         {
+            id:2,
             title: 'Frontend Developer',
             position: 'Full Time (Hybrid)',
             description:
@@ -18,6 +20,7 @@ function CareerList() {
             link: '/careers'
         },
         {
+            id:3,
             title: 'Backend Developer',
             position: 'Part Time (On Site)',
             description:
@@ -30,7 +33,7 @@ function CareerList() {
             <Container>
                 <h3 className="mb-[33px]">OPEN POSITIONS</h3>
                 {careerData.map(i => (
-                    <CareerItem title={i.title} position={i.position} desc={i.description} link={i.link} />
+                    <CareerItem key={i.id} title={i.title} position={i.position} desc={i.description} link={i.link} />
                 ))}
             </Container>
         </section>
