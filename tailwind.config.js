@@ -15,7 +15,10 @@ module.exports = {
     extend: {
       colors: {
         primary: '#BAFF17',
-        primaryHover: '#D9FF80'
+        primaryHover: '#D9FF80',
+        bkGrayLight: '#F2F2F2',
+        bkGrayDark: '#696969',
+        bkGray: '#E5E5E5'
       }
     },
   },

@@ -1,3 +1,4 @@
+import Services from '../work/services'
 import AboutBeurokrat from './about-beurokrat'
 import AboutCompany from './about-company'
 import Hero from './hero'
@@ -12,6 +13,7 @@ export default function HomePage() {
         <Service />
       </section>
       <AboutBeurokrat />
+      <Services />
     </main>
   )
 }
