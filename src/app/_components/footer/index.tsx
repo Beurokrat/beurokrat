@@ -6,43 +6,6 @@ import Avatar from "./fi-rr-user.svg";
 const Footer = () => {
   return (
     <>
-      <div className="h-[80px] w-full relative bg-bk-black overflow-hidden flex flex-col items-start justify-start  px-8 box-border gap-[60px_0px] tracking-[normal] text-left text-lgi text-white font-body-large  mq925:pr-[35px] mq925:box-border">
-        <div className="w-[241px] flex flex-row items-start justify-between gap-[20px]">
-          <div className="w-[72px] flex flex-col items-start justify-start gap-[81px_0px]">
-            <div className="flex flex-col items-start justify-start gap-[30px_0px]">
-              <div className="flex flex-col items-start justify-start gap-[20px_0px]">
-                <div className="flex flex-row items-start justify-start py-0 px-px">
-                  <div className="relative leading-[31px] font-medium">
-                    Works
-                  </div>
-                </div>
-                <div className="relative text-mini leading-[21px] font-medium">
-                  Services
-                </div>
-              </div>
-              <div className="relative text-mini leading-[21px] font-medium">
-                Products
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col items-start justify-start gap-[20px_0px]">
-            <div className="relative leading-[31px] font-medium">Company</div>
-          </div>
-        </div>
-
-        <div className="flex flex-col items-start justify-start gap-[20px_0px]">
-          <div className="relative leading-[31px] font-medium">
-            Privacy policy
-          </div>
-          <div className="relative leading-[31px] font-medium">{`Terms & Conditions`}</div>
-          <div className="relative leading-[31px] font-medium">
-            Manage Cookies
-          </div>
-        </div>
-        <div className="relative leading-[31px] font-medium">
-          ©2024 beurokrat
-        </div>
-      </div>
       <footer className="w-full bg-black overflow-hidden flex flex-col items-end justify-start  pb-[41px] pr-[71px] pl-[70px] box-border gap-[187px_0px] tracking-[normal] text-left text-lgi text-white font-body-large mq450:gap-[47px_0px] mq925:gap-[93px_0px] mq925:pl-[35px] mq925:pr-[35px] mq925:box-border">
         <div className="w-[285px] h-[283px] relative hidden">
           <div className="absolute top-[252px] left-[0px] flex flex-row items-start justify-start gap-[0px_18px]">

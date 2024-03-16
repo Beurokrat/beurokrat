@@ -27,10 +27,10 @@ function Clients() {
                 <h3 className='mb-[50px]'>OUR CLIENTS</h3>
                 <h1>Empowered partnerships</h1>
             </div>
-            <div className="pb-[100px] flex flex-row h-[200px] justify-between">
+            <div className="flex sm:flex-col md:flex-row justify-between">
                 {clients.map((i) => (
-                    <div className="w-1/3 flex flex-col justify-center">
-                        <img className="md:p-10" src={i.logo} alt={i.company} />
+                    <div className="md:w-1/3  flex justify-center">
+                        <img className="sm:w-1/2 md:w-3/4 sm:p-5" src={i.logo} alt={i.company} />
                     </div>
                 ))}
             </div>
