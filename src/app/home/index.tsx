@@ -2,6 +2,7 @@ import Services from '../work/services'
 import AboutBeurokrat from './about-beurokrat'
 import AboutCompany from './about-company'
 import Hero from './hero'
+import HomeContact from './home-contact'
 import Service from './services-section'
 
 export default function HomePage() {
@@ -14,6 +15,7 @@ export default function HomePage() {
       </section>
       <AboutBeurokrat />
       <Services />
+      <HomeContact/>
     </main>
   )
 }

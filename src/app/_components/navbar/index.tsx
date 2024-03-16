@@ -19,10 +19,8 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleResize = () => {
-      const mdBreakpoint = 1024 // Default Tailwind "md" breakpoint
+      const mdBreakpoint = 1024 
       setIsWindowWidthGreaterThanMd(window.innerWidth > mdBreakpoint)
-      console.log('isOpen-->', isOpen)
-      console.log('isWindowWidthGreaterThanMd-->', isWindowWidthGreaterThanMd)
     }
     setIsOpen(false)
     window.addEventListener('resize', handleResize)
@@ -40,7 +38,7 @@ export default function Navbar() {
 
   const handleClick = () => {
     console.log('Button clicked!')
-    router.push('/careers')
+    router.push('/contact')
   }
 
   return (
