@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className="w-full border-t-8 bg-black border-primary">
             <Container>
                 <div className="flex flex-col mt-[120px]">
-                    <Image src="/assets/img/logo_light.png" className="w-[250px]" alt="beurokrat logo" />
+                    <Image src="/assets/img/logo_light.png" width={200} height={70} alt="beurokrat logo" />
                     <div className="flex sm:flex-col md:flex-row justify-between py-[50px] border-b border-white">
                         <div className="flex sm:flex-col md:flex-row sm:gap-[20px] md:gap-[50px] text-white">
                             <Link className="body-small" href="/work">
@@ -23,14 +23,14 @@ const Footer = () => {
                                 Blog
                             </Link>
                             <Link className="body-small flex flex-row" href="/work">
-                                <Image src="/assets/img/icons/ic_login.png" className="w-fit pr-2" alt="twitter" />
+                                <Image src="/assets/img/icons/ic_login.png" width={30} height={30} className="w-fit pr-2" alt="twitter" />
                                 Login
                             </Link>
                         </div>
                         <div className="flex mt-[50px] md:mt-0 gap-[30px] text-white">
-                            <Image src="/assets/img/icons/ic_x.png" className="w-[25px]" alt="twitter" />
-                            <Image src="/assets/img/icons/ic_linkedin.png" className="w-[25px]" alt="linkedin" />
-                            <Image src="/assets/img/icons/ic_instagram.png" className="w-[25px]" alt="instagram" />
+                            <Image src="/assets/img/icons/ic_x.png" width={25} height={25} alt="twitter" />
+                            <Image src="/assets/img/icons/ic_linkedin.png" width={25} height={25} alt="linkedin" />
+                            <Image src="/assets/img/icons/ic_instagram.png" width={25} height={25} alt="instagram" />
                         </div>
                     </div>
                     <div className="flex sm:flex-col md:flex-row justify-between mt-2 mb-[40px]">

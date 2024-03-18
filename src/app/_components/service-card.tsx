@@ -16,7 +16,7 @@ const Card: React.FC<CardProps> = ({ service, desc }) => {
                 <p className="text-bkGrayDark">{desc}</p>
             </div>
             <div className="flex w-[110px] p-[35px] bg-bkGray justify-center items-center">
-                <Image src="/assets/img/icons/services_icon_1.svg" alt="" />
+                <Image src="/assets/img/icons/services_icon_1.svg" width={100} height={100} alt="" />
             </div>
         </div>
     )

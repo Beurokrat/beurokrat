@@ -20,6 +20,8 @@ function HomeContact() {
                             className=""
                             src="/assets/img/img_1.png"
                             alt="contact image"
+                            width={200}
+                            height={300}
                         />
                     </div>
                 </div>
