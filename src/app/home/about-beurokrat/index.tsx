@@ -59,7 +59,7 @@ const AboutBeurokrat = () => {
             </p>
           </div>
         </div>
-        <div className="mt-16">
+        <div className="mt-16 flex justify-center">
           <Image src={image} width={1372} height={600} alt="image" />
         </div>
       </section>

@@ -1,56 +1,53 @@
-import Image from "next/image";
-import React from "react";
-import HomeImage from "./Rangitikei_2_.png";
-import Arrow from "../../../../public/vector.svg";
+"use client"
+import React, { useState, useEffect, useRef } from 'react';
+import HALO from 'vanta/dist/vanta.halo.min';
+import Container from '@/app/_components/Container';
 
-const Hero = () => {
-  return (
-    <>
-      <section className="h-[600px] bg-white">
-        <div className="h-[600px] flex justify-center items-center mt-[80px] pl-10 pr-10 md:pl-0 md:pr-0 ">
-          <div>
-            <Image
-              alt="home-image"
-              src={HomeImage}
-              quality={100}
-              width={600}
-              height={600}
-            />
-          </div>
-        </div>
+type VantaEffect = any;
 
-        {/* Mobile view */}
-        <div className="w-full flex flex-col items-center justify-center text-center text-bk-black font-inter md:hidden">
-          <div className="h-284 w-16 bg-primary flex items-center justify-center p-2.5 box-border mb-4">
-            <Image
-              className="h-auto w-[30px]  overflow-hidden"
-              loading="lazy"
-              alt="down-arrow"
-              src={Arrow}
-              width={30}
-              height={30}
-            />
-          </div>
-          <h3>SCROLL TO EXPLORE</h3>
-        </div>
+interface HeroProps {
+ // Define any props your component expects here
+}
 
-        {/* Non-mobile view */}
-        <div className=" hidden md:flex md:w-full md:flex-row md:items-center md:justify-start md:gap-[0px_16px] md:text-left md:text-[15px] md:text-bk-black md:font-inter">
-          <div className="ml-20 h-14 w-16 bg-primary flex flex-row items-center justify-center p-2.5 box-border">
-            <Image
-              className="h-[30px] w-[30px]  overflow-hidden shrink-"
-              loading="lazy"
-              alt="down-arrow"
-              src={Arrow}
-              width={30}
-              height={30}
-            />
+const Hero: React.FC<HeroProps> = (props) => {
+ const [vantaEffect, setVantaEffect] = useState<VantaEffect | null>(null);
+ const myRef = useRef<HTMLDivElement>(null);
+
+ useEffect(() => {
+    if (!vantaEffect && myRef.current) {
+      const effect = HALO({
+        el: myRef.current,
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: true,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        // baseColor: "#baff17",
+        // backgroundColor: 0x1f253c,
+        // amplitudeFactor: 2.00,
+        size: 1,
+      });
+      setVantaEffect(effect);
+    }
+
+    return () => {
+      if (vantaEffect) {
+        vantaEffect.destroy();
+      }
+    };
+ }, [vantaEffect]);
+
+ return (
+    <div style={{ zIndex: -10 }} className="-full h-screen" ref={myRef}>
+      <div className="w-full h-full flex items-center bg-black/30">
+        <Container>
+          <div className="flex ">
+            <h1 className='sm:text-4xl md:text-5xl bg-primary p-4 md:w-[40%] -mr-10 leading-10'>Unleashing Innovation, One Byte at a Time.</h1>
           </div>
-          <h3>SCROLL TO EXPLORE</h3>
-        </div>
-      </section>
-    </>
-  );
+        </Container>
+      </div>
+    </div>
+ );
 };
 
 export default Hero;
