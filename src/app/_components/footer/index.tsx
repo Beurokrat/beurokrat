@@ -1,12 +1,13 @@
 import Link from 'next/link'
-import Container from '../Container'
+import Container from '../container'
+import Image from 'next/image'
 
 const Footer = () => {
     return (
         <footer className="w-full border-t-8 bg-black border-primary">
             <Container>
                 <div className="flex flex-col mt-[120px]">
-                    <img src="/assets/img/logo_light.png" className="w-[250px]" alt="beurokrat logo" />
+                    <Image src="/assets/img/logo_light.png" className="w-[250px]" alt="beurokrat logo" />
                     <div className="flex sm:flex-col md:flex-row justify-between py-[50px] border-b border-white">
                         <div className="flex sm:flex-col md:flex-row sm:gap-[20px] md:gap-[50px] text-white">
                             <Link className="body-small" href="/work">
@@ -22,14 +23,14 @@ const Footer = () => {
                                 Blog
                             </Link>
                             <Link className="body-small flex flex-row" href="/work">
-                                <img src="/assets/img/icons/ic_login.png" className="w-fit pr-2" alt="twitter" />
+                                <Image src="/assets/img/icons/ic_login.png" className="w-fit pr-2" alt="twitter" />
                                 Login
                             </Link>
                         </div>
                         <div className="flex mt-[50px] md:mt-0 gap-[30px] text-white">
-                            <img src="/assets/img/icons/ic_x.png" className="w-[25px]" alt="twitter" />
-                            <img src="/assets/img/icons/ic_linkedin.png" className="w-[25px]" alt="linkedin" />
-                            <img src="/assets/img/icons/ic_instagram.png" className="w-[25px]" alt="instagram" />
+                            <Image src="/assets/img/icons/ic_x.png" className="w-[25px]" alt="twitter" />
+                            <Image src="/assets/img/icons/ic_linkedin.png" className="w-[25px]" alt="linkedin" />
+                            <Image src="/assets/img/icons/ic_instagram.png" className="w-[25px]" alt="instagram" />
                         </div>
                     </div>
                     <div className="flex sm:flex-col md:flex-row justify-between mt-2 mb-[40px]">

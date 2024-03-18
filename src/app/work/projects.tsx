@@ -1,4 +1,4 @@
-import Container from '../_components/Container'
+import Container from '../_components/container'
 import ProjectItem from '../_components/project-card'
 
 function Projects() {

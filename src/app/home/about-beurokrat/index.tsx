@@ -4,7 +4,7 @@ import image from './Rectangle 7.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 import Button from '../../_components/button'
-import Container from '../../_components/Container'
+import Container from '../../_components/container'
 import { useRouter } from 'next/navigation'
 
 const AboutBeurokrat = () => {

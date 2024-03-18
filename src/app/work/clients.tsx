@@ -1,4 +1,5 @@
-import Container from '../_components/Container'
+import Image from 'next/image'
+import Container from '../_components/container'
 
 function Clients() {
     const clients = [
@@ -29,8 +30,8 @@ function Clients() {
             </div>
             <div className="flex sm:flex-col md:flex-row justify-between">
                 {clients.map((i) => (
-                    <div className="md:w-1/3  flex justify-center">
-                        <img className="sm:w-1/2 md:w-3/4 sm:p-5" src={i.logo} alt={i.company} />
+                    <div key={i.id} className="md:w-1/3  flex justify-center">
+                        <Image className="sm:w-1/2 md:w-3/4 sm:p-5" src={i.logo} alt={i.company} />
                     </div>
                 ))}
             </div>

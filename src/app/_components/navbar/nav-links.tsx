@@ -1,6 +1,11 @@
 import React from "react";
 
-const NavLinks = ({ width }) => {
+
+interface NavLinksProps {
+  width?: number; 
+ }
+ 
+ const NavLinks: React.FC<NavLinksProps> = ({ width }) => {
   const containerWidth = width ? `${width}rem` : `${width}rem`;
 
   return (

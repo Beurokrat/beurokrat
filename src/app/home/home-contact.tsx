@@ -1,6 +1,7 @@
 import React from 'react'
-import Container from '../_components/Container'
+import Container from '../_components/container'
 import ContactForm from '../_components/contact-form'
+import Image from 'next/image'
 
 function HomeContact() {
     return (
@@ -15,7 +16,7 @@ function HomeContact() {
                         <ContactForm />
                     </div>
                     <div className="flex sm:hidden md:block justify-end pl-[20px]">
-                        <img
+                        <Image
                             className=""
                             src="/assets/img/img_1.png"
                             alt="contact image"

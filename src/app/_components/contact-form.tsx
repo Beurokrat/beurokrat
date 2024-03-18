@@ -19,8 +19,8 @@ function ContactForm() {
             <textarea
                 name="message"
                 id=""
-                cols="30"
-                rows="8"
+                cols={30}
+                rows={8}
                 placeholder="MESSAGE.."
             ></textarea>
             <div className="w-fit">
