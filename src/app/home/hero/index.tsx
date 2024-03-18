@@ -1,10 +1,15 @@
 "use client"
 import React, { useState, useEffect, useRef } from 'react';
-import HALO from 'vanta/dist/vanta.halo.min';
-import Container from '@/app/_components/Container';
+import Container from '@/app/_components/container';
 
 type VantaEffect = any;
 
+declare global {
+  interface Window {
+     VANTA: any;
+  }
+ }
+ 
 interface HeroProps {
  // Define any props your component expects here
 }
@@ -14,21 +19,34 @@ const Hero: React.FC<HeroProps> = (props) => {
  const myRef = useRef<HTMLDivElement>(null);
 
  useEffect(() => {
-    if (!vantaEffect && myRef.current) {
-      const effect = HALO({
-        el: myRef.current,
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: true,
-        minHeight: 200.0,
-        minWidth: 200.0,
-        // baseColor: "#baff17",
-        // backgroundColor: 0x1f253c,
-        // amplitudeFactor: 2.00,
-        size: 1,
-      });
-      setVantaEffect(effect);
-    }
+    // Function to load the Vanta.js library
+    const loadVantaScript = async () => {
+      if (!window.VANTA) {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js';
+        script.async = true;
+        document.body.appendChild(script);
+
+        await new Promise((resolve) => {
+          script.onload = resolve;
+        });
+      }
+    };
+
+    loadVantaScript().then(() => {
+      if (!vantaEffect && myRef.current) {
+        const effect = window.VANTA.HALO({
+          el: myRef.current,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: true,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          size: 1,
+        });
+        setVantaEffect(effect);
+      }
+    });
 
     return () => {
       if (vantaEffect) {

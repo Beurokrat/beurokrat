@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import image1 from './hover-title-top (1).svg';
 import image2 from './hover-title-top (2).svg';
 import image3 from './hover-title-top.svg';
-import Container from '../../_components/Container';
+import Container from '../../_components/container';
 
 const Service = () => {
   const [showText, setShowText] = useState(false);
@@ -24,7 +24,7 @@ const Service = () => {
           <div className='md:w-[25%] md:mr-10 mb-10 md:mb-0'>
             <p>
               As a research and development company focused on services, we
-              evaluate our clients' needs, whether they involve design
+              evaluate our clients&apos; needs, whether they involve design
               materials, web applications, or embedded systems. Our dynamic and
               inventive team is committed to addressing your requirements
               effectively.

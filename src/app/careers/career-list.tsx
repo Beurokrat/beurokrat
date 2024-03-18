@@ -1,4 +1,4 @@
-import Container from '../_components/Container'
+import Container from '../_components/container'
 import CareerItem from '../_components/career-item'
 
 function CareerList() {

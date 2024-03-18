@@ -2,7 +2,7 @@
 import React from "react";
 import Button from "../../_components/button";
 import { useRouter } from 'next/navigation'
-import Container from "../../_components/Container";
+import Container from "../../_components/container";
 
 const AboutCompany = () => {
   const router = useRouter()

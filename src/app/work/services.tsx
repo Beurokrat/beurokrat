@@ -1,4 +1,4 @@
-import Container from '../_components/Container'
+import Container from '../_components/container'
 import Card from '../_components/service-card'
 
 function Services() {
