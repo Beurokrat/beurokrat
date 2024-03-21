@@ -13,17 +13,17 @@ const Footer = () => {
                             <Link className="body-small" href="/work">
                                 Work
                             </Link>
-                            <Link className="body-small" href="/work">
+                            <Link className="body-small" href="/company">
                                 Company
                             </Link>
-                            <Link className="body-small" href="/work">
+                            <Link className="body-small" href="/careers">
                                 Careers
                             </Link>
-                            <Link className="body-small" href="/work">
+                            <Link className="body-small" href="/">
                                 Blog
                             </Link>
-                            <Link className="body-small flex flex-row" href="/work">
-                                <Image src="/assets/img/icons/ic_login.png" width={30} height={30} className="w-fit pr-2" alt="twitter" />
+                            <Link className="body-small flex flex-row" href="/">
+                                <Image src="/assets/img/icons/ic_login.png" width={30} height={30} className="w-[30px] h-[20px] pr-2" alt="twitter" />
                                 Login
                             </Link>
                         </div>
