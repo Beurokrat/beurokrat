@@ -31,7 +31,7 @@ function Clients() {
             <div className="flex sm:flex-col md:flex-row justify-between">
                 {clients.map((i) => (
                     <div key={i.id} className="md:w-1/3  flex justify-center">
-                        <Image className="sm:w-1/2 md:w-3/4 sm:p-5" src={i.logo} alt={i.company} />
+                        <Image className="sm:w-[80%] md:w-3/4 sm:p-5" width={270} height={200} src={i.logo} alt={i.company} />
                     </div>
                 ))}
             </div>
