@@ -44,7 +44,7 @@ export default function Navbar() {
   return (
     <div className="fixed top-0 left-0 right-0 w-full">
       <div className="my-10 mx-auto md:h-[70px] sm:h-[70px] flex flex-row items-center justify-between bg-white sm:w-[80%] md:w-3/4 shadow-lg">
-        <div className="p-5 flex flex-row items-center justify-between w-full">
+        <div className="p-2 flex flex-row items-center justify-between w-full">
           <Link href="/">
             <img
               src="/assets/img/logo.png"

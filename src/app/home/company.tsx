@@ -1,13 +1,13 @@
 "use client"
 import React from "react";
-import Button from "../../_components/button";
+import Button from "../_components/button";
 import { useRouter } from 'next/navigation'
-import Container from "../../_components/container";
+import Container from "../_components/container";
 
 const AboutCompany = () => {
   const router = useRouter()
   const handleClick = () => {
-      router.push('/about')
+      router.push('/company')
     }
   return (
     <section className=" bg-white h-[600px]">
