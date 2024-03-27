@@ -49,7 +49,7 @@ export default function Navbar() {
             <img
               src="/assets/img/logo.png"
               alt="Beurokrat logo"
-              className="sm:h-[25px] md:h-[28px]" />
+              className="px-5 sm:h-[25px] md:h-[28px]" />
           </Link>
           {/* Desktop menu */}
           <div className="sm:hidden md:block">

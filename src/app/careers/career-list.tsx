@@ -29,7 +29,7 @@ function CareerList() {
         },
     ]
     return (
-        <section className="md:mt-[100px]">
+        <section className="mt-[100px]">
             <Container>
                 <h3 className="mb-[33px]">OPEN POSITIONS</h3>
                 {careerData.map(i => (
