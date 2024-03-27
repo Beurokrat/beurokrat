@@ -31,7 +31,7 @@ const Service = () => {
                         {/* <div className='bg-blue-500 text-center text-white py-2 hover-text sm:hidden md:block'>
                 Data Science
               </div> */}
-                        <Image alt="service-image" width={200} height={200} src="/assets/img/hover-title-top.svg" />
+                        <Image alt="service-image" width={200} height={200} src="/assets/img/art_1.svg" />
                     </div>
                     <div
                         className="flex flex-col items-center"
@@ -41,7 +41,7 @@ const Service = () => {
                         {/* <div className='bg-blue-500 text-center text-white py-2 hover-text sm:hidden md:block'>
                 Robotics
               </div> */}
-                        <Image alt="service-image" width={200} height={200} src="/assets/img/hover-title-top_1.svg" />
+                        <Image alt="service-image" width={200} height={200} src="/assets/img/art_2.svg" />
                     </div>
                     <div
                         className="flex flex-col items-center"
@@ -51,7 +51,7 @@ const Service = () => {
                         {/* <div className='bg-blue-500 text-center text-white py-2 hover-text sm:hidden md:block'>
                 Robotics
               </div> */}
-                        <Image alt="service-image" width={200} height={200} src="/assets/img/hover-title-top_2.svg" />
+                        <Image alt="service-image" width={200} height={200} src="/assets/img/art_3.svg" />
                     </div>
                 </div>
             </div>
