@@ -12,9 +12,9 @@ import React, { useState, useEffect, useRef } from 'react'
 //     }
 // }
 
-// interface HeroProps {
-//     // Define any props your component expects here
-// }
+interface HeroProps {
+    // Define any props your component expects here
+}
 
 const Hero: React.FC<HeroProps> = (props) => {
     // const [vantaEffect, setVantaEffect] = useState<VantaEffect | null>(null)
