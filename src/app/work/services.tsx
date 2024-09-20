@@ -6,36 +6,36 @@ function Services() {
         {
             id: 1,
             service: 'Branding',
-            description: 'We do brand identity development',
+            description: `Elevate your brand's story.`,
         },
     ]
     const development = [
         {
             id: 1,
             service: 'Websites',
-            description: 'We do brand identity development',
+            description: 'Online success, simplified.',
         },
         {
             id: 2,
             service: 'ECommerce',
-            description: 'We do brand identity development',
+            description: 'Cater your product to a global audience.',
         },
         {
             id: 3,
             service: 'Custom webapps',
-            description: 'We do brand identity development',
+            description: 'Your vision, our expertise, your success.',
         },
     ]
     const robotics = [
         {
             id: 1,
             service: 'Consumer Electronics',
-            description: 'We do brand identity development',
+            description: 'Seemless tech, simplified life.',
         },
         {
             id: 2,
-            service: 'Custom Projects',
-            description: 'We do brand identity development',
+            service: 'Research Projects',
+            description: 'Pushing limits with our creative minds.',
         },
     ]
     return (
@@ -46,7 +46,7 @@ function Services() {
             </div>
             <div className="pb-[100px] flex sm:flex-col md:flex-row items-start gap-4 justify-between">
                 <div className="sm:w-full md:w-1/3 gap-4 flex flex-col justify-center">
-                    <h3 className="mb-[5px]">WE DO DESIGN</h3>
+                    <h3 className="mb-[5px]">DESIGN</h3>
                     {design.map((i) => (
                         <Card key={i.id} service={i.service} desc={i.description} />
                     ))}

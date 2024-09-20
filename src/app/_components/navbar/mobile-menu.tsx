@@ -4,12 +4,13 @@ import Link from 'next/link'
 
 // Define the type for the props
 interface MobileMenuProps {
+    closeMobileMenu: any
     overlayAction: boolean
     setOverlayAction: (value: boolean) => void
 }
 
 // Use the defined type in your component
-const MobileMenu: React.FC<MobileMenuProps> = ({ overlayAction, setOverlayAction }) => {
+const MobileMenu: React.FC<MobileMenuProps> = ({ overlayAction, setOverlayAction, closeMobileMenu }) => {
     return (
         <div
             style={{
@@ -29,7 +30,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ overlayAction, setOverlayAction
         >
             <main className="top-50 bottom-0 flex flex-col items-center justify-start w-[80%] h-[400px]   box-border gap-[16px]  text-left text-base p-0 pb-10">
                 <div className="self-stretch flex flex-row items-center justify-between py-[16px] border-b-[1px] border-solid border-whitesmoke">
-                    <Link href="/work" className="relative leading-[21px] ">
+                    <Link onClick={closeMobileMenu} href="/work" className="relative leading-[21px] ">
                         Work
                     </Link>
                     <svg
@@ -48,7 +49,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ overlayAction, setOverlayAction
                     } items-center justify-between py-[16px] border-b-[1px] border-solid border-whitesmoke mq450:flex-wrap`}
                     onClick={() => setOverlayAction(!overlayAction)}
                 >
-                    <Link href="/company" className="relative leading-[21px]">
+                    <Link onClick={closeMobileMenu} href="/company" className="relative leading-[21px]">
                         Company
                     </Link>
 
@@ -77,14 +78,10 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ overlayAction, setOverlayAction
                         </svg>
                     )}
                 </div>
-                {overlayAction && (
-                    <div className="flex flex-wrap ">
-                        <NavLinks width={20} />
-                    </div>
-                )}
+                {overlayAction && <div className="flex flex-wrap ">{/* <NavLinks width={20} /> */}</div>}
 
                 <div className="self-stretch flex flex-row items-center justify-between py-[16px] border-b-[1px] border-solid border-whitesmoke">
-                    <Link href="careers" className="relative leading-[21px]">
+                    <Link onClick={closeMobileMenu} href="careers" className="relative leading-[21px]">
                         Careers
                     </Link>
                     <svg
@@ -98,7 +95,9 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ overlayAction, setOverlayAction
                     </svg>
                 </div>
                 <div className="self-stretch flex flex-row items-center justify-between py-[16px] border-b-[1px] border-solid border-whitesmoke mq450:flex-wrap">
-                    <div className="relative leading-[21px]">Blog</div>
+                    <div onClick={closeMobileMenu} className="relative leading-[21px]">
+                        Blog
+                    </div>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-6 w-6"
@@ -109,11 +108,15 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ overlayAction, setOverlayAction
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                 </div>
-                <button className="cursor-pointer [border:none] mt-[16px] px-5 py-[16px] bg-primary self-stretch rounded-[35px] flex flex-row flex-wrap items-center justify-center hover:bg-greenyellow">
+                <Link
+                    href="/contact"
+                    onClick={closeMobileMenu}
+                    className="cursor-pointer [border:none] mt-[16px] px-5 py-[16px] bg-primary self-stretch rounded-[35px] flex flex-row flex-wrap items-center justify-center hover:bg-greenyellow"
+                >
                     <div className="relative text-base leading-[21px] font-cta-button-text-title-case-mob text-bk-black text-center">
                         Contact
                     </div>
-                </button>
+                </Link>
             </main>
         </div>
     )
