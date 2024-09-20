@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from 'react'
 import Container from '@/app/_components/container'
 import HALO from 'vanta/dist/vanta.halo.min'
 import * as THREE from 'three'
-import splitStringUsingRegex from '@/helpers/regex-string-split'
 
 type VantaEffect = any
 
@@ -20,7 +19,6 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = (props) => {
     const [vantaEffect, setVantaEffect] = useState<VantaEffect | null>(null)
     const myRef = useRef<HTMLDivElement>(null)
-    splitStringUsingRegex
     useEffect(() => {
         if (!vantaEffect) {
             setVantaEffect(
