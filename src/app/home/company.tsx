@@ -20,8 +20,8 @@ const AboutCompany = () => {
                         <h1 className="m-0 md:w-3/4">At Beurokrat, our products are our mode of expression</h1>
                         <p className="m-0 text-md md:w-3/4">
                             Engage with our community of experts pushing the limits of innovation and disrupting norms. We
-                            undertake AI, Web3, and Robotics projects. Through our collaborative efforts, we're not just building
-                            technologies – we're shaping the future of human-machine interaction, decentralized governance, and
+                            undertake AI, Web3, and Robotics projects. Through our collaborative efforts, we are not just building
+                            technologies we are shaping the future of human-machine interaction, decentralized governance, and
                             intelligent automation.
                         </p>
                     </footer>
