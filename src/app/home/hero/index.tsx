@@ -25,12 +25,13 @@ const Hero: React.FC<HeroProps> = (props) => {
                 HALO({
                     THREE,
                     el: myRef.current,
-                    backgroundColor: 0x000000, // Background color
-                    color: 0xdddddd, // Halo color
-                    size: 3.15, // Size of the halo effect
-                    amplitudeFactor: 1.0, // Amplitude of the waves
-                    baseFrequency: 0.9, // Frequency of the waves
-                    speed: 1.0, // Speed of the animation
+                    backgroundColor: 0x000000,
+                    mouseControls: true,
+                    touchControls: true,
+                    gyroControls: false,
+                    scale: 1.0,
+                    scaleMobile: 1.0,
+                    speed: 0.1,
                 })
             )
         }
@@ -47,8 +48,8 @@ const Hero: React.FC<HeroProps> = (props) => {
                 <Container>
                     <div className="flex justify-center">
                         <div className=" rounded-xl p-6 md:w-[60%]  text-gray-100">
-                            <h1 className="p-5 sm:text-5xl md:text-6xl leading-loose">{heading}</h1>
-                            <h1 className="p-5 sm:hidden md:text-md leading-loose">{text}</h1>
+                            <h1 className="p-5 sm:text-4xl md:text-6xl leading-loose">{heading}</h1>
+                            <h1 className="p-5  md:block sm:text-lg ">{text}</h1>
                         </div>
                     </div>
                 </Container>

@@ -77,7 +77,7 @@ export default function Navbar() {
                     </div>
                 </div>
                 {/* Mobile menu */}
-                <div className="flex items-center justify-center w-[70px] md:hidden h-full px-4 py-6 bg-primary">
+                <div className="flex items-center justify-center w-[70px] md:hidden h-full px-4 py-6 rounded-xl bg-primary">
                     <button onClick={() => setIsOpen(!isOpen)} className="flex items-center ">
                         <svg width="25" height="12" viewBox="0 0 25 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 1H24M1 11H24" stroke="black" strokeWidth="2" strokeLinecap="round" />
