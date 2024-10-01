@@ -93,7 +93,7 @@ const Hero: React.FC<HeroProps> = (props) => {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={fadeInAnimationConfig}
-                                className="sm:text-lg md:text-xl mt-5 sm:pb-10 md:p-5 pl-0"
+                                className="sm:text-lg md:text-lg mt-5 sm:pb-10 md:p-5 md:pl-0"
                             >
                                 Since our inception in July 2020, Beurokrat BMS has been at the forefront of technological
                                 innovation.{' '}

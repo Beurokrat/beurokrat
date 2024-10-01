@@ -1,65 +1,59 @@
 'use client'
 import React from 'react'
-import image from './Rectangle 7.svg'
-import Image from 'next/image'
-import Link from 'next/link'
-import Button from '../../_components/button'
+
 import Container from '../../_components/container'
-import { useRouter } from 'next/navigation'
+import { motion } from 'framer-motion'
 
 const AboutBeurokrat = () => {
-    const router = useRouter()
-    const handleClick = () => {
-        console.log('Button clicked!')
-        router.push('/careers')
+    const fadeInAnimationConfig = {
+        duration: 1,
+        delay: 0.7,
     }
     return (
         <Container>
-            <section className="bg-white mt-10 md:mt-[100px]">
-                <div className="ml-4  text-center md:text-start">
-                    <h3>ABOUT BEUROKRAT</h3>
-                </div>
-
-                <div className="flex flex-col md:flex-row ml-4  pt-5">
-                    <div
-                        className="w-full md:w-1/2 md:order-1 "
-                        style={{
-                            width: '100%',
-                            maxWidth: '678px',
-                            top: '150px',
-                        }}
-                    >
-                        <h1 className="font-display font-normal text-black">
-                            The drive to build is in all of us; the determination to make things better.
-                        </h1>
-                        <Link href="/careers">
-                            <div className="mt-5">
-                                <Button text="Careers At Beurokrat" onClick={handleClick} />
-                            </div>
-                        </Link>
+            <div className="mt-[80px] py-[80px] px-10 w-full rounded-[38px] bg-cover bg-center bg-[url('/assets/img/homepage_about_bg_image.png')]">
+                <div className="flex flex-col mt-10">
+                    <div className="rounded-xl md:p-6 md:w-[60%] text-left text-black">
+                        <motion.h3
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={fadeInAnimationConfig}
+                            className="px-3 py-1 w-fit sm:mb-5 rounded-lg"
+                            style={{ backgroundColor: 'rgba(255, 255, 255, 0.85)', border: '2px', color: '#000000' }}
+                        >
+                            ABOUT US
+                        </motion.h3>
+                        <motion.h1
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={fadeInAnimationConfig}
+                            className="p-1 mt-3 sm:text-3xl md:text-6xl"
+                        >
+                            At Beurokrat, our <span className="text-gray-400">products</span> are our mode of expression
+                        </motion.h1>
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={fadeInAnimationConfig}
+                            className="sm:text-lg md:text-lg mt-5 sm:pb-10 md:p-5 md:pl-0"
+                        >
+                            Since our inception in July 2020, Beurokrat BMS has been at the forefront of technological innovation.
+                            We're more than just a service provider; we're your strategic partner, dedicated to helping businesses
+                            elevate their value through bespoke software solutions, product design, and consultancy services.{' '}
+                        </motion.p>
                     </div>
-
-                    <div
-                        className="w-full md:w-1/2 md:ml-8 md:order-2 mt-4 md:mt-0 md:mr-16"
-                        style={{
-                            width: '100%',
-                            maxWidth: '683px',
-                            top: '160px',
-                            left: '764px',
-                        }}
-                    >
-                        <p className="body-small text-black">
-                            Since our inception in July 2020, Beurokrat BMS has helped businesses elevate their value by providing
-                            customised software solutions, product design and consultancy services. We provide technical solutions
-                            in the form of software / hardware in order to organize the workflow and provide tools for easy and
-                            efficient management.
-                        </p>
+                    <div className="p-5 flex flex-row">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={fadeInAnimationConfig}
+                            className="bg-primary rounded-[35px] px-[50px] py-[20px]"
+                        >
+                            Get Started
+                        </motion.div>
                     </div>
                 </div>
-                <div className="mt-16 flex justify-center">
-                    <Image src={image} width={1372} height={600} alt="image" />
-                </div>
-            </section>
+            </div>
         </Container>
     )
 }

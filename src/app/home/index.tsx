@@ -11,12 +11,13 @@ export default function HomePage() {
         <main>
             <Hero />
             <SubHeroSection />
+            <AboutBeurokrat />
+            <Services />
             <AboutCompany />
             <section className="w-full bg-black text-white flex flex-col mt-24 md:h-[700px]">
                 <Service />
             </section>
-            <AboutBeurokrat />
-            <Services />
+
             <HomeContact />
         </main>
     )

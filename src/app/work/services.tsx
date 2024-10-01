@@ -1,67 +1,61 @@
+import Image from 'next/image'
 import Container from '../_components/container'
 import Card from '../_components/service-card'
 
 function Services() {
-    const design = [
+    const servicesInfo = [
         {
-            id: 1,
-            service: 'Branding',
-            description: `Elevate your brand's story.`,
-        },
-    ]
-    const development = [
-        {
-            id: 1,
-            service: 'Websites',
-            description: 'Online success, simplified.',
+            title: 'Web Development',
+            description: 'Crafting digital experiences that are both beautiful and practical.',
+            subServices: ['Website Development', 'ECommerce', 'Custom Web Application'],
         },
         {
-            id: 2,
-            service: 'ECommerce',
-            description: 'Cater your product to a global audience.',
+            title: 'Branding',
+            description:
+                'We help evolve brand identities, be it a new brand, guiding its evolution, or giving it a visual uplift.',
+            subServices: ['Visual Identity', 'Marketing Material', 'Brand Guidelines'],
         },
         {
-            id: 3,
-            service: 'Custom webapps',
-            description: 'Your vision, our expertise, your success.',
-        },
-    ]
-    const robotics = [
-        {
-            id: 1,
-            service: 'Consumer Electronics',
-            description: 'Seemless tech, simplified life.',
-        },
-        {
-            id: 2,
-            service: 'Research Projects',
-            description: 'Pushing limits with our creative minds.',
+            title: 'Embedded Systems Development',
+            description: 'We craft a roadmap that aligns with your vision, ensuring every move is purposeful and impactful. ',
+            subServices: ['Consumer Electronics', 'Research Projects', 'Innovation Integration'],
         },
     ]
     return (
         <Container>
-            <div className="py-[100px]">
+            <div className="mt-[80px] px-[50px] w-[70%]">
                 <h3 className="mb-[50px]">OUR SERVICES</h3>
-                <h1>Explore our complete product suite</h1>
+                <h1 className="md:text-6xl">We deliver customized digital products tailored to your needs</h1>
             </div>
-            <div className="pb-[100px] flex sm:flex-col md:flex-row items-start gap-4 justify-between">
-                <div className="sm:w-full md:w-1/3 gap-4 flex flex-col justify-center">
-                    <h3 className="mb-[5px]">DESIGN</h3>
-                    {design.map((i) => (
-                        <Card key={i.id} service={i.service} desc={i.description} />
+            <div className="w-full flex justify-end">
+                <div className="w-[70%] grid grid-cols-2 gap-4">
+                    {servicesInfo.map((item) => (
+                        <>
+                            <div className="flex m-2 rounded-[20px] flex-col justify-between p-10 w-[455px] h-[433px] text-white bg-[#292929]">
+                                <div>
+                                    <h2 className="pb-[8px]">{item.title}</h2>
+                                    <p className="pb-[8px]">{item.description}</p>
+                                </div>
+                                <div>
+                                    <div className="w-full border-b border-gray-300 mb-[16px]">STRATEGY SERVICES</div>
+                                    {item.subServices.map((i) => (
+                                        <div className="flex gap-4">
+                                            <Image
+                                                alt="service-image"
+                                                width={15}
+                                                height={15}
+                                                src="/assets/img/icons/ic_circle.svg"
+                                            />
+                                            {i}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </>
                     ))}
-                </div>
-                <div className="sm:w-full md:w-1/3 gap-4 flex flex-col justify-center">
-                    <h3 className="mb-[5px]">WEB DEVELOPMENT</h3>
-                    {development.map((i) => (
-                        <Card key={i.id} service={i.service} desc={i.description} />
-                    ))}
-                </div>
-                <div className="sm:w-full md:w-1/3 gap-4 flex flex-col justify-center">
-                    <h3 className="mb-[5px]">EMBEDDED SYSTEMS DEVELOPMENT</h3>
-                    {robotics.map((i) => (
-                        <Card key={i.id} service={i.service} desc={i.description} />
-                    ))}
+                    <div className="flex items-end m-2 rounded-2xl p-10 w-[455px] h-[433px] bg-[url('/assets/img/homepage_services_bg.png')]">
+                        <div className="bg-primary rounded-[35px] px-[50px] py-[20px]">Check More Services</div>
+                    </div>
                 </div>
             </div>
         </Container>
