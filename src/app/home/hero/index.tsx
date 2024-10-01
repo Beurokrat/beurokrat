@@ -62,41 +62,62 @@ const Hero: React.FC<HeroProps> = (props) => {
             if (vantaEffect) vantaEffect.destroy()
         }
     }, [vantaEffect])
-
+    const fadeInAnimationConfig = {
+        duration: 1,
+        delay: 0.7,
+    }
     return (
-        <div style={{ zIndex: -10 }} className="w-full h-screen" ref={myRef}>
-            <div className="w-full h-full flex items-center bg-black/30">
+        <div style={{ zIndex: -10 }} className="px-10 w-full rounded-8xl h-screen" ref={myRef}>
+            <div className="w-full h-full flex items-center">
                 <Container>
-                    <div className="flex">
+                    <div className="flex flex-col mt-10">
                         <div className="rounded-xl md:p-6 md:w-[60%] text-left text-gray-100">
+                            <motion.h3
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={fadeInAnimationConfig}
+                                className="px-3 py-1 w-fit sm:mb-5 rounded-lg"
+                                style={{ backgroundColor: 'rgba(255, 255, 255, 0.15)', border: '2px', color: '#ffffff' }}
+                            >
+                                FOR BUSINESS
+                            </motion.h3>
                             <motion.h1
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
-                                transition={{
-                                    duration: 1,
-                                    delay: 0.7,
-                                }}
-                                className="p-1 sm:text-lg md:text-6xl"
+                                transition={fadeInAnimationConfig}
+                                className="p-1 mt-3 sm:text-3xl md:text-6xl"
                             >
                                 {headingChars}
                             </motion.h1>
-
-                            {/* {headingChars.map((el, i) => (
-                                <motion.span
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{
-                                        duration: 0.25,
-                                        delay: i / 20,
-                                    }}
-                                    key={i}
-                                    // variants={itemVariants}
-                                    className="p-1 sm:text-lg md:text-6xl text-center leading-loose"
-                                >
-                                    {el}
-                                </motion.span>
-                            ))} */}
-                            <motion.h1 className="p-5 sm:hidden sm:text-lg ">{textChars}</motion.h1>
+                            <motion.p
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={fadeInAnimationConfig}
+                                className="sm:text-lg md:text-xl mt-5 sm:pb-10 md:p-5 pl-0"
+                            >
+                                Since our inception in July 2020, Beurokrat BMS has been at the forefront of technological
+                                innovation.{' '}
+                            </motion.p>
+                        </div>
+                        <div className="p-5 flex flex-row">
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={fadeInAnimationConfig}
+                                style={{ backgroundColor: '#1b1b1b', color: '#ffffff' }}
+                                className="rounded-[35px] px-[50px] py-[20px]"
+                            >
+                                Get Started
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={fadeInAnimationConfig}
+                                style={{ backgroundColor: 'rgba(255, 255, 255, 0.15)', border: '2px', color: '#ffffff' }}
+                                className="ml-5 rounded-[35px] px-[50px] py-[20px]"
+                            >
+                                About Us
+                            </motion.div>
                         </div>
                     </div>
                 </Container>
