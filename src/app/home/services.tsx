@@ -28,18 +28,21 @@ function Services() {
                 <h1 className="md:text-6xl">We deliver customized digital products tailored to your needs</h1>
             </div>
             <div className="w-full flex justify-end">
-                <div className="w-[70%] grid grid-cols-2 gap-4">
-                    {servicesInfo.map((item) => (
+                <div className="w-fit grid grid-cols-2 gap-4">
+                    {servicesInfo.map((item, index) => (
                         <>
-                            <div className="flex m-2 rounded-[20px] flex-col justify-between p-10 w-[455px] h-[433px] text-white bg-[#292929]">
+                            <div
+                                key={index}
+                                className="flex m-2 rounded-[20px] flex-col justify-between p-10 w-[455px] h-[433px] text-white bg-[#292929]"
+                            >
                                 <div>
                                     <h2 className="pb-[8px]">{item.title}</h2>
                                     <p className="pb-[8px]">{item.description}</p>
                                 </div>
                                 <div>
                                     <div className="w-full border-b border-gray-300 mb-[16px]">STRATEGY SERVICES</div>
-                                    {item.subServices.map((i) => (
-                                        <div className="flex gap-4">
+                                    {item.subServices.map((i, index) => (
+                                        <div className="flex gap-4" key={index}>
                                             <Image
                                                 alt="service-image"
                                                 width={15}

@@ -1,10 +1,13 @@
-import Services from '../work/services'
+import Services from './services'
 import AboutBeurokrat from './about-beurokrat'
 import AboutCompany from './company'
 import Hero from './hero'
 import HomeContact from './home-contact'
-import Service from './services-section'
 import SubHeroSection from './sub-hero-section'
+import StartProject from './start-project'
+import VisionSection from './vision'
+import Quantifiers from './quantifiers'
+import JoinUs from './join-us'
 
 export default function HomePage() {
     return (
@@ -13,12 +16,10 @@ export default function HomePage() {
             <SubHeroSection />
             <AboutBeurokrat />
             <Services />
-            <AboutCompany />
-            <section className="w-full bg-black text-white flex flex-col mt-24 md:h-[700px]">
-                <Service />
-            </section>
-
-            <HomeContact />
+            <StartProject />
+            <VisionSection />
+            <Quantifiers />
+            <JoinUs />
         </main>
     )
 }
