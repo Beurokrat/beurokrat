@@ -27,7 +27,7 @@ function Services() {
                 <h3 className="mb-[50px]">OUR SERVICES</h3>
                 <h1 className="md:text-6xl">We deliver customized digital products tailored to your needs</h1>
             </div>
-            <div className="w-full flex justify-end">
+            <div className="w-full mt-[60px] flex justify-end">
                 <div className="w-fit grid grid-cols-2 gap-4">
                     {servicesInfo.map((item, index) => (
                         <>

@@ -16,7 +16,7 @@ function VisionSection() {
                     </h1>
                 </div>
                 <div className="flex flex-row mt-[48px] w-full gap-5">
-                    <div className="flex flex-col p-[20px] w-1/2 h-[740px] mr-[23px]  justify-between rounded-[38px] bg-cover bg-center bg-[url('/assets/img/homepage_vision_bg.png')] text-white">
+                    <div className="flex flex-col p-[20px] w-1/2 h-[690px]   justify-between rounded-[38px] bg-cover bg-center bg-[url('/assets/img/homepage_vision_bg.png')] text-white">
                         <h1 className="text-3xl mt-[100px] leading-[50px]">
                             We deliver customized digital products tailored to your needs
                         </h1>
@@ -26,8 +26,8 @@ function VisionSection() {
                             <HomeCard />
                         </div>
                     </div>
-                    <div className="flex flex-col p-[20px] w-1/2 md:ml-[23px] h-[740px] rounded-[38px] bg-cover bg-center bg-[url('/assets/img/homepage_vision_bg2.png')] text-black">
-                        <div className="mt-[35px] text-[#7C61FF] bg-[rgba(106, 68, 255, 0.12)] border border-[#7C61FF] w-fit rounded-[39px] px-2 py-1 text-base">
+                    <div className="flex flex-col p-[20px] w-1/2 h-[690px] rounded-[38px] bg-cover bg-center bg-[url('/assets/img/homepage_vision_bg2.png')] text-black">
+                        <div className="mt-[35px] text-[#7C61FF] bg-[rgba(106, 68, 255, 0.12)] border border-[#7C61FF] w-fit h-fit rounded-[48px] px-[12px] py-[8px] text-[9px]">
                             <b>Content</b>
                         </div>
                         <div>

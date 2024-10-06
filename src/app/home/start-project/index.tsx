@@ -15,7 +15,7 @@ const StartProject = () => {
                 {/* <div className="absolute bottom-0" style={{ zIndex: 3 }}>
                     <Image alt="bg-hand-image" width={464} height={619} src="/assets/img/homepage_hand_1.png" />
                 </div> */}
-                <div className="flex flex-col py-[80px] px-10  mt-10">
+                <div className="flex flex-col py-[10px] px-10  mt-10">
                     <div className="rounded-xl md:p-6 md:w-full text-left text-white">
                         <motion.h1
                             initial={{ opacity: 0 }}
@@ -40,7 +40,7 @@ const StartProject = () => {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={fadeInAnimationConfig}
-                                className="sm:text-lg md:text-lg mt-5 md:w-[30%] sm:pb-10 md:p-5 md:pl-0"
+                                className="sm:text-lg md:text-[17px] mt-5 md:w-[30%] sm:pb-10 md:p-5 md:pl-0"
                             >
                                 As a research and development company focused on services, we evaluate our clients needs, whether
                                 they involve design materials, web applications, or embedded systems. Our dynamic and inventive

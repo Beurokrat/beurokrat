@@ -76,7 +76,7 @@ const Hero: React.FC<HeroProps> = (props) => {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={fadeInAnimationConfig}
-                                className="px-3 py-1 w-fit sm:mb-5 rounded-lg"
+                                className="mt-[60px] px-3 py-1 w-fit sm:mb-5 rounded-lg"
                                 style={{ backgroundColor: 'rgba(255, 255, 255, 0.15)', border: '2px', color: '#ffffff' }}
                             >
                                 FOR BUSINESS

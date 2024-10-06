@@ -11,7 +11,7 @@ const AboutBeurokrat = () => {
     }
     return (
         <Container>
-            <div className="mt-[80px] py-[80px] px-10 w-full rounded-[38px] bg-cover bg-center bg-[url('/assets/img/homepage_about_bg_image.png')]">
+            <div className="mt-[80px] py-[20px] px-10 w-full rounded-[38px] bg-cover bg-center bg-[url('/assets/img/homepage_about_bg_image.png')]">
                 <div className="flex flex-col mt-10">
                     <div className="rounded-xl md:p-6 md:w-[60%] text-left text-black">
                         <motion.h3
@@ -35,7 +35,7 @@ const AboutBeurokrat = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={fadeInAnimationConfig}
-                            className="sm:text-lg md:text-lg mt-5 sm:pb-10 md:p-5 md:pl-0"
+                            className="sm:text-lg md:text-[17px] mt-5 sm:pb-10 md:p-5 md:pl-0"
                         >
                             Since our inception in July 2020, Beurokrat BMS has been at the forefront of technological innovation.
                             We are more than just a service provider; we are your strategic partner, dedicated to helping
