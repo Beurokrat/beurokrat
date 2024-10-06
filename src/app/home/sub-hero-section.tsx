@@ -20,7 +20,7 @@ function SubHeroSection() {
             iconPath: '/assets/img/icons/ic_inside_bk.svg',
             title: 'Inside Beurokrat',
             description:
-                'Solving the world’s problems through technology wouldn’t be possible without our most important invention.',
+                "Solving the world's problems through technology wouldn't be possible without our most important invention.",
         },
         {
             iconPath: '/assets/img/icons/ic_inside_bk.svg',

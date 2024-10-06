@@ -9,8 +9,8 @@ function VisionSection() {
                 <div className="mt-[80px]  w-full">
                     <h3 className="mb-[50px]">OUR VISION</h3>
                     <h1 className="md:text-3xl leading-[50px]">
-                        We've explored widely across regions and sectors, creating diverse outputs—goods, services, and
-                        encounters—that have shown us the importance of a clear visual plan in boosting an organization's
+                        Weve explored widely across regions and sectors, creating diverse outputs—goods, services, and
+                        encounters—that have shown us the importance of a clear visual plan in boosting an organizations
                         prominence, trust, and funding. From 2021, we committed to planting a tree per client, showcasing our
                         dedication to sustainability.
                     </h1>

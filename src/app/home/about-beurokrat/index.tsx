@@ -38,8 +38,9 @@ const AboutBeurokrat = () => {
                             className="sm:text-lg md:text-lg mt-5 sm:pb-10 md:p-5 md:pl-0"
                         >
                             Since our inception in July 2020, Beurokrat BMS has been at the forefront of technological innovation.
-                            We're more than just a service provider; we're your strategic partner, dedicated to helping businesses
-                            elevate their value through bespoke software solutions, product design, and consultancy services.{' '}
+                            We are more than just a service provider; we are your strategic partner, dedicated to helping
+                            businesses elevate their value through bespoke software solutions, product design, and consultancy
+                            services.{' '}
                         </motion.p>
                     </div>
                     <div className="p-5 flex flex-row">

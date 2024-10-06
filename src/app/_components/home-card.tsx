@@ -25,7 +25,7 @@ function HomeCard(props: Props) {
             </div>
             <div className="flex flex-col">
                 <h3 className="w-[65%] text-lg">Create & Set File Thumbnail</h3>
-                <p className="py-3 text-[#A9A9A9]">This automation quickly creates and sets a file's thumbnail…</p>
+                <p className="py-3 text-[#A9A9A9]">This automation quickly creates and sets a files thumbnail</p>
             </div>
             <div className="bg-[#2B2B2B] w-fit rounded-[48px] px-4 py-2 text-base">
                 <b>Content</b>

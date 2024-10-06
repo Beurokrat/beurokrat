@@ -42,7 +42,7 @@ const StartProject = () => {
                                 transition={fadeInAnimationConfig}
                                 className="sm:text-lg md:text-lg mt-5 md:w-[30%] sm:pb-10 md:p-5 md:pl-0"
                             >
-                                As a research and development company focused on services, we evaluate our clients' needs, whether
+                                As a research and development company focused on services, we evaluate our clients needs, whether
                                 they involve design materials, web applications, or embedded systems. Our dynamic and inventive
                                 team is committed to addressing your requirements effectively.
                             </motion.p>
