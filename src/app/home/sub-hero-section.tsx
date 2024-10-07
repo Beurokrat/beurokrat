@@ -33,7 +33,7 @@ function SubHeroSection() {
             <Container>
                 <div className="mt-[50px] overflow-x-auto flex md:flex-row sm:flex-col gap-[68px]">
                     {cardInfo.map((item, index) => (
-                        <div key={index} className="border-t w-[324px] py-5 border-gray-400">
+                        <div key={index} className="border-t py-5 border-gray-400">
                             <div className="flex flex-row items-center mb-[16px]">
                                 <Image alt="service-image" width={21} height={21} src={item.iconPath} />
                                 <div>
