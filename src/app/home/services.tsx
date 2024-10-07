@@ -23,11 +23,11 @@ function Services() {
     ]
     return (
         <Container>
-            <div className="mt-[80px] px-[50px] w-[70%]">
+            <div className="sm:hidden mt-[80px] px-[50px] w-[70%]">
                 <h3 className="mb-[50px]">OUR SERVICES</h3>
                 <h1 className="md:text-6xl">We deliver customized digital products tailored to your needs</h1>
             </div>
-            <div className="w-full mt-[60px] flex justify-end">
+            <div className="w-full sm:hidden  mt-[60px] flex justify-end">
                 <div className="w-fit grid grid-cols-2 gap-4">
                     {servicesInfo.map((item, index) => (
                         <>

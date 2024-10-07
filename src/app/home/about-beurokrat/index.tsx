@@ -11,8 +11,8 @@ const AboutBeurokrat = () => {
     }
     return (
         <Container>
-            <div className="mt-[80px] py-[20px] px-10 w-full rounded-[38px] bg-cover bg-center bg-[url('/assets/img/homepage_about_bg_image.png')]">
-                <div className="flex flex-col mt-10">
+            <div className="mt-[80px] py-[30px] md:px-[50px] sm:px-[22px] w-full rounded-[38px] bg-cover bg-center bg-[url('/assets/img/homepage_about_bg_image.png')]">
+                <div className="flex flex-col ">
                     <div className="rounded-xl md:p-6 md:w-[60%] text-left text-black">
                         <motion.h3
                             initial={{ opacity: 0 }}
@@ -43,7 +43,7 @@ const AboutBeurokrat = () => {
                             services.{' '}
                         </motion.p>
                     </div>
-                    <div className="p-5 flex flex-row">
+                    <div className="md:p-5 flex flex-row">
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}

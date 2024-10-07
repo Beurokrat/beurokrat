@@ -67,10 +67,10 @@ const Hero: React.FC<HeroProps> = (props) => {
         delay: 0.7,
     }
     return (
-        <div style={{ zIndex: -10 }} className="px-10 w-full rounded-8xl h-screen" ref={myRef}>
+        <div style={{ zIndex: -10 }} className="sm:px-[23px] md:px-10 w-full rounded-8xl h-screen" ref={myRef}>
             <div className="w-full h-full flex items-center">
                 <Container>
-                    <div className="flex flex-col mt-10">
+                    <div className="flex flex-col mt-10 h-fit">
                         <div className="rounded-xl md:p-6 md:w-[60%] text-left text-gray-100">
                             <motion.h3
                                 initial={{ opacity: 0 }}
@@ -99,13 +99,13 @@ const Hero: React.FC<HeroProps> = (props) => {
                                 innovation.{' '}
                             </motion.p>
                         </div>
-                        <div className="p-5 flex flex-row">
+                        <div className="md:p-5 flex flex-row">
                             <motion.div
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={fadeInAnimationConfig}
                                 style={{ backgroundColor: '#1b1b1b', color: '#ffffff' }}
-                                className="rounded-[35px] px-[50px] py-[20px]"
+                                className="rounded-[35px] md:px-[50px] sm:px-[25px] md:py-[20px] sm:py-[20px]"
                             >
                                 Get Started
                             </motion.div>
@@ -114,7 +114,7 @@ const Hero: React.FC<HeroProps> = (props) => {
                                 animate={{ opacity: 1 }}
                                 transition={fadeInAnimationConfig}
                                 style={{ backgroundColor: 'rgba(255, 255, 255, 0.15)', border: '2px', color: '#ffffff' }}
-                                className="ml-5 rounded-[35px] px-[50px] py-[20px]"
+                                className="ml-5 rounded-[35px] md:px-[50px] sm:px-[25px] md:py-[20px] sm:py-[20px]"
                             >
                                 About Us
                             </motion.div>
