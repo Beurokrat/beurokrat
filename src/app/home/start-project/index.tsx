@@ -11,21 +11,21 @@ const StartProject = () => {
     }
     return (
         <Container>
-            <div className="mt-[80px] w-full rounded-[38px] bg-black bg-cover bg-center bg-[url('/assets/img/homepage_hand_1.png')]">
+            <div className="mt-[80px] w-full rounded-[38px] bg-black md:bg-cover bg-center bg-[url('/assets/img/homepage_hand_1.png')]">
                 {/* <div className="absolute bottom-0" style={{ zIndex: 3 }}>
                     <Image alt="bg-hand-image" width={464} height={619} src="/assets/img/homepage_hand_1.png" />
                 </div> */}
-                <div className="flex flex-col py-[10px] px-10  mt-10">
+                <div className="flex flex-col py-[10px] md:px-10  mt-10">
                     <div className="rounded-xl md:p-6 md:w-full text-left text-white">
                         <motion.h1
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={fadeInAnimationConfig}
-                            className="p-5 mt-3 sm:text-3xl md:text-6xl"
+                            className="sm:p-[28px] md:p-5 mt-3 sm:text-3xl md:text-6xl"
                         >
                             We deliver customized digital products tailored to your needs
                         </motion.h1>
-                        <div className="flex mt-5 w-full justify-center text-black">
+                        <div className="flex mt-5 w-full sm:pl-[28px] md:justify-center text-black">
                             <motion.div
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
@@ -35,7 +35,7 @@ const StartProject = () => {
                                 Start A Project
                             </motion.div>
                         </div>
-                        <div className="p-5 flex md:w-full justify-end flex-row">
+                        <div className="sm:p-[28px] md:p-5 flex md:w-full justify-end flex-row">
                             <motion.p
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
