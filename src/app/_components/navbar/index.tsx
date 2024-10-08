@@ -43,7 +43,7 @@ export default function Navbar() {
     }
 
     return (
-        <div className="fixed top-0 left-0 right-0 rounded-sm w-full">
+        <div style={{ zIndex: 300 }} className="fixed top-0 left-0 right-0 rounded-sm w-full">
             <div className="my-10 mx-auto rounded-xl bg-white md:h-[70px] sm:h-[70px] flex flex-row items-center justify-between sm:w-[80%] md:w-[75%] shadow-lg">
                 <div className="p-2 flex flex-row items-center justify-between w-full">
                     <Link href="/">

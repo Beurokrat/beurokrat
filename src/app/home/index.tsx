@@ -1,3 +1,4 @@
+'use client'
 import Services from './services'
 import AboutBeurokrat from './about-beurokrat'
 import AboutCompany from './company'
@@ -9,10 +10,15 @@ import VisionSection from './vision'
 import Quantifiers from './quantifiers'
 import JoinUs from './join-us'
 import ContactUs from './contact-cta'
+import { useEffect } from 'react'
+import { ReactLenis, useLenis } from 'lenis/dist/lenis-react'
 
 export default function HomePage() {
+    const lenis = useLenis(({ scroll }) => {
+        // called every scroll
+    })
     return (
-        <main>
+        <ReactLenis root options={{ lerp: 0.04 }}>
             <Hero />
             <SubHeroSection />
             <AboutBeurokrat />
@@ -22,6 +28,6 @@ export default function HomePage() {
             <Quantifiers />
             <JoinUs />
             <ContactUs />
-        </main>
+        </ReactLenis>
     )
 }
