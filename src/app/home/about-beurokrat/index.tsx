@@ -1,17 +1,34 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import Container from '../../_components/container'
 import { motion } from 'framer-motion'
-
+import { gsap } from 'gsap'
+import { useGSAP } from '@gsap/react'
 const AboutBeurokrat = () => {
+    useGSAP(() => {
+        gsap.fromTo(
+            '.about-beurokrat',
+            { backgroundSize: '170%' },
+            {
+                backgroundSize: '120%',
+                scrollTrigger: {
+                    trigger: '.about-beurokrat',
+                    start: 'top center',
+                    end: 'bottom top',
+                    scrub: true,
+                },
+                duration: 1.7,
+            }
+        )
+    }, [])
     const fadeInAnimationConfig = {
         duration: 1,
         delay: 0.7,
     }
     return (
         <Container>
-            <div className="mt-[80px] py-[30px] md:px-[50px] sm:px-[22px] w-full rounded-[38px] bg-cover bg-center bg-[url('/assets/img/homepage_about_bg_image.png')]">
+            <div className="about-beurokrat mt-[80px] py-[30px] md:px-[50px] sm:px-[22px] w-full rounded-[38px] bg-cover bg-center bg-[url('/assets/img/homepage_about_bg_image.png')]">
                 <div className="flex flex-col ">
                     <div className="rounded-xl md:p-6 md:w-[60%] text-left text-black">
                         <motion.h3
