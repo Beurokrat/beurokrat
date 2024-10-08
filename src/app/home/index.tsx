@@ -8,6 +8,7 @@ import StartProject from './start-project'
 import VisionSection from './vision'
 import Quantifiers from './quantifiers'
 import JoinUs from './join-us'
+import ContactUs from './contact-cta'
 
 export default function HomePage() {
     return (
@@ -20,6 +21,7 @@ export default function HomePage() {
             <VisionSection />
             <Quantifiers />
             <JoinUs />
+            <ContactUs />
         </main>
     )
 }

@@ -8,7 +8,7 @@ function HomeCard(props: Props) {
 
     return (
         <div
-            className="flex flex-col rounded-[32px] p-[28px] text-white"
+            className="flex flex-col md:w-[45%] rounded-[32px] p-[28px] text-white"
             style={{ background: 'linear-gradient(180deg, #242325 0%, #171619 100%)' }}
         >
             <div className="mb-[12px] flex flex-row w-fit ">
