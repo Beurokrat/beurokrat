@@ -26,11 +26,16 @@ const StartProject = () => {
             }
         ).fromTo(
             '.fade-in-text',
-            { yPercent: -50, opacity: 0 },
+            { opacity: 0 },
             {
-                yPercent: 0,
                 opacity: 1,
-                duration: 1,
+                scrollTrigger: {
+                    trigger: '.fade-in-text',
+                    start: 'top bottom',
+                    end: 'top 30%',
+                    scrub: true,
+                },
+                duration: 0.9,
                 stagger: 0.5,
                 ease: 'expo.in',
             }

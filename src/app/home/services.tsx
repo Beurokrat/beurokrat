@@ -1,11 +1,33 @@
 'use client'
 import Image from 'next/image'
 import Container from '../_components/container'
+import { gsap } from 'gsap'
+import { useGSAP } from '@gsap/react'
 
 function Services() {
+    const tl = gsap.timeline({ repeat: 1 })
+    useGSAP(() => {
+        tl.fromTo(
+            '.services-text',
+            { opacity: 0 },
+            {
+                opacity: 1,
+                duration: 0.9,
+                scrollTrigger: {
+                    trigger: '.services-section',
+                    // trigger: '.about-beurokrat',
+                    start: 'top bottom',
+                    end: 'top center',
+                    scrub: true,
+                },
+                stagger: 0.5,
+                ease: 'expo.in',
+            }
+        )
+    }, [])
     const servicesInfo = [
         {
-            id: 1,
+            id: 0,
             title: 'Web Development',
             description: 'Crafting digital experiences that are both beautiful and practical.',
             subServices: [
@@ -15,7 +37,7 @@ function Services() {
             ],
         },
         {
-            id: 2,
+            id: 1,
             title: 'Branding',
             description:
                 'We help evolve brand identities, be it a new brand, guiding its evolution, or giving it a visual uplift.',
@@ -38,9 +60,9 @@ function Services() {
     ]
     return (
         <Container>
-            <div className="sm:hidden md:block mt-[80px] px-[50px] w-[70%]">
-                <h3 className="mb-[50px]">OUR SERVICES</h3>
-                <h1 className="md:text-6xl">We deliver customized digital products tailored to your needs</h1>
+            <div className=" sm:hidden md:block mt-[80px] px-[50px] w-[70%]">
+                <h3 className="services-section services-text mb-[50px]">OUR SERVICES</h3>
+                <h1 className=" services-text md:text-6xl">We deliver customized digital products tailored to your needs</h1>
             </div>
             <div className="w-full sm:hidden md:flex mt-[60px]  justify-end">
                 <div className="w-fit grid grid-cols-2 gap-4">
