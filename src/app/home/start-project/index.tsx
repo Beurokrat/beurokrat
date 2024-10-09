@@ -13,9 +13,9 @@ const StartProject = () => {
     useGSAP(() => {
         tl.fromTo(
             '.start-project',
-            { backgroundSize: '120%' },
+            { backgroundPositionY: '85vh' },
             {
-                backgroundSize: '100%',
+                backgroundPositionY: '100vh',
                 scrollTrigger: {
                     trigger: '.start-project',
                     start: 'top center',
@@ -43,7 +43,10 @@ const StartProject = () => {
     }, [])
     return (
         <Container>
-            <div className="start-project mt-[80px] w-full rounded-[38px] bg-black md:bg-cover bg-center bg-[url('/assets/img/homepage_hand_1.png')]">
+            <div
+                style={{ backgroundOrigin: 'center center' }}
+                className="start-project mt-[80px] w-full rounded-[38px] bg-black md:bg-cover bg-center md:bg-[url('/assets/img/homepage_hand_1.png')] sm:bg-[url('/assets/img/homepage_hand_2_mobile.png')]"
+            >
                 {/* <div className="absolute bottom-0" style={{ zIndex: 3 }}>
                     <Image alt="bg-hand-image" width={464} height={619} src="/assets/img/homepage_hand_1.png" />
                 </div> */}
@@ -53,7 +56,9 @@ const StartProject = () => {
                             We deliver customized digital products tailored to your needs
                         </h1>
                         <div className="fade-in-text flex mt-5 w-full sm:pl-[28px] md:justify-center text-black">
-                            <div className="bg-primary w-fit rounded-[35px] px-[50px] py-[20px]">Start A Project</div>
+                            <div className="bg-primary sm:mb-[200px] md:mb-[30px] w-fit rounded-[35px] px-[50px] py-[20px]">
+                                Start A Project
+                            </div>
                         </div>
                         <div className="sm:p-[28px] md:p-5 flex md:w-full justify-end flex-row">
                             <p className="fade-in-text sm:text-lg md:text-[17px] mt-5 md:w-[30%] sm:pb-10 md:p-5 md:pl-0">
