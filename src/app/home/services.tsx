@@ -17,7 +17,7 @@ function Services() {
                     trigger: '.services-section',
                     // trigger: '.about-beurokrat',
                     start: 'top bottom',
-                    end: 'top center',
+                    end: 'top 60%',
                     scrub: true,
                 },
                 stagger: 0.5,

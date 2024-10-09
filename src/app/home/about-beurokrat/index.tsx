@@ -10,33 +10,49 @@ const AboutBeurokrat = () => {
     useGSAP(() => {
         tl.fromTo(
             '.about-beurokrat',
-            { backgroundSize: '180%' },
+            { backgroundPositionY: '85vh' },
             {
-                backgroundSize: '150%',
+                backgroundPositionY: '100vh',
                 scrollTrigger: {
                     trigger: '.about-beurokrat',
                     start: 'top center',
-                    end: 'bottom top',
+                    end: 'bottom 60%',
                     scrub: true,
                 },
                 duration: 1.9,
             }
-        ).fromTo(
-            '.fade-in-text-about',
-            { opacity: 0 },
-            {
-                opacity: 1,
-                scrollTrigger: {
-                    trigger: '.fade-in-text-about',
-                    start: 'top bottom',
-                    end: 'top top',
-                    scrub: true,
-                },
-                duration: 0.9,
-                stagger: 0.5,
-                ease: 'expo.in',
-            }
         )
+            .fromTo(
+                '.fade-in-text-about',
+                { opacity: 0 },
+                {
+                    opacity: 1,
+                    scrollTrigger: {
+                        trigger: '.fade-in-text-about',
+                        start: 'top bottom',
+                        end: 'top 60%',
+                        scrub: true,
+                    },
+                    duration: 0.9,
+                    ease: 'expo.in',
+                }
+            )
+            .fromTo(
+                '.fade-in-button-about',
+                { opacity: 0 },
+                {
+                    opacity: 1,
+                    scrollTrigger: {
+                        trigger: '.fade-in-text-about',
+                        start: 'top bottom',
+                        end: 'top 60%',
+                        scrub: true,
+                    },
+                    duration: 0.9,
+                    ease: 'expo.in',
+                },
+                '<'
+            )
     }, [])
 
     return (
@@ -60,7 +76,7 @@ const AboutBeurokrat = () => {
                             services.{' '}
                         </p>
                     </div>
-                    <div className="fade-in-text-about md:p-5 flex flex-row">
+                    <div className="fade-in-button-about md:p-5 flex flex-row">
                         <div className="bg-primary rounded-[35px] px-[50px] py-[20px]">Get Started</div>
                     </div>
                 </div>

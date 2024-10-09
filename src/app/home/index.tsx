@@ -18,7 +18,7 @@ export default function HomePage() {
         // called every scroll
     })
     return (
-        <ReactLenis root options={{ lerp: 0.04 }}>
+        <ReactLenis root options={{ lerp: 0.05 }}>
             <Hero />
             <SubHeroSection />
             <AboutBeurokrat />
