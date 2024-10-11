@@ -23,7 +23,7 @@ function Work(props: Props) {
                     <div className="flex md:flex-row sm:flex-col-reverse justify-between">
                         <div className="flex md:flex-col sm:flex-col-reverse md:w-[45%] md:mb-[100px] justify-between">
                             <p className="text-[17px] leading-[29px]">
-                                We've built a vast collection of successful design and tech solutions that can be tailored to your
+                                Weve built a vast collection of successful design and tech solutions that can be tailored to your
                                 specific needs. Whether youre facing a sudden change in direction or a new competitor, Pelo offers
                                 the expertise and resources to help you thrive
                             </p>
