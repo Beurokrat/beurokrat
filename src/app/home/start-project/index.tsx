@@ -12,19 +12,6 @@ const StartProject = () => {
     const tl = gsap.timeline({ reoeat: 0 })
     useGSAP(() => {
         tl.fromTo(
-            '.start-project',
-            { backgroundPositionY: '85vh' },
-            {
-                backgroundPositionY: '100vh',
-                scrollTrigger: {
-                    trigger: '.start-project',
-                    start: 'top center',
-                    end: 'bottom top',
-                    scrub: true,
-                },
-                duration: 1.9,
-            }
-        ).fromTo(
             '.fade-in-text',
             { opacity: 0 },
             {
@@ -56,7 +43,7 @@ const StartProject = () => {
                             We deliver customized digital products tailored to your needs
                         </h1>
                         <div className="fade-in-text flex mt-5 w-full sm:pl-[28px] md:justify-center text-black">
-                            <div className="bg-primary sm:mb-[200px] md:mb-[30px] w-fit rounded-[35px] px-[50px] py-[20px]">
+                            <div className="bg-primary sm:mb-[100px] md:mb-[30px] w-fit rounded-[35px] px-[50px] py-[20px]">
                                 Start A Project
                             </div>
                         </div>
