@@ -14,7 +14,7 @@ function Work(props: Props) {
                 <div className="flex flex-col">
                     <div className="md:border-b-2 md:border-[#E8EDED] w-full md:py-[35px] sm:py-[15px]">
                         <h1 className="sm:text-[32px] md:text-[60px] md:leading-[63px] md:w-[70%]">
-                            Committed to make you live your brand’s best life.
+                            Committed to make you live your brands best life.
                         </h1>
                     </div>
                     <div className="bg-primary my-[30px] sm:w-full md:w-fit text-center md:px-[24px] py-[12px] rounded-[50px]">
@@ -24,8 +24,8 @@ function Work(props: Props) {
                         <div className="flex md:flex-col sm:flex-col-reverse md:w-[45%] md:mb-[100px] justify-between">
                             <p className="text-[17px] leading-[29px]">
                                 We've built a vast collection of successful design and tech solutions that can be tailored to your
-                                specific needs. Whether you're facing a sudden change in direction or a new competitor, Pelo
-                                offers the expertise and resources to help you thrive
+                                specific needs. Whether youre facing a sudden change in direction or a new competitor, Pelo offers
+                                the expertise and resources to help you thrive
                             </p>
                             <Exodus />
                         </div>
