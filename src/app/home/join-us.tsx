@@ -9,11 +9,11 @@ function JoinUs(props: Props) {
 
     return (
         <Container>
-            <div className="flex sm:flex-col md:flex-row mt-[36px] mb-[56px] p-[32px] items-center justify-between rounded-[38px] bg-[#010101]">
+            <div className="flex  md:w-2/3 sm:flex-col md:flex-row mt-[36px] mb-[56px] p-[32px] items-center justify-between rounded-[38px] bg-[#010101]">
                 <div className="flex sm:flex-col-reverse md:flex-row md:items-center">
                     <Image
                         height={60}
-                        width={310}
+                        width={210}
                         alt="grid"
                         src="/assets/img/join_us_grid.png"
                         className="md:pr-5 sm:mb-[35px] md:mb-0"

@@ -12,6 +12,8 @@ import JoinUs from './join-us'
 import ContactUs from './contact-cta'
 import { useEffect } from 'react'
 import { ReactLenis, useLenis } from 'lenis/dist/lenis-react'
+import Work from './work'
+import Recognition from './recognition'
 
 export default function HomePage() {
     const lenis = useLenis(({ scroll }) => {
@@ -27,6 +29,8 @@ export default function HomePage() {
             <VisionSection />
             <Quantifiers />
             <JoinUs />
+            <Work />
+            <Recognition />
             <ContactUs />
         </ReactLenis>
     )

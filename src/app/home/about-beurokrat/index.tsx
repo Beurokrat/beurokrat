@@ -9,50 +9,35 @@ const AboutBeurokrat = () => {
 
     useGSAP(() => {
         tl.fromTo(
-            '.about-beurokrat',
-            { backgroundPositionY: '85vh' },
+            '.fade-in-text-about',
+            { opacity: 0 },
             {
-                backgroundPositionY: '100vh',
+                opacity: 1,
                 scrollTrigger: {
-                    trigger: '.about-beurokrat',
-                    start: 'top center',
-                    end: 'bottom 60%',
+                    trigger: '.fade-in-text-about',
+                    start: 'top bottom',
+                    end: 'top 60%',
                     scrub: true,
                 },
-                duration: 1.9,
+                duration: 0.9,
+                ease: 'expo.in',
             }
-        )
-            .fromTo(
-                '.fade-in-text-about',
-                { opacity: 0 },
-                {
-                    opacity: 1,
-                    scrollTrigger: {
-                        trigger: '.fade-in-text-about',
-                        start: 'top bottom',
-                        end: 'top 60%',
-                        scrub: true,
-                    },
-                    duration: 0.9,
-                    ease: 'expo.in',
-                }
-            )
-            .fromTo(
-                '.fade-in-button-about',
-                { opacity: 0 },
-                {
-                    opacity: 1,
-                    scrollTrigger: {
-                        trigger: '.fade-in-text-about',
-                        start: 'top bottom',
-                        end: 'top 60%',
-                        scrub: true,
-                    },
-                    duration: 0.9,
-                    ease: 'expo.in',
+        ).fromTo(
+            '.fade-in-button-about',
+            { opacity: 0 },
+            {
+                opacity: 1,
+                scrollTrigger: {
+                    trigger: '.fade-in-text-about',
+                    start: 'top bottom',
+                    end: 'top 60%',
+                    scrub: true,
                 },
-                '<'
-            )
+                duration: 0.9,
+                ease: 'expo.in',
+            },
+            '<'
+        )
     }, [])
 
     return (
