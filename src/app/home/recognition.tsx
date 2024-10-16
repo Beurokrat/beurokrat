@@ -45,6 +45,7 @@ function Recognition(props: Props) {
                 <div className="flex flex-row w-full justify-between mb-[26px] overflow-auto">
                     {recognition.map((item) => (
                         <Image
+                            key={item.key}
                             alt="recognition"
                             className="sm:h-[100px] md:h-[120px] w-auto p-3"
                             height={item.height}
