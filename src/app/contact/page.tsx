@@ -1,44 +1,19 @@
-import Link from 'next/link'
+'use client'
 import Container from '../_components/container'
-import ContactForm from '../_components/contact-form'
-import Image from 'next/image'
+import CheckServices from './check-services'
+import Clientile from './clientile'
+import ContactFormHero from './contact-form-hero'
+import { ReactLenis, useLenis } from 'lenis/dist/lenis-react'
 
 function Contact() {
     return (
-        <Container>
-            <div className="sm:pt-[200px] sm:pb-[100px] flex flex-col">
-                <h3 className="sm:pb-[30px]">CONTACT US</h3>
-                <h1>Get in touch with beurokrat</h1>
-            </div>
-            <div className="sm:pb-[100px] flex md:flex-row sm:flex-col w-full justify-between">
-                <div className="md:w-2/3 md:border-r-2">
-                    <ContactForm />
-                </div>
-                <div className="sm:mt-[70px] md:mt-0 md:pl-5 flex md:w-1/3 gap-[30px] flex-col">
-                    <div className="flex flex-row">
-                        <Image src="/assets/img/icons/ic_contact_address.png" className="p-1 w-[30px] h-[30px]" width={30} height={30} alt="" />
-                        <p className="pl-5">
-                            UB Business Centre,
-                            <br /> Ernakulam, India 682021
-                        </p>
-                    </div>
-                    <div className="flex flex-row">
-                        <Image src="/assets/img/icons/ic_contact_mail.png" className="p-1 w-[30px] h-[25px]"  width={30} height={30} alt="" />
-                        <Link href="mailto:beurokrat@gmail.com" className="pl-5">
-                            beurokrat@gmail.com
-                        </Link>
-                    </div>
-                    <div className="flex flex-row">
-                        <Image src="/assets/img/icons/ic_contact_phone.png" className="p-1 w-[30px] h-[30px]" width={30} height={30} alt="" />
-                        <p className="pl-5">+91 8113995643</p>
-                    </div>
-                    <div className="flex flex-row">
-                        <Image src="/assets/img/icons/ic_contact_phone.png" className="p-1 w-[30px] h-[30px]" width={30} height={30} alt="" />
-                        <p className="pl-5">+971 56 929 3266</p>
-                    </div>
-                </div>
-            </div>
-        </Container>
+        <ReactLenis root options={{ lerp: 0.05 }}>
+            <Container>
+                <ContactFormHero />
+                <Clientile />
+                <CheckServices />
+            </Container>
+        </ReactLenis>
     )
 }
 
