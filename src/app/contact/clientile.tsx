@@ -27,7 +27,7 @@ function Clientile() {
         },
     ]
     return (
-        <div className="flex flex-row items-center justify-between w-full my-[80px]">
+        <div className="flex sm:flex-col md:flex-row items-center justify-between w-full my-[80px]">
             <h2 className="text-[30px] text-[#B0B0B0]">Working worlwide for →</h2>
             {clients.map((item) => (
                 <div key={item.key} className="p-[20px]">

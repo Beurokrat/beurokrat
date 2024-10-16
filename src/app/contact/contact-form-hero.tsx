@@ -7,8 +7,8 @@ interface Props {}
 function ContactFormHero(props: Props) {
     return (
         <div className="flex flex-row mt-[150px] w-full">
-            <div className="flex w-full justify-between">
-                <div className="flex flex-col justify-between w-1/2 mr-4 h-full aspect-square p-[18px] rounded-[24px] bg-cover bg-center bg-[url('/assets/img/contact_hero.png')]">
+            <div className="flex md:flex-row sm:flex-col-reverse w-full justify-between">
+                <div className="flex flex-col justify-between md:w-1/2 mr-4 h-full aspect-square p-[18px] rounded-[24px] bg-cover bg-center bg-[url('/assets/img/contact_hero.png')]">
                     <div className="flex flex-row items-center w-full justify-end">
                         <div className="flex flex-row px-[9px] py-[6px] bg-[#CFCFCF7A] rounded-[32px]">
                             <Image width={15} height={15} alt="thunder" src="/assets/img/icons/ic_contact_thunder.svg" />
@@ -30,8 +30,8 @@ function ContactFormHero(props: Props) {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col w-1/2 ml-4">
-                    <h1 className="text-[55px] mb-[16px]">Start a Project</h1>
+                <div className="flex flex-col md:w-1/2 my-2 ml-4">
+                    <h1 className="sm:text-[40px] md:text-[55px] mb-[16px]">Start a Project</h1>
                     <p className="w-[90%] mb-[40px]">
                         Ready to explore how our expertise can help your business? Fill out the form below to schedule a
                         consultation or simply drop us a line
