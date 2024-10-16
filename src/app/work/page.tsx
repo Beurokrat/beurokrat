@@ -47,7 +47,7 @@ function Work() {
     return (
         <ReactLenis root options={{ lerp: 0.05 }}>
             <Container>
-                <div className="mt-[150px] md:my-[45px] flex sm:flex-col md:flex-row w-full md:justify-between md:items-end">
+                <div className="mt-[150px] md:mb-[45px] flex sm:flex-col md:flex-row w-full md:justify-between md:items-end">
                     <h1 className="sm:text-[40px] md:text-[60px] ">Our Projects</h1>
                     <p className="text-[16px] md:w-[40%]">
                         We have extensive experience in various research projects as well as service-oriented initiatives. Some
