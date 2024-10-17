@@ -5,13 +5,13 @@ function ContactForm() {
     return (
         <div className="flex flex-col">
             <div className="flex sm:flex-col md:flex-row w-full">
-                <label className="text-[12px] flex flex-col w-1/2" htmlFor="full-name">
+                <label className="text-[12px] flex flex-col md:w-1/2" htmlFor="full-name">
                     <div className="flex flex-row pb-2">
                         Full Name <span className="text-red-500">*</span>
                     </div>
                     <input id="full-name" name="full-name" type="text" placeholder="Your full name" />
                 </label>
-                <label className="text-[12px] flex flex-col w-1/2" htmlFor="full-name">
+                <label className="text-[12px] flex flex-col md:w-1/2" htmlFor="full-name">
                     <div className="flex flex-row pb-2">
                         Company Name <span className="text-red-500">*</span>
                     </div>
@@ -19,7 +19,7 @@ function ContactForm() {
                 </label>
             </div>
             <div className="flex sm:flex-col md:flex-row w-full">
-                <label className="text-[12px] flex flex-col w-1/2" htmlFor="full-name">
+                <label className="text-[12px] flex flex-col md:w-1/2" htmlFor="full-name">
                     <div className="flex flex-row pb-2">
                         Contact Number <span className="text-red-500">*</span>
                     </div>
@@ -34,7 +34,7 @@ function ContactForm() {
                         <input className="w-full" type="text" placeholder="98210 300066" />
                     </div>
                 </label>
-                <label className="text-[12px] flex flex-col w-1/2" htmlFor="email">
+                <label className="text-[12px] flex flex-col md:w-1/2" htmlFor="email">
                     <div className="flex flex-row pb-2">
                         E-mail <span className="text-red-500">*</span>
                     </div>
