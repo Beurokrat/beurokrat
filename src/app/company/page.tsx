@@ -1,24 +1,12 @@
-import React from 'react'
-import CompanyTitle from './company-title'
-import About from './about'
-import Founder from './founder'
-import Recognition from './recognition'
+import Container from '../_components/container'
+import AboutHero from './about-hero'
 
-interface Props {}
-
-function Page(props: Props) {
-    const {} = props
-
+function AboutPage() {
     return (
-        <>
-            <CompanyTitle />
-            <About />
-            {/* <section className="w-full bg-black text-white">
-                <Founder/>
-            </section> */}
-            <Recognition />
-        </>
+        <Container>
+            <AboutHero />
+        </Container>
     )
 }
 
-export default Page
+export default AboutPage
