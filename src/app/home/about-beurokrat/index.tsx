@@ -21,7 +21,7 @@ const AboutBeurokrat = () => {
                 },
                 duration: 0.9,
                 ease: 'expo.in',
-            }
+            },
         ).fromTo(
             '.fade-in-button-about',
             { opacity: 0 },
@@ -36,7 +36,7 @@ const AboutBeurokrat = () => {
                 duration: 0.9,
                 ease: 'expo.in',
             },
-            '<'
+            '<',
         )
     }, [])
 

@@ -16,13 +16,7 @@ function HomeContact() {
                         <ContactForm />
                     </div>
                     <div className="flex sm:hidden md:block justify-end pl-[20px]">
-                        <Image
-                            className=""
-                            src="/assets/img/img_1.png"
-                            alt="contact image"
-                            width={200}
-                            height={300}
-                        />
+                        <Image className="" src="/assets/img/img_1.png" alt="contact image" width={200} height={300} />
                     </div>
                 </div>
             </div>

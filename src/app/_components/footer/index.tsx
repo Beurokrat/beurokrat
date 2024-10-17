@@ -23,7 +23,13 @@ const Footer = () => {
                                 Blog
                             </Link>
                             <Link className="body-small flex flex-row" href="/">
-                                <Image src="/assets/img/icons/ic_login.png" width={30} height={30} className="w-[30px] h-[20px] pr-2" alt="twitter" />
+                                <Image
+                                    src="/assets/img/icons/ic_login.png"
+                                    width={30}
+                                    height={30}
+                                    className="w-[30px] h-[20px] pr-2"
+                                    alt="twitter"
+                                />
                                 Login
                             </Link>
                         </div>

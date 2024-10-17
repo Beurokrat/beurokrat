@@ -18,7 +18,7 @@ function Founder() {
                         <Image src="/assets/img/icons/ic_instagram.png" width={25} height={25} alt="instagram" />
                     </div>
                     <div className="mt-[30px] w-1/4">
-                        <p className='text-center'>
+                        <p className="text-center">
                             Lorem ipsum dolor sit amet consectetur. Nunc tellus risus tincidunt arcu sed. Malesuada eu imperdiet
                             lectus id nunc venenatis ac sit metus. Enim viverra lectus pharetra feugiat ultricies aliquet vitae
                             orci duis. Morbi duis pretium aliquet libero porta.

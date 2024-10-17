@@ -22,7 +22,7 @@ function Services() {
                 },
                 stagger: 0.5,
                 ease: 'expo.in',
-            }
+            },
         )
     }, [])
     const servicesInfo = [

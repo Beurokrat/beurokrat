@@ -10,7 +10,7 @@ interface ProjectProps {
 const ProjectItem: React.FC<ProjectProps> = ({ id, title }) => {
     return (
         <div className="flex flex-row items-start py-3 border-gray-500 border-b">
-            <h2 className='pr-[20px]'>{id}</h2>
+            <h2 className="pr-[20px]">{id}</h2>
             <p className="body-small">{title}</p>
         </div>
     )

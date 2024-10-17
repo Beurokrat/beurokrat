@@ -25,7 +25,7 @@ const StartProject = () => {
                 duration: 0.9,
                 stagger: 0.5,
                 ease: 'expo.in',
-            }
+            },
         )
     }, [])
     return (

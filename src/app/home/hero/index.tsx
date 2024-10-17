@@ -55,7 +55,7 @@ const Hero: React.FC<HeroProps> = (props) => {
                     scale: 1.0,
                     scaleMobile: 1.0,
                     speed: 0.1,
-                })
+                }),
             )
         }
         return () => {

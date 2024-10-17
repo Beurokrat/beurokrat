@@ -36,56 +36,57 @@ p {
     line-height: 1.7;
 }
 /* Link */
-a, .link {
+a,
+.link {
     font-family: 'AtypTextRegular', sans-serif;
     font-size: 15px;
 }
 
-.body-large{
+.body-large {
     font-family: 'AtypTextMedium', sans-serif;
     font-size: 19px;
 }
-.body-small{
+.body-small {
     font-family: 'AtypTextRegular', sans-serif;
     font-size: 17px;
 }
 
-input, textarea {
+input,
+textarea {
     margin-bottom: 20px;
     margin-right: 20px;
     padding: 9px;
     background-color: #ffffff;
     border: 1px solid rgba(226, 228, 232, 0.74);
     border-radius: 10px;
-    outline: none; 
-} 
- select {
+    outline: none;
+}
+select {
     margin-bottom: 20px;
     margin-right: 10px;
     padding: 9px;
     background-color: #ffffff;
     border: 1px solid rgba(226, 228, 232, 0.74);
     border-radius: 10px;
-    outline: none; 
-} 
+    outline: none;
+}
 
 /* For all browsers */
 option {
     padding: 15px;
     background-color: #f2f2f2;
-    border: none; 
+    border: none;
     outline: none;
 }
 
 input:focus {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    border: none; 
+    border: none;
     outline: none;
 }
 input::placeholder {
     font-size: 12px;
     color: rgba(202, 205, 213, 1);
-
 }
 
 @media (max-width: 640px) {
