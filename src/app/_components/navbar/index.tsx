@@ -44,10 +44,16 @@ export default function Navbar() {
 
     return (
         <div style={{ zIndex: 300 }} className="fixed top-0 left-0 right-0 rounded-sm w-full">
-            <div className="my-10 mx-auto rounded-xl bg-white md:h-[70px] sm:h-[70px] flex flex-row items-center justify-between sm:w-[80%] md:w-[75%] shadow-lg">
+            <div className="my-10 mx-auto text-[#dddddd] rounded-xl bg-[#000000] bg-opacity-[0.60] backdrop-blur-md md:h-[70px] sm:h-[70px] flex flex-row items-center justify-between sm:w-[80%] md:w-[83%] shadow-lg">
                 <div className="p-2 flex flex-row items-center justify-between w-full">
                     <Link href="/">
-                        <img src="/assets/img/logo.png" alt="Beurokrat logo" className="px-5 sm:h-[25px] md:h-[28px]" />
+                        <Image
+                            height={35}
+                            width={180}
+                            src="/assets/img/logo_light.png"
+                            alt="Beurokrat logo"
+                            className="px-5 sm:h-[25px] md:h-[28px]"
+                        />
                     </Link>
                     {/* Desktop menu */}
                     <div className="sm:hidden md:block">
@@ -87,6 +93,8 @@ export default function Navbar() {
             </div>
             {isOpen && !isWindowWidthGreaterThanMd && (
                 // <div style={{zIndex: -10}} className="absolute top-0 left-0 w-full h-screen bg-white"></div>
+
+                // <MobileMenu closeMobileMenu={closeMobileMenu} overlayAction={overlayAction} setOverlayAction={setOverlayAction} />
                 <MobileMenu closeMobileMenu={closeMobileMenu} overlayAction={overlayAction} setOverlayAction={setOverlayAction} />
             )}
         </div>

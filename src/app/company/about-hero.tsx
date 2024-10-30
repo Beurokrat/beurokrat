@@ -7,25 +7,25 @@ import { useGSAP } from '@gsap/react'
 gsap.registerPlugin(ScrollTrigger)
 
 const AboutHero = () => {
-    const tl = gsap.timeline({ reoeat: 0 })
-    useGSAP(() => {
-        tl.fromTo(
-            '.fade-in-text',
-            { opacity: 0 },
-            {
-                opacity: 1,
-                scrollTrigger: {
-                    trigger: '.fade-in-text',
-                    start: 'top bottom',
-                    end: 'top 30%',
-                    scrub: true,
-                },
-                duration: 0.9,
-                stagger: 0.5,
-                ease: 'expo.in',
-            }
-        )
-    }, [])
+    // const tl = gsap.timeline({ reoeat: 0 })
+    // useGSAP(() => {
+    //     tl.fromTo(
+    //         '.fade-in-text',
+    //         { opacity: 0 },
+    //         {
+    //             opacity: 1,
+    //             scrollTrigger: {
+    //                 trigger: '.fade-in-text',
+    //                 start: 'top bottom',
+    //                 end: 'top 30%',
+    //                 scrub: true,
+    //             },
+    //             duration: 0.9,
+    //             stagger: 0.5,
+    //             ease: 'expo.in',
+    //         }
+    //     )
+    // }, [])
     return (
         <div
             style={{ backgroundOrigin: 'center center' }}

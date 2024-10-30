@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 interface ButtonProps {
@@ -7,8 +8,8 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
     return (
-        <button className="link px-7 py-4 rounded-full bg-primary text-black" onClick={onClick}>
-            {text}
+        <button className="link px-7 py-4 rounded-[10px] bg-primary" onClick={onClick}>
+            <Image alt="arrow" width={26} height={26} src="/assets/img/icons/ic_bk_research.svg" />
         </button>
     )
 }
