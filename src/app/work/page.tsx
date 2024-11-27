@@ -4,6 +4,7 @@ import Container from '../_components/container'
 
 import { ReactLenis } from 'lenis/dist/lenis-react'
 import Clientile from '../contact/clientile'
+import ContactUs from '../home/contact-cta'
 
 function Work() {
     const projects = [
@@ -12,8 +13,8 @@ function Work() {
             title: 'Vehicle-to-Vehicle communication system',
             src: '/assets/img/project_1.png',
             description:
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea accusantium corporis tenetur, nemo laboriosam veniam in nisi corrupti quibusdam ad.',
-            tag: 'Automotive',
+                'The system enables seamless VoIP communication and media sharing between vehicles. By facilitating real-time information exchange, it significantly improves driving safety and helps prevent accidents.',
+            tag: 'Networking',
             link: '',
         },
         {
@@ -21,7 +22,7 @@ function Work() {
             title: 'Variable intensity brake lighting with dynamic brake assist.',
             src: '/assets/img/project_2.png',
             description:
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea accusantium corporis tenetur, nemo laboriosam veniam in nisi corrupti quibusdam ad.',
+                'An innovative design concept for vehicle tail lamps that combines both functionality and aesthetics, along with a derivative braking system that enhances the ADAS collision avoidance capabilities.',
             tag: 'Automotive',
             link: '',
         },
@@ -30,8 +31,8 @@ function Work() {
             title: 'Real-time proximity sensing module for disease spread tracking',
             src: '/assets/img/project_3.png',
             description:
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea accusantium corporis tenetur, nemo laboriosam veniam in nisi corrupti quibusdam ad.',
-            tag: 'Automotive',
+                'Designed to track disease spread by monitoring the distance between individuals. This system provided valuable insights into interactions and helped enforce social distancing protocols.',
+            tag: 'Electronics',
             link: '',
         },
         {
@@ -39,8 +40,8 @@ function Work() {
             title: 'AI powered Exoskeleton for assisting patients with Muscular Dystrophy',
             src: '/assets/img/project_4.png',
             description:
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea accusantium corporis tenetur, nemo laboriosam veniam in nisi corrupti quibusdam ad.',
-            tag: 'Automotive',
+                'An assistive technology for rehabilitating patients with post-stroke paralysis, aimed at improving motor function and helping patients regain independence during recovery.',
+            tag: 'Bio-Medical',
             link: '',
         },
     ]
@@ -48,10 +49,10 @@ function Work() {
         <ReactLenis root options={{ lerp: 0.05 }}>
             <Container>
                 <div className="mt-[150px] md:mb-[45px] flex sm:flex-col md:flex-row w-full md:justify-between md:items-end">
-                    <h1 className="sm:text-[40px] md:text-[60px] ">Our Projects</h1>
+                    <h1 className="sm:text-[40px] md:text-[60px] ">Research Projects</h1>
                     <p className="text-[16px] md:w-[40%]">
-                        We have extensive experience in various research projects as well as service-oriented initiatives. Some
-                        notable highlights of our endeavors include:
+                        Our work spans a wide range of fields, including vehicle safety, assistive technology, and health tracking
+                        systems, demonstrating our commitment to improving lives through technology.
                     </p>
                 </div>
                 <div className="w-full md:flex mt-[60px] justify-end">
@@ -74,7 +75,7 @@ function Work() {
 
                                 <div className="pt-3">
                                     <h2 className="pb-[8px]">{pr.title}</h2>
-                                    <p className="pb-[8px]">{pr.description}</p>
+                                    <p className="pb-[8px] text-[13px]">{pr.description}</p>
                                 </div>
                                 <div className="pt-3 flex justify-end w-full">
                                     <Image height={60} width={60} alt="arrow" src="/assets/img/icons/work_arrow.png" />
@@ -85,6 +86,7 @@ function Work() {
                 </div>
                 <Clientile />
             </Container>
+            <ContactUs />
         </ReactLenis>
     )
 }

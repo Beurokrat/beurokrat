@@ -22,14 +22,14 @@ function Services() {
                 },
                 stagger: 0.5,
                 ease: 'expo.in',
-            },
+            }
         )
     }, [])
     const servicesInfo = [
         {
             id: 0,
             title: 'Web Development',
-            description: 'Crafting digital experiences that are both beautiful and practical.',
+            description: 'We create custom web applications that deliver seamless, user-friendly experiences.',
             subServices: [
                 { id: 1, title: 'Website Development' },
                 { id: 2, title: 'ECommerce' },
@@ -39,8 +39,7 @@ function Services() {
         {
             id: 1,
             title: 'Branding',
-            description:
-                'We help evolve brand identities, be it a new brand, guiding its evolution, or giving it a visual uplift.',
+            description: 'We build strong, memorable brands that connect with your audience.',
             subServices: [
                 { id: 4, title: 'Visual Identity' },
                 { id: 5, title: 'Marketing Material' },
@@ -50,11 +49,11 @@ function Services() {
         {
             id: 3,
             title: 'Embedded Systems Development',
-            description: 'We craft a roadmap that aligns with your vision, ensuring every move is purposeful and impactful. ',
+            description: 'We design and develop advanced embedded systems and electronic solutions.',
             subServices: [
                 { id: 7, title: 'Consumer Electronics' },
-                { id: 8, title: 'Research Projects' },
-                { id: 9, title: 'Innovation Integration' },
+                { id: 8, title: 'IoT Automated Systems' },
+                { id: 9, title: 'EDGE Computing Systems' },
             ],
         },
     ]
@@ -76,7 +75,7 @@ function Services() {
                                 <p className="pb-[8px]">{item.description}</p>
                             </div>
                             <div>
-                                <div className="w-full border-b border-gray-300 mb-[16px]">STRATEGY SERVICES</div>
+                                <div className="w-full border-b border-gray-300 mb-[16px]">SERVICES</div>
                                 {item.subServices.map((i) => (
                                     <div className="flex gap-4" key={i.id}>
                                         <Image alt="service-image" width={15} height={15} src="/assets/img/icons/ic_circle.svg" />

@@ -20,9 +20,9 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = (props) => {
     const [vantaEffect, setVantaEffect] = useState<VantaEffect | null>(null)
-    const heading = 'Shaping the future of technology and challenging the status quo.'
+    const heading = 'Challenging the Impossible, Creating the Unimaginable'
     const text =
-        'Engage with our community of experts pushing the limits of innovation and disrupting norms. We undertake AI, Web3 and Robotics projects.'
+        "Since our inception in July 2020, we're not just building technology — we’re redefining possibilities. Our solutions don’t just adapt to your needs; they evolve with them, powered by the synergy of artificial intelligence and human ingenuity."
     const headingChars = splitStringUsingRegex(heading)
     const textChars = splitStringUsingRegex(text)
     const myRef = useRef<HTMLDivElement>(null)
@@ -55,7 +55,7 @@ const Hero: React.FC<HeroProps> = (props) => {
                     scale: 1.0,
                     scaleMobile: 1.0,
                     speed: 0.1,
-                }),
+                })
             )
         }
         return () => {
@@ -79,7 +79,7 @@ const Hero: React.FC<HeroProps> = (props) => {
                                 className="mt-[60px] px-3 py-1 w-fit sm:mb-5 rounded-lg"
                                 style={{ backgroundColor: 'rgba(255, 255, 255, 0.15)', border: '2px', color: '#ffffff' }}
                             >
-                                FOR BUSINESS
+                                SHAPE THE FUTURE TODAY
                             </motion.h3>
                             <motion.h1
                                 initial={{ opacity: 0 }}
@@ -93,10 +93,11 @@ const Hero: React.FC<HeroProps> = (props) => {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={fadeInAnimationConfig}
-                                className="sm:text-lg md:text-lg mt-5 sm:pb-10 md:p-5 md:pl-0"
+                                className="sm:text-[17px] mt-5 sm:pb-10 md:p-5 md:pl-0"
                             >
-                                Since our inception in July 2020, Beurokrat BMS has been at the forefront of technological
-                                innovation.{' '}
+                                Since our inception, we&apos;re not just building technology — we&apos;re redefining
+                                possibilities. Our solutions don&apos;t just adapt to your needs; they evolve with them, powered
+                                by the synergy of artificial intelligence and human ingenuity.
                             </motion.p>
                         </div>
                         <div className="md:p-5 flex flex-row">

@@ -15,9 +15,9 @@ function Exodus(props: Props) {
                     </h2>
                     <Image alt="arrow" width={55} height={55} src="/assets/img/icons/ic_right_arrow.png" />
                 </div>
-                <div className="mt-[35px] text-[17px] mb-[40px]">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue interdum ligula a dignissim. Lorem ipsum
-                    dolor sit amet, consectetur adipiscing elit. Sed lobortis orci elementum egestas lobortis.
+                <div className="mt-[35px] text-[13px] mb-[40px]">
+                    An assistive technology for rehabilitating patients with post-stroke paralysis, aimed at improving motor
+                    function and helping patients regain independence during recovery.
                 </div>
                 <div className="flex flex-row  items-center bg-[#FFFFFF40] w-fit rounded-[29px] pr-[19px] my-[15px]">
                     <div className="rounded-[45px] bg-[#CFCFCF7A] p-[9px] ">

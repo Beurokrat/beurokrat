@@ -4,7 +4,7 @@ import Container from '../_components/container'
 
 const AboutHero = () => {
     return (
-        <div style={{ backgroundOrigin: 'center center' }} className="text-white p-[30px] pt-[130px] w-full bg-black">
+        <div className="text-white p-[30px] pt-[130px] w-full bg-cover bg-center sm:bg-[url('/assets/img/about_hero_mobile.png')] md:bg-[url('/assets/img/about_hero.png')]">
             <Container>
                 <div className="flex flex-col p-[20px] w-full ">
                     <div className="mb-[170px] w-[60%]">

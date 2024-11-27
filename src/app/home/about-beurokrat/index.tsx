@@ -21,7 +21,7 @@ const AboutBeurokrat = () => {
                 },
                 duration: 0.9,
                 ease: 'expo.in',
-            },
+            }
         ).fromTo(
             '.fade-in-button-about',
             { opacity: 0 },
@@ -36,7 +36,7 @@ const AboutBeurokrat = () => {
                 duration: 0.9,
                 ease: 'expo.in',
             },
-            '<',
+            '<'
         )
     }, [])
 
@@ -54,15 +54,15 @@ const AboutBeurokrat = () => {
                         <h1 className="fade-in-text-about p-1 mt-3 sm:text-3xl md:text-6xl">
                             At Beurokrat, our <span className="text-gray-400">products</span> are our mode of expression
                         </h1>
-                        <p className="fade-in-text-about sm:text-lg md:text-[17px] mt-5 sm:pb-10 md:p-5 md:pl-0">
-                            Since our inception in July 2020, Beurokrat BMS has been at the forefront of technological innovation.
-                            We are more than just a service provider; we are your strategic partner, dedicated to helping
-                            businesses elevate their value through bespoke software solutions, product design, and consultancy
-                            services.{' '}
+                        <p className="fade-in-text-about sm:text-[17px] mt-5 sm:pb-10 md:p-5 md:pl-0">
+                            Our products embody our creativity, innovation, and dedication. At Beurokrat, every design, line of
+                            code, and feature is a testament to our pursuit of <b>excellence</b>. Through AI and cutting-edge
+                            digital engineering, we bring ideas to life, crafting solutions that inspire and empower. For us,
+                            innovation isn&apos;t just a process—it&apos;s how we tell our story.
                         </p>
                     </div>
                     <div className="fade-in-button-about md:p-5 flex flex-row">
-                        <div className="bg-primary rounded-[35px] px-[50px] py-[20px]">Get Started</div>
+                        <div className="bg-primary rounded-[35px] px-[50px] py-[20px]">About Us</div>
                     </div>
                 </div>
             </div>
