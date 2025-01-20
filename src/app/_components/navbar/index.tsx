@@ -44,40 +44,46 @@ export default function Navbar() {
 
     return (
         <div style={{ zIndex: 300 }} className="fixed top-0 left-0 right-0 rounded-sm w-full">
-            <div className="my-10 mx-auto rounded-xl bg-white md:h-[70px] sm:h-[70px] flex flex-row items-center justify-between sm:w-[80%] md:w-[75%] shadow-lg">
-                <div className="p-2 flex flex-row items-center justify-between w-full">
+            <div className="my-10 mx-auto border border-[#505050] md:rounded-[38px] sm:rounded-[17px] bg-[#303030] text-white md:h-[59px] sm:h-[59px] flex flex-row items-center justify-between sm:w-[93%] md:w-[82%] shadow-lg">
+                <div className="p-2 flex flex-row leading-none items-center justify-between w-full">
                     <Link href="/">
-                        <img src="/assets/img/logo.png" alt="Beurokrat logo" className="px-5 sm:h-[25px] md:h-[28px]" />
+                        <Image
+                            src="/assets/img/logo_light.png"
+                            alt="Beurokrat logo"
+                            height={19}
+                            width={98}
+                            className="sm:ml-[10px] md:ml-[28px]"
+                        />
                     </Link>
                     {/* Desktop menu */}
-                    <div className="sm:hidden md:block">
+                    <div className="sm:hidden md:flex">
                         <div className="lg:flex hidden">
-                            <Link href="/work" className="m-[15px]">
+                            <Link href="/work" className="pt-[3px] px-[15px] text-[14px] m-[15px]">
                                 Work
                             </Link>
-                            <div
-                                className="m-[15px] relative"
+                            {/* <div
+                                className="text-[14px] m-[15px] relative"
                                 onMouseEnter={handleCompanyHover}
                                 onMouseLeave={handleCompanyLeave}
-                            >
-                                <Link href="/company" className="cursor-pointer">
-                                    Company
-                                </Link>
+                            > */}
+                            <Link href="/company" className="pt-[3px] px-[15px] text-[14px] m-[15px] cursor-pointer">
+                                Company
+                            </Link>
 
-                                {/* {onHover && <NavLinks width={23} />} */}
-                            </div>
-                            <Link href="/careers" className="m-[15px]">
+                            {/* {onHover && <NavLinks width={23} />} */}
+                            {/* </div> */}
+                            <Link href="/careers" className="pt-[3px] px-[15px] text-[14px] m-[15px]">
                                 Careers
                             </Link>
-                            <Link href="/blog" className="m-[15px]">
+                            <Link href="/blog" className="pt-[3px] px-[15px] text-[14px] m-[15px]">
                                 Blog
                             </Link>
-                            <Button text="Contact" onClick={handleClick} />
+                            <Button text="Contact Us" onClick={handleClick} />
                         </div>
                     </div>
                 </div>
                 {/* Mobile menu */}
-                <div className="flex items-center justify-center w-[70px] md:hidden h-full px-4 py-6 rounded-xl bg-primary">
+                <div className="my-[8px] mx-[11px] py-[18px]  flex items-center justify-center w-[70px] md:hidden rounded-xl bg-primary">
                     <button onClick={() => setIsOpen(!isOpen)} className="flex items-center ">
                         <svg width="25" height="12" viewBox="0 0 25 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 1H24M1 11H24" stroke="black" strokeWidth="2" strokeLinecap="round" />
