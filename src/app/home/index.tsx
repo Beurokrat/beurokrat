@@ -13,7 +13,8 @@ import ContactUs from './contact-cta'
 import { useEffect } from 'react'
 import { ReactLenis, useLenis } from 'lenis/dist/lenis-react'
 import Work from './work'
-import Recognition from './recognition'
+import Awards from './awards'
+import HomeClientile from './home-clientile'
 
 export default function HomePage() {
     const lenis = useLenis(({ scroll }) => {
@@ -24,13 +25,14 @@ export default function HomePage() {
             <Hero />
             <SubHeroSection />
             <AboutBeurokrat />
+            <Awards />
             <Services />
+            <HomeClientile />
             <StartProject />
             <VisionSection />
             <Quantifiers />
             <JoinUs />
             <Work />
-            <Recognition />
             <ContactUs />
         </ReactLenis>
     )

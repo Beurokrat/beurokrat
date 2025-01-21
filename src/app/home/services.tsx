@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react'
 
 function Services() {
     const tl = gsap.timeline({ repeat: 1 })
+
     useGSAP(() => {
         tl.fromTo(
             '.services-text',
@@ -15,9 +16,8 @@ function Services() {
                 duration: 0.9,
                 scrollTrigger: {
                     trigger: '.services-section',
-                    // trigger: '.about-beurokrat',
                     start: 'top bottom',
-                    end: 'top 60%',
+                    end: 'top 90%',
                     scrub: true,
                 },
                 stagger: 0.5,
@@ -25,6 +25,7 @@ function Services() {
             }
         )
     }, [])
+
     const servicesInfo = [
         {
             id: 0,
@@ -57,13 +58,17 @@ function Services() {
             ],
         },
     ]
+
     return (
         <Container>
-            <div className=" sm:hidden md:block mt-[80px] px-[50px] w-[70%]">
+            {/* Header Section */}
+            <div className="sm:hidden md:block mt-[40px] w-[70%]">
                 <h3 className="services-section services-text mb-[50px]">OUR SERVICES</h3>
-                <h1 className=" services-text md:text-6xl">We deliver customized digital products tailored to your needs</h1>
+                <h1 className="services-text md:text-6xl">We deliver customized digital products tailored to your needs</h1>
             </div>
-            <div className="w-full sm:hidden md:flex mt-[60px]  justify-end">
+
+            {/* Desktop View */}
+            <div className="w-full sm:hidden md:flex mt-[60px] justify-end">
                 <div className="w-fit grid grid-cols-2 gap-4">
                     {servicesInfo.map((item) => (
                         <div
@@ -88,6 +93,33 @@ function Services() {
                     <div className="flex items-end m-2 rounded-2xl p-10 w-[455px] h-[433px] bg-[url('/assets/img/homepage_services_bg.png')]">
                         <div className="bg-primary rounded-[35px] px-[50px] py-[20px]">Check More Services</div>
                     </div>
+                </div>
+            </div>
+
+            {/* Mobile View - Carousel */}
+            <div className="w-full md:hidden flex mt-[0px] overflow-x-auto space-x-4 px-4">
+                {servicesInfo.map((item) => (
+                    <div
+                        key={item.id}
+                        className="flex-shrink-0 w-[300px] rounded-[20px] flex flex-col justify-between p-6 text-white bg-[#292929]"
+                    >
+                        <div>
+                            <h2 className="py-[25px]">{item.title}</h2>
+                            <p className="pb-[10px]">{item.description}</p>
+                        </div>
+                        <div className="mb-[25px]">
+                            <div className="w-full border-b border-gray-300 mb-[16px]">SERVICES</div>
+                            {item.subServices.map((i) => (
+                                <div className="flex gap-4" key={i.id}>
+                                    <Image alt="service-image" width={15} height={15} src="/assets/img/icons/ic_circle.svg" />
+                                    {i.title}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+                <div className="flex-shrink-0 w-[300px] h-[300px] flex items-center justify-center bg-[url('/assets/img/homepage_services_bg.png')] bg-cover rounded-2xl">
+                    <div className="bg-primary rounded-[35px] px-[30px] py-[15px]">Check More Services</div>
                 </div>
             </div>
         </Container>
