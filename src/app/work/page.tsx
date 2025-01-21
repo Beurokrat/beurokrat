@@ -11,7 +11,7 @@ function Work() {
         {
             key: 1,
             title: 'Vehicle-to-Vehicle communication system',
-            src: '/assets/img/project_1.png',
+            src: '/assets/img/project_1a.png',
             description:
                 'The system enables seamless VoIP communication and media sharing between vehicles. By facilitating real-time information exchange, it significantly improves driving safety and helps prevent accidents.',
             tag: 'Networking',
@@ -20,7 +20,7 @@ function Work() {
         {
             key: 2,
             title: 'Variable intensity brake lighting with dynamic brake assist.',
-            src: '/assets/img/project_2.png',
+            src: '/assets/img/project_1.png',
             description:
                 'An innovative design concept for vehicle tail lamps that combines both functionality and aesthetics, along with a derivative braking system that enhances the ADAS collision avoidance capabilities.',
             tag: 'Automotive',
@@ -38,7 +38,7 @@ function Work() {
         {
             key: 4,
             title: 'AI powered Exoskeleton for assisting patients with Muscular Dystrophy',
-            src: '/assets/img/project_4.png',
+            src: '/assets/img/project_4a.png',
             description:
                 'An assistive technology for rehabilitating patients with post-stroke paralysis, aimed at improving motor function and helping patients regain independence during recovery.',
             tag: 'Bio-Medical',

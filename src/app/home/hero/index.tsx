@@ -22,7 +22,7 @@ const Hero: React.FC<HeroProps> = (props) => {
     const [vantaEffect, setVantaEffect] = useState<VantaEffect | null>(null)
     const heading = 'Challenging the Impossible, Creating the Unimaginable'
     const text =
-        "Since our inception in July 2020, we're not just building technology — we’re redefining possibilities. Our solutions don’t just adapt to your needs; they evolve with them, powered by the synergy of artificial intelligence and human ingenuity."
+        "Since our inception, Beurokrat has consistently moved beyond building technology. We redefine the impossible. Our solutions don't just adapt to your needs; they evolve with them, powered by the synergy of artificial intelligence and human ingenuity."
     const headingChars = splitStringUsingRegex(heading)
     const textChars = splitStringUsingRegex(text)
     const myRef = useRef<HTMLDivElement>(null)
