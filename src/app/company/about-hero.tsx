@@ -4,8 +4,8 @@ import Container from '../_components/container'
 
 const AboutHero = () => {
     return (
-        <div className="text-white p-[30px] pt-[130px] w-full bg-cover bg-center sm:bg-[url('/assets/img/about_hero_mobile.png')] md:bg-[url('/assets/img/about_hero.png')]">
-            <Container>
+        <Container>
+            <div className="mt-[120px] text-white rounded-[65px] p-[30px] pt-[130px] w-full bg-cover bg-center sm:bg-[url('/assets/img/about_hero_mobile.png')] md:bg-[url('/assets/img/about_hero.png')]">
                 <div className="flex flex-col p-[20px] w-full ">
                     <div className="mb-[170px] w-[60%]">
                         <h1 className=" md:text-[70px] md:leading-[105px]">
@@ -24,8 +24,8 @@ const AboutHero = () => {
                         </div>
                     </div>
                 </div>
-            </Container>
-        </div>
+            </div>
+        </Container>
     )
 }
 

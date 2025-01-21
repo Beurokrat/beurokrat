@@ -89,26 +89,6 @@ input::placeholder {
     color: rgba(202, 205, 213, 1);
 }
 
-.custom-scrollbar::-webkit-scrollbar {
-    height: 8px; /* Height of the horizontal scrollbar */
-    background-color: #1e1e1e; /* Background color of the scrollbar track */
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #ff5722; /* Color of the scrollbar thumb */
-    border-radius: 8px; /* Round corners */
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background-color: #ff784e; /* Thumb color on hover */
-}
-
-/* For modern standards-compliant browsers */
-.custom-scrollbar {
-    scrollbar-color: #ff5722 #1e1e1e; /* Thumb color and track color */
-    scrollbar-width: thin; /* Thin scrollbar */
-}
-
 
 @media (max-width: 640px) {
     h1 {
