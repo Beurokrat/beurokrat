@@ -58,7 +58,7 @@ export default function Navbar() {
                     {/* Desktop menu */}
                     <div className="sm:hidden md:flex">
                         <div className="lg:flex hidden">
-                            <Link href="/work" className="pt-[3px] px-[15px] text-[14px] m-[15px]">
+                            <Link href="/work" className="pt-[6px] px-[15px] text-[14px] m-[15px]">
                                 Work
                             </Link>
                             {/* <div
@@ -66,16 +66,16 @@ export default function Navbar() {
                                 onMouseEnter={handleCompanyHover}
                                 onMouseLeave={handleCompanyLeave}
                             > */}
-                            <Link href="/company" className="pt-[3px] px-[15px] text-[14px] m-[15px] cursor-pointer">
+                            <Link href="/company" className="pt-[6px] px-[15px] text-[14px] m-[15px] cursor-pointer">
                                 Company
                             </Link>
 
                             {/* {onHover && <NavLinks width={23} />} */}
                             {/* </div> */}
-                            <Link href="/careers" className="pt-[3px] px-[15px] text-[14px] m-[15px]">
+                            <Link href="/careers" className="pt-[6px] px-[15px] text-[14px] m-[15px]">
                                 Careers
                             </Link>
-                            <Link href="/blog" className="pt-[3px] px-[15px] text-[14px] m-[15px]">
+                            <Link href="/blog" className="pt-[6px] px-[15px] text-[14px] m-[15px]">
                                 Blog
                             </Link>
                             <Button text="Contact Us" onClick={handleClick} />
@@ -83,7 +83,7 @@ export default function Navbar() {
                     </div>
                 </div>
                 {/* Mobile menu */}
-                <div className="my-[8px] mx-[11px] py-[18px]  flex items-center justify-center w-[70px] md:hidden rounded-xl bg-primary">
+                <div className="my-[8px] mx-[5px] py-[18px]  flex items-center justify-center w-[70px] md:hidden rounded-xl bg-primary">
                     <button onClick={() => setIsOpen(!isOpen)} className="flex items-center ">
                         <svg width="25" height="12" viewBox="0 0 25 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 1H24M1 11H24" stroke="black" strokeWidth="2" strokeLinecap="round" />

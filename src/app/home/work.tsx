@@ -25,7 +25,7 @@ function Work(props: Props) {
 
                     <div className="mt-[60px] flex md:flex-row sm:flex-col-reverse justify-between">
                         <div className="flex md:flex-col sm:flex-col-reverse md:w-[45%] md:mb-[100px] justify-between">
-                            <p className="sm:hidden text-[17px] leading-[29px]">
+                            <p className="sm:hidden md:flex text-[17px] leading-[29px]">
                                 We&apos;ve built a vast collection of successful design and tech solutions that can be tailored to
                                 your specific needs. Whether you&apos;re facing a sudden change in direction or a new competitor,
                                 Beurokrat offers the expertise and resources to help you thrive

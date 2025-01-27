@@ -8,7 +8,7 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
     return (
         <button
-            className="link text-[14px] mx-[15px] px-[13px] my-[11px] py-[8px] rounded-full bg-primary text-black"
+            className="link text-[14px] ml-[15px] mr-[5px] px-[17px] my-[11px] font-semibold py-[11px] rounded-[25px] bg-primary text-black"
             onClick={onClick}
         >
             {text}
