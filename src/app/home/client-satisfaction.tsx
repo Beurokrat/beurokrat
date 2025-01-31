@@ -20,7 +20,7 @@ function ClientStaisfaction(props: Props) {
                             </h1>
                             <p className="mt-[30px] sm:pr-[50px] md:pr-0 text-[#ffffff] sm:text-[17px] md:text-[20px] md:leading-[28px]">
                                 Trusted by industry leaders, our AI solutions deliver measurable results. Partner with us and
-                                unlock the full potential of AI for your business."
+                                unlock the full potential of AI for your business.
                             </p>
                         </div>
                         <Image src="/assets/img/home_client_world.png" alt="beurokrat world" height={400} width={485} />
