@@ -15,6 +15,7 @@ import { ReactLenis, useLenis } from 'lenis/dist/lenis-react'
 import Work from './work'
 import Awards from './awards'
 import HomeClientile from './home-clientile'
+import ClientStaisfaction from './client-satisfaction'
 
 export default function HomePage() {
     const lenis = useLenis(({ scroll }) => {
@@ -33,7 +34,8 @@ export default function HomePage() {
             <Quantifiers />
             <JoinUs />
             <Work />
-            <ContactUs />
+            <ClientStaisfaction />
+            {/* <ContactUs /> */}
         </ReactLenis>
     )
 }

@@ -1,5 +1,6 @@
 import Container from '../_components/container'
 import CareerItem from '../_components/career-item'
+import Image from 'next/image'
 
 function CareerList() {
     const careerData = [
@@ -7,6 +8,7 @@ function CareerList() {
             id: 1,
             title: 'UI/UX Designer',
             position: 'Full Time',
+            location: 'Remote',
             description:
                 'Elevate user experiences through intuitive and visually appealing designs. Collaborate with cross-functional teams to create seamless digital interactions.',
             link: '/careers',
@@ -14,7 +16,8 @@ function CareerList() {
         {
             id: 2,
             title: 'Frontend Developer',
-            position: 'Full Time (Hybrid)',
+            position: 'Full Time',
+            location: 'Remote',
             description:
                 'Elevate user experiences through intuitive and visually appealing designs. Collaborate with cross-functional teams to create seamless digital interactions.',
             link: '/careers',
@@ -22,19 +25,44 @@ function CareerList() {
         {
             id: 3,
             title: 'Backend Developer',
-            position: 'Part Time (On Site)',
+            position: 'Contract',
+            location: 'Remote',
             description:
                 'Elevate user experiences through intuitive and visually appealing designs. Collaborate with cross-functional teams to create seamless digital interactions.',
             link: '/careers',
         },
     ]
     return (
-        <section className="mt-[100px]">
+        <section className="my-[50px]">
             <Container>
-                <h3 className="mb-[33px]">OPEN POSITIONS</h3>
-                {careerData.map((i) => (
-                    <CareerItem key={i.id} title={i.title} position={i.position} desc={i.description} link={i.link} />
-                ))}
+                <div className="flex md:flex-row sm:flex-col items-start bg-[#121212] rounded-[38px] py-[40px] px-[28px]">
+                    <Image
+                        width={286}
+                        height={144}
+                        className="sm:hidden md:flex"
+                        alt="Beurokrat is hiring now"
+                        src={'/assets/img/careers_hiring.png'}
+                    />
+                    <Image
+                        width={319}
+                        height={63}
+                        className="md:hidden sm:flex"
+                        alt="Beurokrat is hiring now"
+                        src={'/assets/img/careers_hiring_sm.png'}
+                    />
+                    <div className="flex flex-col md:ml-[80px]">
+                        {careerData.map((i) => (
+                            <CareerItem
+                                key={i.id}
+                                title={i.title}
+                                position={i.position}
+                                location={i.location}
+                                desc={i.description}
+                                link={i.link}
+                            />
+                        ))}
+                    </div>
+                </div>
             </Container>
         </section>
     )
