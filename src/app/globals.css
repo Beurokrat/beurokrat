@@ -89,7 +89,6 @@ input::placeholder {
     color: rgba(202, 205, 213, 1);
 }
 
-
 @media (max-width: 640px) {
     h1 {
         font-size: 30px;

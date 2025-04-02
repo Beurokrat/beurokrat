@@ -2,11 +2,16 @@ import React from 'react'
 import Container from '../_components/container'
 import Exodus from '../_components/home-exodus'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation' // Import useRouter
 
 interface Props {}
 
 function Work(props: Props) {
-    const {} = props
+    const router = useRouter() // Initialize useRouter
+
+    const navigateToWork = () => {
+        router.push('/work') // Navigate to the "Our Work" page
+    }
 
     return (
         <>
@@ -21,7 +26,10 @@ function Work(props: Props) {
                             your specific needs. Whether you&apos;re facing a sudden change in direction or a new competitor,
                             Beurokrat offers the expertise and resources to help you thrive
                         </p>
-                        <div className="sm:flex md:hidden bg-primary my-[30px] sm:w-fit text-center px-[24px] py-[12px] rounded-[50px]">
+                        <div
+                            className="sm:flex md:hidden bg-primary my-[30px] sm:w-fit text-center px-[24px] py-[12px] rounded-[50px] cursor-pointer"
+                            onClick={navigateToWork} // Add onClick handler
+                        >
                             Our Work
                         </div>
                     </div>
@@ -33,7 +41,10 @@ function Work(props: Props) {
                                 your specific needs. Whether you&apos;re facing a sudden change in direction or a new competitor,
                                 Beurokrat offers the expertise and resources to help you thrive
                             </p>
-                            <div className="sm:hidden md:flex bg-primary my-[30px] sm:w-fit text-center px-[24px] py-[12px] rounded-[50px]">
+                            <div
+                                className="sm:hidden md:flex bg-primary my-[30px] sm:w-fit text-center px-[24px] py-[12px] rounded-[50px] cursor-pointer"
+                                onClick={navigateToWork} // Add onClick handler
+                            >
                                 Our Work
                             </div>
                             <Exodus />
@@ -41,7 +52,6 @@ function Work(props: Props) {
                         <div className="flex flex-col md:w-1/2 md:mb-[30px] sm:mb-[30px] ">
                             <p className="text-[80px] leading-[70px]">30+</p>
                             <p className="text-[17px] mb-[14px]">Accomplished Endeavors</p>
-                            {/* <div className="w-[530px] h-[545px] bg-cover bg-center bg-[url('/assets/animated/home_work.gif')] rounded-[38px]"></div> */}
                             <Image
                                 alt="arrow"
                                 width={530}

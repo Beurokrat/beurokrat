@@ -1,15 +1,17 @@
 'use client'
 import React, { useEffect } from 'react'
-
 import Container from '../../_components/container'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
+import { useRouter } from 'next/navigation' // Import useRouter
 
 gsap.registerPlugin(ScrollTrigger)
 
 const StartProject = () => {
-    const tl = gsap.timeline({ reoeat: 0 })
+    const tl = gsap.timeline({ repeat: 0 })
+    const router = useRouter() // Initialize useRouter
+
     useGSAP(() => {
         tl.fromTo(
             '.fade-in-text',
@@ -28,22 +30,27 @@ const StartProject = () => {
             },
         )
     }, [])
+
+    const navigateToStartProject = () => {
+        router.push('/contact') // Navigate to the "Start A Project" page
+    }
+
     return (
         <Container>
             <div
                 style={{ backgroundOrigin: 'center center' }}
                 className="start-project mt-[80px] w-full rounded-[38px] bg-black md:bg-cover bg-center md:bg-[url('/assets/img/homepage_hand_1.png')] sm:bg-[url('/assets/img/homepage_hand_2_mobile.png')]"
             >
-                {/* <div className="absolute bottom-0" style={{ zIndex: 3 }}>
-                    <Image alt="bg-hand-image" width={464} height={619} src="/assets/img/homepage_hand_1.png" />
-                </div> */}
-                <div className=" flex flex-col py-[10px] md:px-10  mt-10">
+                <div className="flex flex-col py-[10px] md:px-10 mt-10">
                     <div className="rounded-xl md:p-6 md:w-full text-left text-white">
                         <h1 className="fade-in-text sm:p-[28px] md:p-5 mt-3 sm:text-3xl md:text-6xl">
                             We deliver customized digital products tailored to your needs
                         </h1>
                         <div className="fade-in-text flex mt-5 w-full sm:pl-[28px] md:justify-center text-black">
-                            <div className="bg-primary sm:mb-[100px] md:mb-[30px] w-fit rounded-[35px] px-[50px] py-[20px]">
+                            <div
+                                className="bg-primary sm:mb-[100px] md:mb-[30px] w-fit rounded-[35px] px-[50px] py-[20px] cursor-pointer"
+                                onClick={navigateToStartProject} // Add onClick handler
+                            >
                                 Start A Project
                             </div>
                         </div>

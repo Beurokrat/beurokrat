@@ -1,11 +1,13 @@
 'use client'
 import React, { useEffect } from 'react'
-
 import Container from '../../_components/container'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
+import { useRouter } from 'next/navigation' // Import useRouter
+
 const AboutBeurokrat = () => {
-    const tl = gsap.timeline({ reoeat: 1 })
+    const tl = gsap.timeline({ repeat: 1 })
+    const router = useRouter() // Initialize useRouter
 
     useGSAP(() => {
         tl.fromTo(
@@ -21,7 +23,7 @@ const AboutBeurokrat = () => {
                 },
                 duration: 0.9,
                 ease: 'expo.in',
-            }
+            },
         ).fromTo(
             '.fade-in-button-about',
             { opacity: 0 },
@@ -36,9 +38,13 @@ const AboutBeurokrat = () => {
                 duration: 0.9,
                 ease: 'expo.in',
             },
-            '<'
+            '<',
         )
     }, [])
+
+    const navigateToAbout = () => {
+        router.push('/company') // Navigate to the "About Us" page
+    }
 
     return (
         <Container>
@@ -62,7 +68,12 @@ const AboutBeurokrat = () => {
                         </p>
                     </div>
                     <div className="fade-in-button-about md:p-5 flex flex-row">
-                        <div className="bg-primary rounded-[35px] px-[50px] py-[20px]">About Us</div>
+                        <div
+                            onClick={navigateToAbout} // Add onClick handler
+                            className="bg-primary rounded-[35px] px-[50px] py-[20px] cursor-pointer"
+                        >
+                            About Us
+                        </div>
                     </div>
                 </div>
             </div>

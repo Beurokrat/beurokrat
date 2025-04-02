@@ -1,7 +1,15 @@
+'use client'
 import Image from 'next/image'
 import React from 'react'
+import { useRouter } from 'next/navigation' // Import useRouter
 
 function CheckServices() {
+    const router = useRouter() // Initialize useRouter
+
+    const navigateToServices = () => {
+        router.push('/work') // Navigate to the "Services" page
+    }
+
     return (
         <div className="my-[80px] py-[30px] md:px-[50px] sm:px-[22px] w-full rounded-[38px] bg-cover bg-center bg-[url('/assets/animated/contact_animated_section.gif')]">
             <div className="flex flex-col ">
@@ -11,7 +19,12 @@ function CheckServices() {
                     </p>
                 </div>
                 <div className="md:py-5 sm:hidden md:flex flex-row">
-                    <div className="bg-primary rounded-[35px] px-[50px] py-[20px]">Check Our Services</div>
+                    <div
+                        className="bg-primary rounded-[35px] px-[50px] py-[20px] cursor-pointer"
+                        onClick={navigateToServices} // Add onClick handler
+                    >
+                        Check Our Works
+                    </div>
                 </div>
                 <Image
                     className="md:mt-[100px]"

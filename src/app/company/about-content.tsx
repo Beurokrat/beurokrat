@@ -1,9 +1,17 @@
+'use client'
 import React from 'react'
 import Container from '../_components/container'
 import Image from 'next/image'
 import ContactUs from '../home/contact-cta'
+import { useRouter } from 'next/navigation'
 
 function AboutContent() {
+    const router = useRouter()
+
+    const navigateToStartProject = () => {
+        router.push('/contact')
+    }
+
     return (
         <>
             <Container>
@@ -96,7 +104,10 @@ function AboutContent() {
                             <p className="mt-[20px] text-[16px]">
                                 Use intuitive UI and ultra- customizable blocks to craft your ideal workflows.
                             </p>
-                            <div className="md:mt-[20px] bg-primary text-black sm:mb-[100px] md:mb-[30px] w-fit rounded-[35px] px-[30px] py-[10px]">
+                            <div
+                                className="md:mt-[20px] bg-primary text-black sm:mb-[100px] md:mb-[30px] w-fit rounded-[35px] px-[30px] py-[10px] cursor-pointer"
+                                onClick={navigateToStartProject}
+                            >
                                 Start A Project
                             </div>
                         </div>
