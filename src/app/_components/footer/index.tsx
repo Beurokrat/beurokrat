@@ -111,6 +111,19 @@ const Footer = () => {
                                 src={'/assets/img/icons/footer_open.png'}
                             />
                         </div>
+                        <div
+                            className="flex flex-row items-center sm:mt-[25px] md:mt-[0px] md:ml-[30px] text-[17px] font-bold cursor-pointer"
+                            onClick={() => navigateTo('/login')} // Navigate to "admin login"
+                        >
+                            Admin
+                            <Image
+                                className="py-2 ml-[10px]"
+                                height={13}
+                                width={13}
+                                alt="share"
+                                src={'/assets/img/icons/footer_open.png'}
+                            />
+                        </div>
                     </div>
                 </div>
                 <div className="flex sm:flex-col md:flex-row justify-between sm:mt-[40px] md:mt-[90px]">
