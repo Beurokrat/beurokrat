@@ -1,21 +1,24 @@
 import TabNavigation from "../_components/tab-navigation";
+import BacklogPage from "./blogs";
+import CareersPage from "./careers";
+import WorksPage from "./works";
 
 const AdminPage = () => {
   const tabs = [
     {
       label: 'Blogs',
       value: 'blogs',
-      content: <div>Manage Blogs</div>,
+      content: <BacklogPage />,
     },
     {
       label: 'Careers',
       value: 'careers',
-      content: <div>Manage Careers</div>,
+      content: <CareersPage />,
     },
     {
       label: 'Works',
       value: 'works',
-      content: <div>Manage Works</div>,
+      content: <WorksPage />,
     },
   ];
 

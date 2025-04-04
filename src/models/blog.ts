@@ -20,10 +20,14 @@ Blog.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    blogImage: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     sequelize,
-    modelName: 'Blog',
+    modelName: 'blogs',
   }
 );
 

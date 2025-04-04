@@ -26,6 +26,6 @@ Admin.init(
   },
   {
     sequelize, // Pass the sequelize instance
-    tableName: 'admins', // Table name
+    tableName: 'admin_details', // Table name
   }
 );

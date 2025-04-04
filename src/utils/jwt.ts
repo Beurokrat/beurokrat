@@ -2,13 +2,13 @@ import jwt from 'jsonwebtoken';
 import { jwtVerify } from 'jose';
 
 // Use your secret key securely
-const SECRET_KEY = process.env.JWT_SECRET_KEY;
+const SECRET_KEY = process.env.JWT_SECRET_KEY||'beurokrat-secret';
 if (!SECRET_KEY) {
   throw new Error('JWT_SECRET_KEY is not defined in environment variables');
 }
 
 
-export const generateJWT = (userId: string) => {
+export const generateJWT = (userId: number) => {
   return jwt.sign({ userId }, SECRET_KEY, {
     expiresIn: '1h',
   });

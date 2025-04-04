@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ message: 'Invalid credentials' }, { status: 401 });
     }
 
-    const token = generateJWT('1');
+    const token = generateJWT(admin.id);
 
     // Set JWT token as an HttpOnly cookie
     const response = NextResponse.json({ message: 'Login successful' }, { status: 200 });

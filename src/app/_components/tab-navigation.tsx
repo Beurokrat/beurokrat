@@ -9,8 +9,8 @@ interface Tab {
 
 const TabNavigation = ({ tabs }: { tabs: Tab[] }) => {
   return (
-    <Tabs defaultValue={tabs[0].value}>
-      <TabsList>
+    <Tabs defaultValue={tabs[0].value} className='w-full max-w-4xl' orientation='horizontal'>
+      <TabsList className='flex justify-center align-center'>
         {tabs.map((tab) => (
           <TabsTrigger key={tab.value} value={tab.value}>
             {tab.label}
