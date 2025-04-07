@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import Works from "../../../models/works";
-import verifyToken from "../validations/verifytoken";
+import Works from "@/models/works";
+import verifyToken from "../../validations/verifytoken";
 
 export async function GET(req: Request) {
     try {

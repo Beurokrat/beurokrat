@@ -8,10 +8,11 @@ import { Label } from "../_components/shadui/label";
 import { Button } from "../_components/shadui/button";
 import { Skeleton } from "../_components/shadui/skeleton";
 import { Pagination, PaginationContent, PaginationItem, PaginationPrevious, PaginationNext, PaginationLink } from "../_components/shadui/pagination";
-import { CheckCheck, GitPullRequestClosed, LoaderPinwheel, Trash2 } from "lucide-react"; // Import Trash Icon
+import { CheckCheck, LoaderPinwheel, Trash2 } from "lucide-react"; // Import Trash Icon
 import { Toaster } from "../_components/shadui/sonner"; // Import toast for notifications
 import { toast } from "sonner";
 import axiosInstance from "@/utils/axiosInstance"; // Import axiosInstance instance
+import PaginationControls from "../_components/pagination-control";
 interface Blog {
     id: number;
     title: string;
@@ -27,7 +28,7 @@ export default function BlogPage() {
 
     // Pagination state
     const [page, setPage] = useState(1);
-    const [limit] = useState(5); // Number of blogs per page
+    const [limit] = useState(6); // Number of blogs per page
     const [totalPages, setTotalPages] = useState(1);
 
     useEffect(() => {
@@ -170,29 +171,11 @@ export default function BlogPage() {
 
                     {/* Pagination using ShadCN */}
                     <div className="flex justify-center mt-6">
-                        <Pagination>
-                            <PaginationContent>
-                                <PaginationItem>
-                                    <PaginationPrevious
-                                        onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
-                                        className={`cursor-pointer ${page === 1 && "hidden"}`}
-                                    />
-                                </PaginationItem>
-                                {Array.from({ length: totalPages }, (_, i) => (
-                                    <PaginationItem key={i} className="cursor-pointer">
-                                        <PaginationLink onClick={() => setPage(i + 1)} isActive={page === i + 1}>
-                                            {i + 1}
-                                        </PaginationLink>
-                                    </PaginationItem>
-                                ))}
-                                <PaginationItem>
-                                    <PaginationNext
-                                        onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
-                                        className={`cursor-pointer ${page === totalPages && "hidden"}`}
-                                    />
-                                </PaginationItem>
-                            </PaginationContent>
-                        </Pagination>
+                        <PaginationControls
+                            page={page}
+                            setPage={setPage}
+                            totalPages={totalPages}
+                        />
                     </div>
                 </>
             )}

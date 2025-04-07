@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create Axios instance
 const axiosInstance = axios.create({
-  baseURL: "/api",
+  baseURL: "/api/admin",
   withCredentials: true, // Ensures cookies (JWT) are sent with requests
 });
 

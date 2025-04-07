@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
-import  Careers  from '../../../models/careers';
-import { verifyJWT } from "@/utils/jwt";
-import verifyToken from "../validations/verifytoken";
+import  Careers  from '@/models/careers';
+import verifyToken from "../../validations/verifytoken";
 
 // ✅ 1. GET API - List all job postings  
 export async function GET(req: Request) {  

@@ -12,6 +12,7 @@ import { CheckCheck, Trash2, LoaderPinwheel } from "lucide-react";
 import { Toaster } from "../_components/shadui/sonner";
 import { toast } from "sonner";
 import { Badge } from "../_components/shadui/badge";
+import PaginationControls from "../_components/pagination-control";
 
 interface Work {
     id: number;
@@ -29,7 +30,7 @@ export default function WorksPage() {
     const [loadingWorks, setLoadingWorks] = useState(false);
 
     const [page, setPage] = useState(1);
-    const [limit] = useState(5);
+    const [limit] = useState(6);
     const [totalPages, setTotalPages] = useState(1);
 
     useEffect(() => {
@@ -152,19 +153,11 @@ export default function WorksPage() {
                     </div>
 
                     <div className="flex justify-center mt-6">
-                        <Pagination>
-                            <PaginationContent>
-                                <PaginationItem>
-                                    <PaginationPrevious onClick={() => setPage((prev) => Math.max(prev - 1, 1))} className={page === 1 ? "hidden" : ""} />
-                                </PaginationItem>
-                                {Array.from({ length: totalPages }, (_, i) => (
-                                    <PaginationItem key={i}><PaginationLink onClick={() => setPage(i + 1)} isActive={page === i + 1}>{i + 1}</PaginationLink></PaginationItem>
-                                ))}
-                                <PaginationItem>
-                                    <PaginationNext onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))} className={page === totalPages ? "hidden" : ""} />
-                                </PaginationItem>
-                            </PaginationContent>
-                        </Pagination>
+                        <PaginationControls
+                            page={page}
+                            setPage={setPage}
+                            totalPages={totalPages}
+                        />
                     </div>
                 </>
             )}

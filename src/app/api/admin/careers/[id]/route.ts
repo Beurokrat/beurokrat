@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
-import Job from "../../../../models/careers";
-import { verifyJWT } from "@/utils/jwt";
-import verifyToken from "../../validations/verifytoken";
+import Job from "@/models/careers";
+import verifyToken from "../../../validations/verifytoken";
 
 export async function DELETE(req: Request, { params }: { params: { id: string } }) {
     const isAuthorized = await verifyToken(req);

@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
-import Blog from '../../../models/blog';
-import { verifyJWT } from "@/utils/jwt";
-import verifyToken from "../validations/verifytoken";
+import Blog from '@/models/blog';
+import verifyToken from "../../validations/verifytoken";
 
 // ✅ 1. GET API - List all blogs
 export async function GET(req: Request) {

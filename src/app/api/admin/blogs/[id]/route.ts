@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import Blog from '../../../../models/blog';
-import verifyToken from "../../validations/verifytoken";
+import Blog from '@/models/blog';
+import verifyToken from "../../../validations/verifytoken";
 
 export async function DELETE(req: Request, { params }: { params: { id: string } }) {
   const isAuthorized = await verifyToken(req);

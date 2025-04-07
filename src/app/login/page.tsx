@@ -18,7 +18,7 @@ const LoginPage = () => {
     setLoading(true);
     try {
       setLoading(true);
-      const res = await fetch('/api/auth', {
+      const res = await fetch('/api/admin/auth', {
         method: 'POST',
         body: JSON.stringify({ username, password }),
         headers: { 'Content-Type': 'application/json' },

@@ -12,6 +12,7 @@ import { Toaster } from "../_components/shadui/sonner";
 import { toast } from "sonner";
 import { Badge } from "../_components/shadui/badge";
 import axiosInstance from "@/utils/axiosInstance";
+import PaginationControls from "../_components/pagination-control";
 
 interface Career {
     id: number;
@@ -30,7 +31,7 @@ export default function CareersPage() {
 
     // Pagination state
     const [page, setPage] = useState(1);
-    const [limit] = useState(5); // Number of careers per page
+    const [limit] = useState(6); // Number of careers per page
     const [totalPages, setTotalPages] = useState(1);
 
     useEffect(() => {
@@ -185,29 +186,10 @@ export default function CareersPage() {
 
                     {/* Pagination */}
                     <div className="flex justify-center mt-6">
-                        <Pagination>
-                            <PaginationContent>
-                                <PaginationItem>
-                                    <PaginationPrevious
-                                        onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
-                                        className={`cursor-pointer ${page === 1 && "hidden"}`}
-                                    />
-                                </PaginationItem>
-                                {Array.from({ length: totalPages }, (_, i) => (
-                                    <PaginationItem key={i} className="cursor-pointer">
-                                        <PaginationLink onClick={() => setPage(i + 1)} isActive={page === i + 1}>
-                                            {i + 1}
-                                        </PaginationLink>
-                                    </PaginationItem>
-                                ))}
-                                <PaginationItem>
-                                    <PaginationNext
-                                        onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
-                                        className={`cursor-pointer ${page === totalPages && "hidden"}`}
-                                    />
-                                </PaginationItem>
-                            </PaginationContent>
-                        </Pagination>
+                        <PaginationControls
+                            page={page}
+                            setPage={setPage}
+                            totalPages={totalPages}/>
                     </div>
                 </>
             )}

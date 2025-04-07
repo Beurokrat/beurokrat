@@ -1,15 +1,12 @@
 import { Sequelize } from 'sequelize';
+import pg from 'pg';
 
-// Extend the global namespace to include sequelize
 declare global {
   var sequelize: Sequelize | undefined;
 }
 
-// Prevent multiple instances of Sequelize in development
 let sequelize: Sequelize;
 
-
-  // In development, we need to ensure we don't create multiple connections
   if (!global.sequelize) {
     global.sequelize = new Sequelize(
       process.env.DB_NAME!,
@@ -18,7 +15,7 @@ let sequelize: Sequelize;
       {
         host: process.env.DB_HOST!,
         dialect: 'postgres',
-        dialectModule: require('pg'), // Explicitly require pg module here
+        dialectModule: pg, 
         logging: console.log,
       }
     );
