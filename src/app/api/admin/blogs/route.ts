@@ -43,12 +43,12 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   try {
-    const { title, content, blogImage } = await req.json();
+    const { title, content, blogImage,category } = await req.json();
     if (!title || !content) {
       return NextResponse.json({ error: "Title and content are required" }, { status: 400 });
     }
 
-    const newBlog = await Blog.create({ title, content, blogImage });
+    const newBlog = await Blog.create({ title, content, blogImage,category });
     return NextResponse.json(newBlog, { status: 201 });
   } catch (error) {
     console.error("POST /api/blogs Error:", error);

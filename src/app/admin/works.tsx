@@ -7,7 +7,6 @@ import { Textarea } from "../_components/shadui/textarea";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../_components/shadui/card";
 import { Label } from "../_components/shadui/label";
 import { Button } from "../_components/shadui/button";
-import { Pagination, PaginationContent, PaginationItem, PaginationPrevious, PaginationNext, PaginationLink } from "../_components/shadui/pagination";
 import { CheckCheck, Trash2, LoaderPinwheel } from "lucide-react";
 import { Toaster } from "../_components/shadui/sonner";
 import { toast } from "sonner";
@@ -60,7 +59,12 @@ export default function WorksPage() {
 
         try {
             const response = await axiosInstance.post("/works", workFormData);
-            setWorksList([response.data, ...worksList]);
+            if (page !== 1) {
+                setPage(1); // Reset to the first page after adding a new work
+            }
+            else {
+                fetchWorks(); // Refresh the works list after adding a new work
+            }
             setWorkFormData({ title: "", image: "", description: "", tag: "", link: "" });
             toast("Work added successfully.", { description: new Date().toLocaleString(), action: { label: <CheckCheck />, onClick: () => toast.dismiss() } });
         } catch (error) {
@@ -73,7 +77,12 @@ export default function WorksPage() {
     const handleDeleteWork = async (id: number) => {
         try {
             await axiosInstance.delete(`/works/${id}`);
-            setWorksList(worksList.filter((work) => work.id !== id));
+            if (page !== 1) {
+                setPage(1); // Reset to the first page after adding a new work
+            }
+            else {
+                fetchWorks(); // Refresh the works list after adding a new work
+            }
             toast("Work deleted.", { description: new Date().toLocaleString(), action: { label: <Trash2 />, onClick: () => toast.dismiss() } });
         } catch (error) {
             console.error("Error deleting work:", error);
@@ -128,7 +137,7 @@ export default function WorksPage() {
                                     </CardHeader>
                                     <CardContent className="rounded-lg overflow-hidden min-h-[240px]">
                                         <img src={work.image} alt={work.title} className="w-full h-40 object-cover rounded-lg" />
-                                        <div className="text-justify">
+                                        <div className="text-justify cursor-pointer">
                                             <p
                                                 className={`line-clamp-2 ${work?.description.length > 100 ? "cursor-pointer" : ""}`}
                                                 onClick={(e) => {

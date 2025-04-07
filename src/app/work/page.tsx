@@ -5,8 +5,9 @@ import Container from '../_components/container'
 import { ReactLenis } from 'lenis/dist/lenis-react'
 import Clientile from '../contact/clientile'
 import ContactUs from '../home/contact-cta'
-import { Pagination, PaginationContent, PaginationItem, PaginationPrevious, PaginationNext, PaginationLink } from '../_components/shadui/pagination'
 import axios from 'axios'
+import { Loader } from 'lucide-react'
+import PaginationControls from '../_components/pagination-control'
 function Work() {
     interface Project {
         id: string
@@ -51,18 +52,20 @@ function Work() {
                     </p>
                 </div>
                 <div className="w-full md:flex mt-[60px] justify-end">
-                    <div className="w-fit grid sm:grid-cols-1 md:grid-cols-2 gap-4">
-                        {loading ? (
-                            <p>Loading...</p>
-                        ) : (
+                    {loading ? (
+                        <div className='flex justify-center items-center w-full h-[50vh]'>
+                            <Loader className="animate-spin" size={40} />
+                        </div>
+                    ) : (<div className="w-fit grid sm:grid-cols-1 md:grid-cols-2 gap-4">
+                        {
                             projects.map((pr) => (
                                 <div
                                     key={pr.id}
                                     className="flex m-2 rounded-[20px] flex-col justify-between p-[20px] md:w-[435px] h-[auto] shadow-[0_0_25px_0] shadow-black/10"
                                 >
-                                    {pr.image && (
+                                    {pr?.image && (
                                         <div
-                                            className={`w-full h-[260px] rounded-[14px] bg-center bg-cover bg-no-repeat`}
+                                            className={`w-full h-[260px] rounded-[14px] bg-center bg-cover bg-no-repeat shadow-[0_0_25px_0] shadow-black/5`}
                                             style={{ backgroundImage: `url(${pr.image})` }}
                                         >
                                             <div className="rounded-full bg-primary text-black text-[12px] px-2 py-1 m-2 w-fit">
@@ -75,41 +78,20 @@ function Work() {
                                         <h2 className="pb-[8px]">{pr?.title}</h2>
                                         <p className="pb-[8px] text-[13px]">{pr.description}</p>
                                     </div>
-                                    <div className="pt-3 flex justify-end w-full">
-                                        <Image height={60} width={60} alt="arrow" src="/assets/img/icons/work_arrow.png" />
-                                    </div>
                                 </div>
-                            ))
-                        )}
-                    </div>
+                            ))}
+
+                    </div>)}
                 </div>
 
                 {/* Pagination */}
-                <div className="flex justify-center mt-6">
-                    <Pagination>
-                        <PaginationContent>
-                            <PaginationItem>
-                                <PaginationPrevious
-                                    onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
-                                    className={`cursor-pointer ${page === 1 && 'hidden'}`}
-                                />
-                            </PaginationItem>
-                            {Array.from({ length: totalPages }, (_, i) => (
-                                <PaginationItem key={i} className="cursor-pointer">
-                                    <PaginationLink onClick={() => setPage(i + 1)} isActive={page === i + 1}>
-                                        {i + 1}
-                                    </PaginationLink>
-                                </PaginationItem>
-                            ))}
-                            <PaginationItem>
-                                <PaginationNext
-                                    onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
-                                    className={`cursor-pointer ${page === totalPages && 'hidden'}`}
-                                />
-                            </PaginationItem>
-                        </PaginationContent>
-                    </Pagination>
-                </div>
+                {!loading && <div className="flex justify-center mt-6">
+                    <PaginationControls
+                        page={page}
+                        setPage={setPage}
+                        totalPages={totalPages} />
+
+                </div>}
 
                 <Clientile />
             </Container>

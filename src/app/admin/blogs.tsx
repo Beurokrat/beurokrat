@@ -7,7 +7,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "../_components/shadui/
 import { Label } from "../_components/shadui/label";
 import { Button } from "../_components/shadui/button";
 import { Skeleton } from "../_components/shadui/skeleton";
-import { Pagination, PaginationContent, PaginationItem, PaginationPrevious, PaginationNext, PaginationLink } from "../_components/shadui/pagination";
 import { CheckCheck, LoaderPinwheel, Trash2 } from "lucide-react"; // Import Trash Icon
 import { Toaster } from "../_components/shadui/sonner"; // Import toast for notifications
 import { toast } from "sonner";
@@ -18,12 +17,13 @@ interface Blog {
     title: string;
     content: string;
     blogImage?: string;
+    category?: string;
 }
 
 export default function BlogPage() {
     const [blogList, setBlogList] = useState<Blog[]>([]);
     const [loading, setLoading] = useState(false);
-    const [blogFormData, setBlogFormData] = useState({ title: "", content: "", blogImage: "" });
+    const [blogFormData, setBlogFormData] = useState({ title: "", content: "", blogImage: "",category:"" });
     const [loadingBlogs, setLoadingBlogs] = useState(false);
 
     // Pagination state
@@ -58,8 +58,9 @@ export default function BlogPage() {
 
         try {
             const response = await axiosInstance.post("/blogs", blogFormData);
-            setBlogList([response.data, ...blogList]); // Add new blog at the top
-            setBlogFormData({ title: "", content: "", blogImage: "" });
+            if (page === 1) { fetchBlogs() }
+            else { setPage(1) }
+            setBlogFormData({ title: "", content: "", blogImage: "",category:"" }); // Reset form data
             toast("Blog has been added.", {
                 description: new Date().toLocaleString(),
                 action: {
@@ -77,7 +78,8 @@ export default function BlogPage() {
     const handleDeleteBlog = async (id: number) => {
         try {
             await axiosInstance.delete(`/blogs/${id}`);
-            setBlogList(blogList.filter((blog) => blog.id !== id)); // Remove deleted blog from UI
+            if (page === 1) { fetchBlogs() }
+            else { setPage(1) }
             toast("Blog has been deleted.", {
                 description: new Date().toLocaleString(),
                 action: {
@@ -117,6 +119,10 @@ export default function BlogPage() {
                                     <Label htmlFor="blogImage">Image URL</Label>
                                     <Input id="blogImage" name="blogImage" value={blogFormData.blogImage} onChange={handleInputChange} />
                                 </div>
+                                <div>
+                                    <Label htmlFor="category">Category</Label>
+                                    <Input id="category" name="category" value={blogFormData.category} onChange={handleInputChange} required />
+                                </div>
                                 <Button type="submit" disabled={loading}>
                                     {loading ? "Adding..." : "Add Blog"}
                                 </Button>
@@ -143,15 +149,15 @@ export default function BlogPage() {
                                         </Button>
                                     </CardHeader>
                                     <CardContent className="flex flex-col align-center justify-center space-y-2">
-                                        <div className="text-justify">
+                                        <div className="text-justify cursor-pointer">
                                             <p
-                                                className={`line-clamp-4 ${blog?.content.length > 200 ? "cursor-pointer" : ""}`}
+                                                className={`line-clamp-2 ${blog?.content.length > 150 ? "cursor-pointer" : ""}`}
                                                 onClick={(e) => {
                                                     const target = e.currentTarget;
-                                                    if (target.classList.contains("line-clamp-4")) {
-                                                        target.classList.remove("line-clamp-4");
+                                                    if (target.classList.contains("line-clamp-2")) {
+                                                        target.classList.remove("line-clamp-2");
                                                     } else {
-                                                        target.classList.add("line-clamp-4");
+                                                        target.classList.add("line-clamp-2");
                                                     }
                                                 }}
                                             >

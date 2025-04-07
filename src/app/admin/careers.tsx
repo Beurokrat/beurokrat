@@ -6,7 +6,6 @@ import { Textarea } from "../_components/shadui/textarea";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../_components/shadui/card";
 import { Label } from "../_components/shadui/label";
 import { Button } from "../_components/shadui/button";
-import { Pagination, PaginationContent, PaginationItem, PaginationPrevious, PaginationNext, PaginationLink } from "../_components/shadui/pagination";
 import { CheckCheck, Trash2, LoaderPinwheel } from "lucide-react";
 import { Toaster } from "../_components/shadui/sonner";
 import { toast } from "sonner";
@@ -61,7 +60,10 @@ export default function CareersPage() {
 
         try {
             const response = await axiosInstance.post("/careers", careerFormData);
-            setCareerList([response.data, ...careerList]); // Add new career at the top
+            if (page === 1) {
+                fetchCareers(); // Refresh the careers list after deleting a career
+            }
+            else { setPage(1) }
             setCareerFormData({ title: "", position: "", location: "", description: "", link: "" }); // Reset form data
             toast("Career opportunity added.", {
                 description: new Date().toLocaleString(),
@@ -80,7 +82,10 @@ export default function CareersPage() {
     const handleDeleteCareer = async (id: number) => {
         try {
             await axiosInstance.delete(`/careers/${id}`);
-            setCareerList(careerList.filter((career) => career.id !== id)); // Remove deleted career from UI
+            if (page === 1) {
+                fetchCareers(); // Refresh the careers list after deleting a career
+            }
+            else { setPage(1) }
             toast("Career opportunity deleted.", {
                 description: new Date().toLocaleString(),
                 action: {
@@ -160,7 +165,7 @@ export default function CareersPage() {
                                         <p>
                                             <strong>Location:</strong> {career.location}
                                         </p>
-                                        <div className="text-justify">
+                                        <div className="text-justify cursor-pointer">
                                             <p
                                                 className={`line-clamp-4 ${career?.description.length > 200 ? "cursor-pointer" : ""}`}
                                                 onClick={(e) => {
@@ -189,7 +194,7 @@ export default function CareersPage() {
                         <PaginationControls
                             page={page}
                             setPage={setPage}
-                            totalPages={totalPages}/>
+                            totalPages={totalPages} />
                     </div>
                 </>
             )}

@@ -3,8 +3,9 @@ import { useState, useEffect } from 'react'
 import Container from '../_components/container'
 import CareerItem from '../_components/career-item'
 import Image from 'next/image'
-import { Pagination, PaginationContent, PaginationItem, PaginationPrevious, PaginationNext, PaginationLink } from '../_components/shadui/pagination'
 import axios from 'axios'
+import { Loader } from 'lucide-react'
+import PaginationControls from '../_components/pagination-control'
 
 function CareerList() {
     interface Career {
@@ -15,7 +16,7 @@ function CareerList() {
         description: string
         link: string
     }
-    
+
     const [careerData, setCareerData] = useState<Career[]>([])
     const [loading, setLoading] = useState(false)
     const [page, setPage] = useState(1)
@@ -44,25 +45,28 @@ function CareerList() {
         <section className="my-[50px]">
             <Container>
                 <div className="flex md:flex-row sm:flex-col items-start bg-[#121212] rounded-[38px] py-[40px] px-[28px]">
-                    <Image
-                        width={286}
-                        height={144}
-                        className="sm:hidden md:flex"
-                        alt="Beurokrat is hiring now"
-                        src={'/assets/img/careers_hiring.png'}
-                    />
-                    <Image
-                        width={319}
-                        height={63}
-                        className="md:hidden sm:flex"
-                        alt="Beurokrat is hiring now"
-                        src={'/assets/img/careers_hiring_sm.png'}
-                    />
-                    <div className="flex flex-col md:ml-[80px]">
-                        {loading ? (
-                            <p>Loading...</p>
-                        ) : (
-                            careerData.map((i) => (
+                    {loading ? (
+                        <div className='flex justify-center items-center w-full p-8 h-[50vh]'>
+                            <Loader className="animate-spin text-white" size={40} />
+                        </div>
+                    ) : (<>
+                        <Image
+                            width={286}
+                            height={144}
+                            className="sm:hidden md:flex"
+                            alt="Beurokrat is hiring now"
+                            src={'/assets/img/careers_hiring.png'}
+                        />
+                        <Image
+                            width={319}
+                            height={63}
+                            className="md:hidden sm:flex"
+                            alt="Beurokrat is hiring now"
+                            src={'/assets/img/careers_hiring_sm.png'}
+                        />
+                        <div className="flex flex-col md:ml-[80px]">
+
+                            {careerData.map((i) => (
                                 <CareerItem
                                     key={i.id}
                                     title={i.title}
@@ -71,37 +75,19 @@ function CareerList() {
                                     desc={i.description}
                                     link={i.link}
                                 />
-                            ))
-                        )}
-                    </div>
+                            ))}
+
+                        </div>
+                    </>)}
                 </div>
 
                 {/* Pagination */}
-                <div className="flex justify-center mt-6">
-                    <Pagination>
-                        <PaginationContent>
-                            <PaginationItem>
-                                <PaginationPrevious
-                                    onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
-                                    className={`cursor-pointer ${page === 1 && 'hidden'}`}
-                                />
-                            </PaginationItem>
-                            {Array.from({ length: totalPages }, (_, i) => (
-                                <PaginationItem key={i} className="cursor-pointer">
-                                    <PaginationLink onClick={() => setPage(i + 1)} isActive={page === i + 1}>
-                                        {i + 1}
-                                    </PaginationLink>
-                                </PaginationItem>
-                            ))}
-                            <PaginationItem>
-                                <PaginationNext
-                                    onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
-                                    className={`cursor-pointer ${page === totalPages && 'hidden'}`}
-                                />
-                            </PaginationItem>
-                        </PaginationContent>
-                    </Pagination>
-                </div>
+                {!loading &&<div className="flex justify-center mt-6">
+                <PaginationControls
+                            page={page}
+                            setPage={setPage}
+                            totalPages={totalPages}/>
+                </div>}
             </Container>
         </section>
     )
