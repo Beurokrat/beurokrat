@@ -1,17 +1,18 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { Input } from "../_components/shadui/input";
 import { Textarea } from "../_components/shadui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "../_components/shadui/card";
 import { Label } from "../_components/shadui/label";
 import { Button } from "../_components/shadui/button";
 import { Skeleton } from "../_components/shadui/skeleton";
-import { CheckCheck, LoaderPinwheel, Trash2 } from "lucide-react"; // Import Trash Icon
-import { Toaster } from "../_components/shadui/sonner"; // Import toast for notifications
+import { CheckCheck, Loader, Trash2 } from "lucide-react";
+import { Toaster } from "../_components/shadui/sonner";
 import { toast } from "sonner";
-import axiosInstance from "@/utils/axiosInstance"; // Import axiosInstance instance
+import axiosInstance from "@/utils/axiosInstance";
 import PaginationControls from "../_components/pagination-control";
+
 interface Blog {
     id: number;
     title: string;
@@ -23,7 +24,7 @@ interface Blog {
 export default function BlogPage() {
     const [blogList, setBlogList] = useState<Blog[]>([]);
     const [loading, setLoading] = useState(false);
-    const [blogFormData, setBlogFormData] = useState({ title: "", content: "", blogImage: "",category:"" });
+    const [blogFormData, setBlogFormData] = useState({ title: "", content: "", blogImage: "", category: "" });
     const [loadingBlogs, setLoadingBlogs] = useState(false);
 
     // Pagination state
@@ -31,41 +32,47 @@ export default function BlogPage() {
     const [limit] = useState(6); // Number of blogs per page
     const [totalPages, setTotalPages] = useState(1);
 
-    useEffect(() => {
-        fetchBlogs();
-    }, [page]); // Re-fetch when page changes
-
-    const fetchBlogs = async () => {
+    // Fetch blogs
+    const fetchBlogs = useCallback(async () => {
         setLoadingBlogs(true);
         try {
             const response = await axiosInstance.get(`/blogs?page=${page}&limit=${limit}`);
             setBlogList(response.data.data);
             setTotalPages(response.data.totalPages);
         } catch (error) {
-            console.log("Error fetching blogs:", error);
+            console.error("Error fetching blogs:", error);
         } finally {
             setLoadingBlogs(false);
         }
-    };
+    }, [page, limit]);
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setBlogFormData({ ...blogFormData, [e.target.name]: e.target.value });
-    };
+    useEffect(() => {
+        fetchBlogs();
+    }, [fetchBlogs]);
 
+    // Handle input changes
+    const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setBlogFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    }, []);
+
+    // Handle form submission
     const handleFormSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
 
         try {
-            const response = await axiosInstance.post("/blogs", blogFormData);
-            if (page === 1) { fetchBlogs() }
-            else { setPage(1) }
-            setBlogFormData({ title: "", content: "", blogImage: "",category:"" }); // Reset form data
+            await axiosInstance.post("/blogs", blogFormData);
+            if (page === 1) {
+                fetchBlogs();
+            } else {
+                setPage(1); // Reset to the first page to show the newly added blog
+            }
+            setBlogFormData({ title: "", content: "", blogImage: "", category: "" }); // Reset form data
             toast("Blog has been added.", {
                 description: new Date().toLocaleString(),
                 action: {
                     label: <CheckCheck />,
-                    onClick: () => toast.dismiss(), // Close the toast notification
+                    onClick: () => toast.dismiss(),
                 },
             });
         } catch (error) {
@@ -75,16 +82,26 @@ export default function BlogPage() {
         }
     };
 
+    // Handle blog deletion
     const handleDeleteBlog = async (id: number) => {
         try {
             await axiosInstance.delete(`/blogs/${id}`);
-            if (page === 1) { fetchBlogs() }
-            else { setPage(1) }
+            const updatedBlogList = blogList.filter((blog) => blog.id !== id);
+
+            // If the current page becomes empty, go to the previous page
+            if (updatedBlogList.length === 0 && page > 1) {
+                setPage((prevPage) => prevPage - 1);
+            } else if (updatedBlogList.length === 0 && page === 1 && totalPages > 1) {
+                fetchBlogs();
+            } else {
+                setBlogList(updatedBlogList);
+            }
+
             toast("Blog has been deleted.", {
                 description: new Date().toLocaleString(),
                 action: {
                     label: <Trash2 />,
-                    onClick: () => toast.dismiss(), // Close the toast notification
+                    onClick: () => toast.dismiss(),
                 },
             });
         } catch (error) {
@@ -92,13 +109,63 @@ export default function BlogPage() {
         }
     };
 
+    // Memoized blog list rendering
+    const renderedBlogList = useMemo(() => {
+        if (blogList.length === 0) {
+            return <p>No blogs found.</p>;
+        }
+
+        return blogList.map((blog) => (
+            <Card key={blog.id} className="relative">
+                <CardHeader className="flex justify-between items-center position-relative">
+                    <CardTitle>{blog.title}</CardTitle>
+                    <Button
+                        variant="ghost"
+                        size="icon"
+                        onClick={() => handleDeleteBlog(blog.id)}
+                        className="absolute top-[-6px] right-0 hover:text-red-600 outline-none focus:outline-none"
+                    >
+                        <Trash2 className="w-5 h-5" />
+                    </Button>
+                </CardHeader>
+                <CardContent className="flex flex-col align-center justify-center space-y-2">
+                    <div className="text-justify cursor-pointer">
+                        <p
+                            className={`line-clamp-2 ${blog?.content.length > 150 ? "cursor-pointer" : ""}`}
+                            onClick={(e) => {
+                                const target = e.currentTarget;
+                                if (target.classList.contains("line-clamp-2")) {
+                                    target.classList.remove("line-clamp-2");
+                                } else {
+                                    target.classList.add("line-clamp-2");
+                                }
+                            }}
+                        >
+                            {blog?.content}
+                        </p>
+                    </div>
+                    {blog.blogImage ? (
+                        <img
+                            src={blog.blogImage}
+                            alt="Blog"
+                            className="mt-2 w-full h-40 object-cover rounded-md"
+                            loading="lazy" // Lazy load images
+                        />
+                    ) : (
+                        <Skeleton className="h-[125px] w-[100%] rounded-xl" />
+                    )}
+                </CardContent>
+            </Card>
+        ));
+    }, [blogList, handleDeleteBlog]);
+
     return (
         <div className="container mx-auto p-6">
             <Toaster />
             {loadingBlogs ? (
-                <div className="flex justify-center items-center h-screen">
-                    <LoaderPinwheel className="animate-spin" size={80} />
-                </div>
+                <div className='flex justify-center items-center w-full h-[50vh]'>
+                <Loader className="animate-spin" size={40} />
+            </div>
             ) : (
                 <>
                     <Card className="mb-6">
@@ -132,56 +199,12 @@ export default function BlogPage() {
 
                     {/* Blog List */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
-                        {blogList?.length === 0 ? (
-                            <p>No blogs found.</p>
-                        ) : (
-                            blogList?.map((blog) => (
-                                <Card key={blog.id} className="relative">
-                                    <CardHeader className="flex justify-between items-center position-relative">
-                                        <CardTitle>{blog.title}</CardTitle>
-                                        <Button
-                                            variant="ghost"
-                                            size="icon"
-                                            onClick={() => handleDeleteBlog(blog.id)}
-                                            className="absolute top-[-6px] right-0 hover:text-red-600 outline-none focus:outline-none"
-                                        >
-                                            <Trash2 className="w-5 h-5" />
-                                        </Button>
-                                    </CardHeader>
-                                    <CardContent className="flex flex-col align-center justify-center space-y-2">
-                                        <div className="text-justify cursor-pointer">
-                                            <p
-                                                className={`line-clamp-2 ${blog?.content.length > 150 ? "cursor-pointer" : ""}`}
-                                                onClick={(e) => {
-                                                    const target = e.currentTarget;
-                                                    if (target.classList.contains("line-clamp-2")) {
-                                                        target.classList.remove("line-clamp-2");
-                                                    } else {
-                                                        target.classList.add("line-clamp-2");
-                                                    }
-                                                }}
-                                            >
-                                                {blog?.content}
-                                            </p>
-                                        </div>
-                                        {blog.blogImage ? (
-                                            <img src={blog.blogImage} alt="Blog" className="mt-2 w-full h-40 object-cover rounded-md" />
-                                        ) : (
-                                            <Skeleton className="h-[125px] w-[100%] rounded-xl" />
-                                        )}
-                                    </CardContent>
-                                </Card>
-                            ))
-                        )}
+                        {renderedBlogList}
                     </div>
 
                     {/* Pagination using ShadCN */}
                     <div className="flex justify-center mt-6">
-                        <PaginationControls
-                            page={page}
-                            setPage={setPage}
-                            totalPages={totalPages}
-                        />
+                        <PaginationControls page={page} setPage={setPage} totalPages={totalPages} />
                     </div>
                 </>
             )}

@@ -1,14 +1,7 @@
 import { Sequelize } from 'sequelize';
 import pg from 'pg';
 
-declare global {
-  var sequelize: Sequelize | undefined;
-}
-
-let sequelize: Sequelize;
-
-  if (!global.sequelize) {
-    global.sequelize = new Sequelize(
+const sequelize = new Sequelize(
       process.env.DB_NAME!,
       process.env.DB_USER!,
       process.env.DB_PASSWORD!,
@@ -17,10 +10,14 @@ let sequelize: Sequelize;
         dialect: 'postgres',
         dialectModule: pg, 
         logging: console.log,
+        dialectOptions: {
+          ssl: {
+            require: true,
+            rejectUnauthorized: false, // Supabase uses self-signed certs
+          },
+        },
       }
     );
-  }
-  sequelize = global.sequelize;
 
 
 export default sequelize;

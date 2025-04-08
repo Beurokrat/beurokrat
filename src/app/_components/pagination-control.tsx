@@ -9,7 +9,7 @@ interface PaginationControlsProps {
 
 const PaginationControls = ({ page, totalPages, setPage }: PaginationControlsProps) => {
   return (
-    <Pagination>
+    <>{totalPages > 0 && <Pagination>
       <PaginationContent className="cursor-pointer">
         <PaginationItem>
           <PaginationPrevious
@@ -36,7 +36,8 @@ const PaginationControls = ({ page, totalPages, setPage }: PaginationControlsPro
           />
         </PaginationItem>
       </PaginationContent>
-    </Pagination>
+    </Pagination>}
+    </>
   );
 };
 

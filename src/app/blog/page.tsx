@@ -84,7 +84,8 @@ function BlogList() {
                                         <h2 className="pb-[8px]">{post?.title}</h2>
                                         <p className="pb-[8px] text-[13px]">{post.excerpt}</p>
                                     </div>
-                                    <a href={`/blog/${post.id}`} className="flex items-center">
+                                    <div className='flex justify-end items-right'>
+                                    <a href={`/blog/${post.id}`}>
                                         <div className="pt-3 flex justify-end w-full cursor-pointer group">
                                             <div className=' group-hover:bg-blue-200 relative w-[150px] flex items-center justify-end rounded-full'>
                                                 <Image
@@ -100,6 +101,7 @@ function BlogList() {
                                             </div>
                                         </div>
                                     </a>
+                                    </div>
                                 </div>
                             ))}
                         </div>

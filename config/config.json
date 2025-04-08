@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "postgres",
-    "password": "password",
-    "database": "beurokrat",
-    "host": "127.0.0.1",
+    "username": "postgres.mnahtyizypiirhtzlqva",
+    "password": "0jm7wvjvpIwGMR6H",
+    "database": "postgres",
+    "host": "aws-0-us-east-2.pooler.supabase.com",
     "dialect": "postgres"
   },
   "test": {
