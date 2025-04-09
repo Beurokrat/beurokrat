@@ -27,6 +27,12 @@ const Works = sequelize.define('Works', {
     type: DataTypes.STRING,
     allowNull: true, // Allow empty links
   },
-});
+},
+{
+  timestamps: true,
+  createdAt: 'created_at',
+  updatedAt: 'updated_at',
+}
+);
 
 export default Works;

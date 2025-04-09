@@ -1,17 +1,7 @@
-import { DataTypes, Model } from 'sequelize';
+import { DataTypes } from 'sequelize';
 import sequelize from '../lib/db';
 
-class Blog extends Model {
-  public id!: number;
-  public title!: string;
-  public content!: string;
-  public blogImage!: string;
-  public createdAt!: Date;
-  public updatedAt!: Date;
-}
-
-Blog.init(
-  {
+const blogs = sequelize.define('blogs', {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -30,9 +20,11 @@ Blog.init(
     },
   },
   {
-    sequelize,
-    modelName: 'blogs',
+    timestamps: true,
+    createdAt: 'created_at',
+    updatedAt: 'updated_at',
   }
 );
 
-export default Blog;
+
+export default blogs;

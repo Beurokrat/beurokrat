@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import  Careers  from '../../../../models/careers';
 
 // ✅ 1. GET API - List all job postings  
-export async function GET(req) {  
+export async function GET(req: Request) {  
    
   try {  
     // Parse URL to get query parameters  
@@ -15,7 +15,7 @@ export async function GET(req) {
     const { rows: jobs, count } = await Careers.findAndCountAll({  
       limit,  
       offset,  
-      order: [["createdAt", "DESC"]], // Sort by newest first  
+      order: [["created_at", "DESC"]], // Sort by newest first  
     });  
 
     return NextResponse.json({  

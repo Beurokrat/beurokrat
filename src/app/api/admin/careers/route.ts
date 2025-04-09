@@ -19,7 +19,7 @@ export async function GET(req: Request) {
     const { rows: jobs, count } = await Careers.findAndCountAll({  
       limit,  
       offset,  
-      order: [["createdAt", "DESC"]], // Sort by newest first  
+      order: [["created_at", "DESC"]], // Sort by newest first  
     });  
 
     return NextResponse.json({  

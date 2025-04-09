@@ -9,8 +9,8 @@ module.exports = {
         description: 'A web-based application that provides AI-driven insights for financial decision-making.',
         tag: 'Finance',
         link: 'https://example.com/project-1',
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        created_at: new Date(),
+        updated_at: null
       },
       {
         title: 'Blockchain-based supply chain tracking system',
@@ -18,8 +18,8 @@ module.exports = {
         description: 'Developed a blockchain-based system to enhance transparency and security in supply chain management.',
         tag: 'Blockchain',
         link: 'https://example.com/project-2',
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        created_at: new Date(),
+        updated_at: null
       },
       {
         title: 'Real-time proximity sensing module for disease spread tracking',
@@ -27,8 +27,8 @@ module.exports = {
         description: 'Designed to track disease spread by monitoring the distance between individuals. This system provided valuable insights into interactions and helped enforce social distancing protocols.',
         tag: 'Electronics',
         link: '',
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        created_at: new Date(),
+        updated_at: null
       },
       {
         title: 'E-commerce platform with personalized recommendations',
@@ -36,8 +36,8 @@ module.exports = {
         description: 'Built an e-commerce platform that uses machine learning to provide personalized product recommendations.',
         tag: 'E-commerce',
         link: 'https://example.com/project-4',
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        created_at: new Date(),
+        updated_at: null
       },
       {
         title: 'IoT-based smart home automation system',
@@ -45,8 +45,8 @@ module.exports = {
         description: 'Developed a smart home system that integrates IoT devices for seamless automation and control.',
         tag: 'IoT',
         link: 'https://example.com/project-5',
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        created_at: new Date(),
+        updated_at: null
       },
       {
         title: 'Mobile app for fitness tracking and health monitoring',
@@ -54,8 +54,8 @@ module.exports = {
         description: 'Created a mobile app that tracks fitness activities and monitors health metrics in real-time.',
         tag: 'Health',
         link: 'https://example.com/project-6',
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        created_at: new Date(),
+        updated_at: null
       },
       {
         title: 'AI chatbot for customer support',
@@ -63,8 +63,8 @@ module.exports = {
         description: 'Developed an AI-powered chatbot to provide 24/7 customer support and improve user engagement.',
         tag: 'AI',
         link: 'https://example.com/project-7',
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        created_at: new Date(),
+        updated_at: null
       },
       {
         title: 'Augmented reality app for virtual furniture placement',
@@ -72,8 +72,8 @@ module.exports = {
         description: 'Built an AR app that allows users to visualize furniture in their homes before making a purchase.',
         tag: 'AR',
         link: 'https://example.com/project-8',
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        created_at: new Date(),
+        updated_at: null
       },
       {
         title: 'Online learning platform with interactive courses',
@@ -81,8 +81,8 @@ module.exports = {
         description: 'Created an online learning platform that offers interactive courses and real-time feedback.',
         tag: 'Education',
         link: 'https://example.com/project-9',
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        created_at: new Date(),
+        updated_at: null
       },
       {
         title: 'Weather forecasting system using machine learning',
@@ -90,8 +90,8 @@ module.exports = {
         description: 'Developed a weather forecasting system that uses machine learning to predict weather patterns.',
         tag: 'Weather',
         link: 'https://example.com/project-10',
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        created_at: new Date(),
+        updated_at: null
       },
       {
         title: 'Virtual reality training simulator for medical professionals',
@@ -99,8 +99,8 @@ module.exports = {
         description: 'Built a VR simulator to train medical professionals in performing complex procedures.',
         tag: 'VR',
         link: 'https://example.com/project-11',
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        created_at: new Date(),
+        updated_at: null
       },
       {
         title: 'AI-powered fraud detection system for banking',
@@ -108,8 +108,8 @@ module.exports = {
         description: 'Developed a fraud detection system that uses AI to identify suspicious transactions in real-time.',
         tag: 'Finance',
         link: 'https://example.com/project-12',
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        created_at: new Date(),
+        updated_at: null
       },
       {
         title: 'Smart agriculture system for crop monitoring',
@@ -117,8 +117,8 @@ module.exports = {
         description: 'Created a smart agriculture system that uses IoT sensors to monitor crop health and optimize irrigation.',
         tag: 'Agriculture',
         link: 'https://example.com/project-13',
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        created_at: new Date(),
+        updated_at: null
       },
       {
         title: 'Real-time traffic management system',
@@ -126,8 +126,8 @@ module.exports = {
         description: 'Developed a traffic management system that uses real-time data to optimize traffic flow.',
         tag: 'Transportation',
         link: 'https://example.com/project-14',
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        created_at: new Date(),
+        updated_at: null
       },
       {
         title: 'Blockchain-based voting system',
@@ -135,8 +135,8 @@ module.exports = {
         description: 'Built a secure and transparent voting system using blockchain technology.',
         tag: 'Blockchain',
         link: 'https://example.com/project-15',
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        created_at: new Date(),
+        updated_at: null
       },
       {
         title: 'AI-powered content moderation tool',
@@ -144,8 +144,8 @@ module.exports = {
         description: 'Developed a tool that uses AI to moderate user-generated content on social media platforms.',
         tag: 'AI',
         link: 'https://example.com/project-16',
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        created_at: new Date(),
+        updated_at: null
       },
       {
         title: 'Energy management system for smart grids',
@@ -153,8 +153,8 @@ module.exports = {
         description: 'Created an energy management system that optimizes energy distribution in smart grids.',
         tag: 'Energy',
         link: 'https://example.com/project-17',
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        created_at: new Date(),
+        updated_at: null
       },
       {
         title: 'Mobile app for mental health support',
@@ -162,8 +162,8 @@ module.exports = {
         description: 'Built a mobile app that provides mental health resources and connects users with therapists.',
         tag: 'Health',
         link: 'https://example.com/project-18',
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        created_at: new Date(),
+        updated_at: null
       },
       {
         title: 'AI-powered recommendation engine for e-commerce',
@@ -171,8 +171,8 @@ module.exports = {
         description: 'Developed a recommendation engine that uses AI to suggest products based on user preferences.',
         tag: 'E-commerce',
         link: 'https://example.com/project-19',
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        created_at: new Date(),
+        updated_at: null
       },
       {
         title: 'Autonomous drone delivery system',
@@ -180,8 +180,8 @@ module.exports = {
         description: 'Created a drone delivery system that autonomously delivers packages to customers.',
         tag: 'Logistics',
         link: 'https://example.com/project-20',
-        createdAt: new Date(),
-        updatedAt: new Date(),
+        created_at: new Date(),
+        updated_at: null
       },
     ]);
   },

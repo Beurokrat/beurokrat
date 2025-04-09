@@ -12,7 +12,7 @@ export async function GET(req: Request) {
         const { rows: works, count } = await Works.findAndCountAll({
             limit,
             offset,
-            order: [["id", "DESC"]],
+            order: [["created_at", "DESC"]],
         });
 
         return NextResponse.json({
