@@ -26,6 +26,10 @@ module.exports = {
       updated_at: {
         allowNull: true,
         type: Sequelize.DATE
+      },
+      deleted_at: {
+        allowNull: true,
+        type: Sequelize.DATE,
       }
     });
 
@@ -45,7 +49,7 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false
       },
-      blogImage: {
+      blog_image: {
         type: Sequelize.STRING,
         allowNull: true // Optional
       },
@@ -60,6 +64,10 @@ module.exports = {
       updated_at: {
         allowNull: true,
         type: Sequelize.DATE
+      },
+      deleted_at: {
+        allowNull: true,
+        type: Sequelize.DATE,
       }
     });
 
@@ -98,10 +106,14 @@ module.exports = {
       updated_at: {
         allowNull: true,
         type: Sequelize.DATE,
+      },
+      deleted_at: {
+        allowNull: true,
+        type: Sequelize.DATE,
       }
     });
     
-      await queryInterface.createTable('Works', {
+      await queryInterface.createTable('works', {
         id: {
           type: Sequelize.INTEGER,
           autoIncrement: true,
@@ -137,6 +149,10 @@ module.exports = {
           type: Sequelize.DATE,
           allowNull: true,
         },
+        deleted_at: {
+          allowNull: true,
+          type: Sequelize.DATE,
+        }
       });
     
   },

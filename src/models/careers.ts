@@ -28,11 +28,11 @@ const careers = sequelize.define('careers', {
     allowNull: false,
   },
 },
-  {
-    timestamps: true,
-    createdAt: 'created_at',
-    updatedAt: 'updated_at',
-  }
+{
+  timestamps: true,
+  underscored: true,
+  paranoid: true, // Enable soft deletes
+}
 );
 
 export default careers;

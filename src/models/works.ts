@@ -30,8 +30,8 @@ const Works = sequelize.define('Works', {
 },
 {
   timestamps: true,
-  createdAt: 'created_at',
-  updatedAt: 'updated_at',
+  underscored: true,
+  paranoid: true, // Enable soft deletes
 }
 );
 

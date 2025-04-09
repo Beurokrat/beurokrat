@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkInsert('Works', [
+    await queryInterface.bulkInsert('works', [
       {
         title: 'AI-powered financial analytics platform',
         image: '/assets/img/project_1.png',

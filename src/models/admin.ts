@@ -19,8 +19,8 @@ const admin = sequelize.define('admin_details', {
 },
 {
   timestamps: true,
-  createdAt: 'created_at',
-  updatedAt: 'updated_at',
+  underscored: true,
+  paranoid: true, // Enable soft deletes
 }
 );
 export default admin;
