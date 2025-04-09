@@ -1,24 +1,30 @@
 import bcrypt from 'bcryptjs';
 import { NextRequest, NextResponse } from 'next/server';
 import { generateJWT } from '../../../../utils/jwt';
-import { Admin } from '@/models/admin';
+import  admin  from '@/models/admin';
 
 // POST method for login
 export async function POST(req: NextRequest) {
   const { username, password } = await req.json();
 
   try {
-    const admin = await Admin.findOne({ where: { username } });
-    if (!admin) {
+    interface Admin {
+      id: number;
+      username: string;
+      password: string;
+    }
+
+    const adminDetails = await admin.findOne({ where: { username } }) as Admin | null;
+    if (!adminDetails) {
       return NextResponse.json({ message: 'Invalid credentials' }, { status: 401 });
     }
 
-    const isValidPassword = await bcrypt.compare(password, admin.password);
+    const isValidPassword = await bcrypt.compare(password, adminDetails.password);
     if (!isValidPassword) {
       return NextResponse.json({ message: 'Invalid credentials' }, { status: 401 });
     }
 
-    const token = generateJWT(admin.id);
+    const token = generateJWT(adminDetails.id);
 
     // Set JWT token as an HttpOnly cookie
     const response = NextResponse.json({ message: 'Login successful' }, { status: 200 });

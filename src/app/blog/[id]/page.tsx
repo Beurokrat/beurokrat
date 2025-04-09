@@ -6,7 +6,7 @@ interface BlogPost {
     title: string;
     content: string;
     author: string;
-    createdAt: string;
+    created_at: string;
     blogImage?: string; // Optional cover image for the blog
 }
 
@@ -46,12 +46,12 @@ export default async function BlogPostPage({ params }: { params: { id: string } 
 
             {/* Cover Image */}
             {blogPost.blogImage && (
-                <div className="mb-8">
+                <div className="mb-8 w-[450px] sm:w-[100%] md:w-[600px] lg:w-[800px] xl:w-[1000px] mx-auto">
                     <AspectRatio ratio={16 / 9} className="bg-muted">
                         <Image
                             src={blogPost.blogImage}
                             alt={blogPost.title}
-                            className="w-full h-64 object-cover rounded-lg shadow-md"
+                            className="w-full object-cover rounded-lg shadow-md"
                             fill
                             loading="lazy"
                         />
@@ -68,7 +68,7 @@ export default async function BlogPostPage({ params }: { params: { id: string } 
                 </div>
                 <div>
                     <span>
-                        {new Date(blogPost.createdAt).toLocaleDateString('en-US', {
+                        {new Date(blogPost.created_at).toLocaleDateString('en-US', {
                             weekday: 'long',
                             day: 'numeric',
                             month: 'long',
