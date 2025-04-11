@@ -3,9 +3,11 @@ import Image from 'next/image'
 import Container from '../_components/container'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
+import { useRouter } from 'next/navigation' // Import useRouter
 
 function Services() {
     const tl = gsap.timeline({ repeat: 1 })
+    const router = useRouter() // Initialize useRouter
 
     useGSAP(() => {
         tl.fromTo(
@@ -22,9 +24,13 @@ function Services() {
                 },
                 stagger: 0.5,
                 ease: 'expo.in',
-            }
+            },
         )
     }, [])
+
+    const navigateToServices = () => {
+        router.push('/work') // Navigate to the "Services" page
+    }
 
     const servicesInfo = [
         {
@@ -90,8 +96,11 @@ function Services() {
                             </div>
                         </div>
                     ))}
-                    <div className="flex items-end m-2 rounded-2xl p-10 w-[455px] h-[433px] bg-[url('/assets/img/homepage_services_bg.png')]">
-                        <div className="bg-primary rounded-[35px] px-[50px] py-[20px]">Check More Services</div>
+                    <div
+                        className="flex items-end m-2 rounded-2xl p-10 w-[455px] h-[433px] bg-[url('/assets/img/homepage_services_bg.png')] cursor-pointer"
+                        onClick={navigateToServices} // Add onClick handler
+                    >
+                        <div className="bg-primary rounded-[35px] px-[50px] py-[20px]">See Our Projects</div>
                     </div>
                 </div>
             </div>
@@ -118,8 +127,11 @@ function Services() {
                         </div>
                     </div>
                 ))}
-                <div className="flex-shrink-0 w-[300px] h-[300px] flex items-center justify-center bg-[url('/assets/img/homepage_services_bg.png')] bg-cover rounded-2xl">
-                    <div className="bg-primary rounded-[35px] px-[30px] py-[15px]">Check More Services</div>
+                <div
+                    className="flex-shrink-0 w-[300px] h-[300px] flex items-center justify-center bg-[url('/assets/img/homepage_services_bg.png')] bg-cover rounded-2xl cursor-pointer"
+                    onClick={navigateToServices} // Add onClick handler
+                >
+                    <div className="bg-primary rounded-[35px] px-[30px] py-[15px]">See Our Projects</div>
                 </div>
             </div>
         </Container>

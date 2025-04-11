@@ -1,50 +1,46 @@
 'use client'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Container from '../_components/container'
-
 import { ReactLenis } from 'lenis/dist/lenis-react'
 import Clientile from '../contact/clientile'
 import ContactUs from '../home/contact-cta'
-
+import axios from 'axios'
+import { Loader } from 'lucide-react'
+import PaginationControls from '../_components/pagination-control'
 function Work() {
-    const projects = [
-        {
-            key: 1,
-            title: 'Vehicle-to-Vehicle communication system',
-            src: '/assets/img/project_1a.png',
-            description:
-                'The system enables seamless VoIP communication and media sharing between vehicles. By facilitating real-time information exchange, it significantly improves driving safety and helps prevent accidents.',
-            tag: 'Networking',
-            link: '',
-        },
-        {
-            key: 2,
-            title: 'Variable intensity brake lighting with dynamic brake assist.',
-            src: '/assets/img/project_1.png',
-            description:
-                'An innovative design concept for vehicle tail lamps that combines both functionality and aesthetics, along with a derivative braking system that enhances the ADAS collision avoidance capabilities.',
-            tag: 'Automotive',
-            link: '',
-        },
-        {
-            key: 3,
-            title: 'Real-time proximity sensing module for disease spread tracking',
-            src: '/assets/img/project_3.png',
-            description:
-                'Designed to track disease spread by monitoring the distance between individuals. This system provided valuable insights into interactions and helped enforce social distancing protocols.',
-            tag: 'Electronics',
-            link: '',
-        },
-        {
-            key: 4,
-            title: 'AI powered Exoskeleton for assisting patients with Muscular Dystrophy',
-            src: '/assets/img/project_4a.png',
-            description:
-                'An assistive technology for rehabilitating patients with post-stroke paralysis, aimed at improving motor function and helping patients regain independence during recovery.',
-            tag: 'Bio-Medical',
-            link: '',
-        },
-    ]
+    interface Project {
+        id: string
+        image?: string
+        tag?: string
+        title?: string
+        description?: string
+    }
+
+    const [projects, setProjects] = useState<Project[]>([])
+    const [loading, setLoading] = useState(false)
+    const [page, setPage] = useState(1)
+    const [limit] = useState(4) // Number of projects per page
+    const [totalPages, setTotalPages] = useState(1)
+
+    // Fetch projects from the API
+    useEffect(() => {
+        const fetchProjects = async () => {
+            setLoading(true)
+            try {
+                const response = await axios.get(`/api/client/works?page=${page}&limit=${limit}`)
+                setProjects(response.data.data)
+                setTotalPages(response.data.totalPages)
+            } catch (error) {
+                console.error('Error fetching projects:', error)
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        fetchProjects()
+    }, [page])
+
     return (
         <ReactLenis root options={{ lerp: 0.05 }}>
             <Container>
@@ -56,34 +52,47 @@ function Work() {
                     </p>
                 </div>
                 <div className="w-full md:flex mt-[60px] justify-end">
-                    <div className="w-fit grid sm:grid-cols-1 md:grid-cols-2 gap-4">
-                        {projects.map((pr) => (
-                            <div
-                                key={pr.key}
-                                className="flex m-2 rounded-[20px] flex-col justify-between p-[20px] md:w-[435px] h-[auto] shadow-[0_0_25px_0] shadow-black/10"
-                            >
-                                {pr.src && (
-                                    <div
-                                        className={`w-full h-[260px] rounded-[14px] bg-center bg-cover bg-no-repeat`}
-                                        style={{ backgroundImage: `url(${pr.src})` }}
-                                    >
-                                        <div className="rounded-full bg-primary text-black text-[12px] px-2 py-1 m-2 w-fit">
-                                            {pr.tag}
+                    {loading ? (
+                        <div className='flex justify-center items-center w-full h-[50vh]'>
+                            <Loader className="animate-spin" size={40} />
+                        </div>
+                    ) : (<div className="w-fit grid sm:grid-cols-1 md:grid-cols-2 gap-4">
+                        {
+                            projects.map((pr) => (
+                                <div
+                                    key={pr.id}
+                                    className="flex m-2 rounded-[20px] flex-col justify-between p-[20px] md:w-[435px] h-[auto] shadow-[0_0_25px_0] shadow-black/10"
+                                >
+                                    {pr?.image && (
+                                        <div
+                                            className={`w-full h-[260px] rounded-[14px] bg-center bg-cover bg-no-repeat shadow-[0_0_25px_0] shadow-black/5`}
+                                            style={{ backgroundImage: `url(${pr.image})` }}
+                                        >
+                                            <div className="rounded-full bg-primary text-black text-[12px] px-2 py-1 m-2 w-fit">
+                                                {pr.tag}
+                                            </div>
                                         </div>
-                                    </div>
-                                )}
+                                    )}
 
-                                <div className="pt-3">
-                                    <h2 className="pb-[8px]">{pr.title}</h2>
-                                    <p className="pb-[8px] text-[13px]">{pr.description}</p>
+                                    <div className="pt-3">
+                                        <h2 className="pb-[8px]">{pr?.title}</h2>
+                                        <p className="pb-[8px] text-[13px]">{pr.description}</p>
+                                    </div>
                                 </div>
-                                <div className="pt-3 flex justify-end w-full">
-                                    <Image height={60} width={60} alt="arrow" src="/assets/img/icons/work_arrow.png" />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                            ))}
+
+                    </div>)}
                 </div>
+
+                {/* Pagination */}
+                {!loading && <div className="flex justify-center mt-6">
+                    <PaginationControls
+                        page={page}
+                        setPage={setPage}
+                        totalPages={totalPages} />
+
+                </div>}
+
                 <Clientile />
             </Container>
             <ContactUs />

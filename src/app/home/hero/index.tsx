@@ -5,6 +5,7 @@ import HALO from 'vanta/dist/vanta.halo.min'
 import * as THREE from 'three'
 import splitStringUsingRegex from '@/helpers/split-string-regex'
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 
 type VantaEffect = any
 
@@ -26,6 +27,7 @@ const Hero: React.FC<HeroProps> = (props) => {
     const headingChars = splitStringUsingRegex(heading)
     const textChars = splitStringUsingRegex(text)
     const myRef = useRef<HTMLDivElement>(null)
+    const router = useRouter()
 
     const containerVariants = {
         hidden: { opacity: 1 },
@@ -42,6 +44,14 @@ const Hero: React.FC<HeroProps> = (props) => {
         visible: { opacity: 1, y: 0 },
     }
 
+    const navigateToContact = () => {
+        router.push('/contact')
+    }
+
+    const navigateToAbout = () => {
+        router.push('/company')
+    }
+
     useEffect(() => {
         if (!vantaEffect) {
             setVantaEffect(
@@ -55,7 +65,7 @@ const Hero: React.FC<HeroProps> = (props) => {
                     scale: 1.0,
                     scaleMobile: 1.0,
                     speed: 0.1,
-                })
+                }),
             )
         }
         return () => {
@@ -67,7 +77,7 @@ const Hero: React.FC<HeroProps> = (props) => {
         delay: 0.7,
     }
     return (
-        <div style={{ zIndex: -10 }} className="sm:px-[23px] md:px-10 w-full rounded-8xl h-screen" ref={myRef}>
+        <div className="sm:px-[23px] md:px-10 w-full rounded-8xl h-screen" ref={myRef}>
             <div className="w-full h-full flex items-center">
                 <Container>
                     <div className="flex flex-col mt-10 h-fit">
@@ -102,22 +112,24 @@ const Hero: React.FC<HeroProps> = (props) => {
                         </div>
                         <div className="md:p-5 flex flex-row">
                             <motion.div
+                                onClick={navigateToContact}
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={fadeInAnimationConfig}
                                 style={{ backgroundColor: '#1b1b1b', color: '#ffffff' }}
-                                className="rounded-[35px] md:px-[50px] sm:px-[25px] md:py-[20px] sm:py-[20px]"
+                                className="rounded-[35px] md:px-[50px] sm:px-[25px] md:py-[20px] sm:py-[20px] cursor-pointer"
                             >
-                                Get Started
+                                <div>Get Started</div>
                             </motion.div>
                             <motion.div
+                                onClick={navigateToAbout}
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={fadeInAnimationConfig}
                                 style={{ backgroundColor: 'rgba(255, 255, 255, 0.15)', border: '2px', color: '#ffffff' }}
-                                className="ml-5 rounded-[35px] md:px-[50px] sm:px-[25px] md:py-[20px] sm:py-[20px]"
+                                className="ml-5 rounded-[35px] md:px-[50px] sm:px-[25px] md:py-[20px] sm:py-[20px] cursor-pointer"
                             >
-                                About Us
+                                <div>About Us</div>
                             </motion.div>
                         </div>
                     </div>

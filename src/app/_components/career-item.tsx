@@ -24,9 +24,9 @@ const CareerItem: React.FC<CareerItemProps> = ({ title, position, location, desc
                         <h2 className="text-[#D8D8D8] text-[17px] pl-2">{location}</h2>
                     </div>
                     <p className="text-[14px] leading-[28px] text-[#D8D8D8] mb-[20px]">{desc}</p>
-                    <div className="bg-primary mb-[20px] sm:w-fit text-center text-[14px] font-bold px-[14px] py-[8px] rounded-[50px]">
+                    <Link href={link} target='_blank' className="bg-primary mb-[20px] sm:w-fit text-center text-[14px] font-bold px-[14px] py-[8px] rounded-[50px]">
                         Apply Now
-                    </div>
+                    </Link>
                 </div>
             </div>
         </>

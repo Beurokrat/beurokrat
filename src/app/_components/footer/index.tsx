@@ -1,7 +1,16 @@
+'use client'
 import Image from 'next/image'
 import Container from '../container'
+import { useRouter } from 'next/navigation' // Import useRouter
+import Link from 'next/link'
 
 const Footer = () => {
+    const router = useRouter() // Initialize useRouter
+
+    const navigateTo = (path: string) => {
+        router.push(path) // Navigate to the specified path
+    }
+
     return (
         <div className="flex mx-auto w-[95%] mb-[30px]">
             <div className="py-[70px] sm:px-[30px] md:px-[52px] w-full rounded-[38px] bg-[#15171A] text-[#E9E9E9] h-fit">
@@ -18,7 +27,10 @@ const Footer = () => {
                             src={'/assets/img/footer-cube-sm.png'}
                         />
 
-                        <button className="sm:w-full md:w-fit mt-[34px] bg-black text-white rounded-[35px] py-[20px] px-[50px] border border-primary">
+                        <button
+                            className="sm:w-full md:w-fit mt-[34px] bg-black text-white rounded-[35px] py-[20px] px-[50px] border border-primary"
+                            onClick={() => navigateTo('/contact')} // Navigate to "Let's Chat"
+                        >
                             Let&apos;s chat
                         </button>
                     </div>
@@ -35,7 +47,7 @@ const Footer = () => {
                             </div>
                             <div className="sm:mt-[32px] md:mt-[0px] md:w-1/2">
                                 <div className="text-[17px] font-bold">Call Us</div>
-                                <div className="mt-[16px] text-[#667085] text-[17px]">+91 9539 000006</div>
+                                <div className="mt-[16px] text-[#667085] text-[17px]">+91 9539 000008</div>
                             </div>
                         </div>
                         <div className="flex flex-col mt-[45px] w-full ">
@@ -47,7 +59,10 @@ const Footer = () => {
                     </div>
 
                     <div className="flex sm:mt-[25px] md:mt-[0px] sm:border-t md:border-0 border-[#ffffff6c] sm:flex-col md:flex-row md:w-1/2 h-fit justify-end">
-                        <div className="flex flex-row items-center sm:mt-[25px] md:mt-[0px] md:ml-[30px] text-[17px] font-bold">
+                        <div
+                            className="flex flex-row items-center sm:mt-[25px] md:mt-[0px] md:ml-[30px] text-[17px] font-bold cursor-pointer"
+                            onClick={() => navigateTo('/work')} // Navigate to "Work"
+                        >
                             Work
                             <Image
                                 className="py-2 ml-[10px]"
@@ -57,7 +72,10 @@ const Footer = () => {
                                 src={'/assets/img/icons/footer_open.png'}
                             />
                         </div>
-                        <div className="flex flex-row items-center sm:mt-[25px] md:mt-[0px] md:ml-[30px] text-[17px] font-bold">
+                        <div
+                            className="flex flex-row items-center sm:mt-[25px] md:mt-[0px] md:ml-[30px] text-[17px] font-bold cursor-pointer"
+                            onClick={() => navigateTo('/company')} // Navigate to "About Us"
+                        >
                             About Us
                             <Image
                                 className="py-2 ml-[10px]"
@@ -67,7 +85,10 @@ const Footer = () => {
                                 src={'/assets/img/icons/footer_open.png'}
                             />
                         </div>
-                        <div className="flex flex-row items-center sm:mt-[25px] md:mt-[0px] md:ml-[30px] text-[17px] font-bold">
+                        <div
+                            className="flex flex-row items-center sm:mt-[25px] md:mt-[0px] md:ml-[30px] text-[17px] font-bold cursor-pointer"
+                            onClick={() => navigateTo('/careers')} // Navigate to "Careers"
+                        >
                             Careers
                             <Image
                                 className="py-2 ml-[10px]"
@@ -77,8 +98,24 @@ const Footer = () => {
                                 src={'/assets/img/icons/footer_open.png'}
                             />
                         </div>
-                        <div className="flex flex-row items-center sm:mt-[25px] md:mt-[0px] md:ml-[30px] text-[17px] font-bold">
+                        <div
+                            className="flex flex-row items-center sm:mt-[25px] md:mt-[0px] md:ml-[30px] text-[17px] font-bold cursor-pointer"
+                            onClick={() => navigateTo('/blog')} // Navigate to "Blog"
+                        >
                             Blog
+                            <Image
+                                className="py-2 ml-[10px]"
+                                height={13}
+                                width={13}
+                                alt="share"
+                                src={'/assets/img/icons/footer_open.png'}
+                            />
+                        </div>
+                        <div
+                            className="flex flex-row items-center sm:mt-[25px] md:mt-[0px] md:ml-[30px] text-[17px] font-bold cursor-pointer"
+                            onClick={() => navigateTo('/login')} // Navigate to "admin login"
+                        >
+                            Admin
                             <Image
                                 className="py-2 ml-[10px]"
                                 height={13}
@@ -91,6 +128,7 @@ const Footer = () => {
                 </div>
                 <div className="flex sm:flex-col md:flex-row justify-between sm:mt-[40px] md:mt-[90px]">
                     <div className="flex flex-row">
+                        <Link href="https://www.linkedin.com/company/beurokrat/" target="_blank">
                         <Image
                             className="py-2 mr-[10px]"
                             height={40}
@@ -98,6 +136,7 @@ const Footer = () => {
                             alt="share"
                             src={'/assets/img/icons/footer_in.png'}
                         />
+                        </Link>
                         <Image
                             className="py-2 mr-[10px]"
                             height={40}

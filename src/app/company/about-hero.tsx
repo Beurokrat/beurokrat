@@ -1,8 +1,15 @@
 'use client'
 import React from 'react'
 import Container from '../_components/container'
+import { useRouter } from 'next/navigation' // Import useRouter
 
 const AboutHero = () => {
+    const router = useRouter() // Initialize useRouter
+
+    const navigateToContact = () => {
+        router.push('/contact') // Navigate to the "Contact Us" page
+    }
+
     return (
         <Container>
             <div className="mt-[120px] text-white rounded-[65px] p-[30px] pt-[130px] w-full bg-cover bg-center sm:bg-[url('/assets/img/about_hero_mobile.png')] md:bg-[url('/assets/img/about_hero.png')]">
@@ -19,7 +26,10 @@ const AboutHero = () => {
                         <p className=" md:w-[30%]">
                             {'Making your business outstanding is a science. We take it (a) seriously and (b) creatively.'}
                         </p>
-                        <div className="m-3 ml-0 w-fit rounded-2xl border border-white flex justify-center items-center text-[15px] px-[20px] py-[10px]">
+                        <div
+                            className="m-3 ml-0 w-fit rounded-2xl border border-white flex justify-center items-center text-[15px] px-[20px] py-[10px] cursor-pointer"
+                            onClick={navigateToContact} // Add onClick handler
+                        >
                             Get In Touch
                         </div>
                     </div>

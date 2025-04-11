@@ -6,8 +6,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import logo from './logo.svg'
 import Button from '../button'
-import NavLinks from './nav-links'
 import MobileMenu from './mobile-menu'
+import { Drawer, DrawerContent, DrawerTrigger } from '../shadui/drawer'
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
@@ -43,7 +43,7 @@ export default function Navbar() {
     }
 
     return (
-        <div style={{ zIndex: 300 }} className="fixed top-0 left-0 right-0 rounded-sm w-full">
+        <div style={{ zIndex: 10 }} className="fixed top-0 left-0 right-0 rounded-sm w-full">
             <div className="my-10 mx-auto border border-[#505050] md:rounded-[38px] sm:rounded-[17px] bg-[#303030] text-white md:h-[59px] sm:h-[59px] flex flex-row items-center justify-between sm:w-[93%] md:w-[82%] shadow-lg">
                 <div className="p-2 flex flex-row leading-none items-center justify-between w-full">
                     <Link href="/">
@@ -61,11 +61,6 @@ export default function Navbar() {
                             <Link href="/work" className="pt-[6px] px-[15px] text-[14px] m-[15px]">
                                 Work
                             </Link>
-                            {/* <div
-                                className="text-[14px] m-[15px] relative"
-                                onMouseEnter={handleCompanyHover}
-                                onMouseLeave={handleCompanyLeave}
-                            > */}
                             <Link href="/company" className="pt-[6px] px-[15px] text-[14px] m-[15px] cursor-pointer">
                                 Company
                             </Link>
@@ -83,18 +78,23 @@ export default function Navbar() {
                     </div>
                 </div>
                 {/* Mobile menu */}
-                <div className="my-[8px] mx-[5px] py-[18px]  flex items-center justify-center w-[70px] md:hidden rounded-xl bg-primary">
-                    <button onClick={() => setIsOpen(!isOpen)} className="flex items-center ">
+                < >
+                    <Drawer open={isOpen} onOpenChange={setIsOpen} >
+                    <DrawerTrigger className="my-[8px] mx-[5px] py-[18px]  flex items-center justify-center w-[70px] md:hidden rounded-xl bg-primary" onClick={() => setIsOpen(!isOpen)} >
+                    <p 
+                    className="flex items-center ">
                         <svg width="25" height="12" viewBox="0 0 25 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 1H24M1 11H24" stroke="black" strokeWidth="2" strokeLinecap="round" />
                         </svg>
-                    </button>
-                </div>
-            </div>
-            {isOpen && !isWindowWidthGreaterThanMd && (
-                // <div style={{zIndex: -10}} className="absolute top-0 left-0 w-full h-screen bg-white"></div>
+                    </p>
+                    </DrawerTrigger>
+                    <DrawerContent className='h-full border-none'>
                 <MobileMenu closeMobileMenu={closeMobileMenu} overlayAction={overlayAction} setOverlayAction={setOverlayAction} />
-            )}
+                </DrawerContent>
+                </Drawer>
+                </>
+                
+            </div>
         </div>
     )
 }
