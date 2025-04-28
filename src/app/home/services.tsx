@@ -24,7 +24,7 @@ function Services() {
                 },
                 stagger: 0.5,
                 ease: 'expo.in',
-            },
+            }
         )
     }, [])
 
@@ -70,7 +70,9 @@ function Services() {
             {/* Header Section */}
             <div className="sm:hidden md:block mt-[40px] w-[70%]">
                 <h3 className="services-section services-text mb-[50px]">OUR SERVICES</h3>
-                <h1 className="services-text md:text-6xl">We deliver customized digital products tailored to your needs</h1>
+                <h1 className="services-text sm:text-3xl md:text-5xl">
+                    We deliver customized digital products tailored to your needs
+                </h1>
             </div>
 
             {/* Desktop View */}

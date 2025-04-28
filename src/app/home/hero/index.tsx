@@ -61,11 +61,11 @@ const Hero: React.FC<HeroProps> = (props) => {
                     backgroundColor: 0x000000,
                     mouseControls: true,
                     touchControls: true,
-                    gyroControls: false,
+                    gyroControls: true,
                     scale: 1.0,
                     scaleMobile: 1.0,
                     speed: 0.1,
-                }),
+                })
             )
         }
         return () => {
@@ -89,7 +89,7 @@ const Hero: React.FC<HeroProps> = (props) => {
                                 className="mt-[60px] px-3 py-1 w-fit sm:mb-5 rounded-lg"
                                 style={{ backgroundColor: 'rgba(255, 255, 255, 0.15)', border: '2px', color: '#ffffff' }}
                             >
-                                SHAPE THE FUTURE TODAY
+                                THE FUTURE
                             </motion.h3>
                             <motion.h1
                                 initial={{ opacity: 0 }}
@@ -97,17 +97,16 @@ const Hero: React.FC<HeroProps> = (props) => {
                                 transition={fadeInAnimationConfig}
                                 className="p-1 mt-3 sm:text-3xl md:text-6xl"
                             >
-                                {headingChars}
+                                We Create.
                             </motion.h1>
                             <motion.p
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={fadeInAnimationConfig}
-                                className="sm:text-[17px] mt-5 sm:pb-10 md:p-5 md:pl-0"
+                                className="sm:text-[17px] mt-5 sm:pb-10 md:p-5 md:pl-0 leading-9"
                             >
-                                Since our inception, we&apos;re not just building technology — we&apos;re redefining
-                                possibilities. Our solutions don&apos;t just adapt to your needs; they evolve with them, powered
-                                by the synergy of artificial intelligence and human ingenuity.
+                                We redefine the impossible. Our solutions don&apos;t just adapt to your needs; they evolve with
+                                them, powered by the synergy of artificial intelligence and human ingenuity.
                             </motion.p>
                         </div>
                         <div className="md:p-5 flex flex-row">

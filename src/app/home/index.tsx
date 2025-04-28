@@ -29,13 +29,23 @@ export default function HomePage() {
             <Awards />
             <Services />
             <HomeClientile />
-            <StartProject />
             <VisionSection />
-            <Quantifiers />
-            <JoinUs />
-            <Work />
             <ClientStaisfaction />
-            {/* <ContactUs /> */}
         </ReactLenis>
+        // <ReactLenis root options={{ lerp: 0.05 }}>
+        //     <Hero />
+        //     <SubHeroSection />
+        //     <AboutBeurokrat />
+        //     <Awards />
+        //     <Services />
+        //     <HomeClientile />
+        //     {/* <StartProject /> */}
+        //     <VisionSection />
+        //     {/* <Quantifiers /> */}
+        //     {/* <JoinUs /> */}
+        //     {/* <Work /> */}
+        //     <ClientStaisfaction />
+        //     {/* <ContactUs /> */}
+        // </ReactLenis>
     )
 }
