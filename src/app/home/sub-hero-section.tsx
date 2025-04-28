@@ -7,25 +7,26 @@ function SubHeroSection() {
     const cardInfo = [
         {
             iconPath: '/assets/img/icons/ic_think_beyond.svg',
-            title: 'Think Beyond',
-            description: 'Next-generation AI, security and storage solutions, find the answer to your business challenge.',
+            title: 'Future Forward',
+            description: 'We ignite tomorrow’s tech today, creating cutting-edge solutions that’s always ahead of the curve.',
         },
         {
             iconPath: '/assets/img/icons/ic_strong_identity.svg',
-            title: 'Strong Identity',
+            title: 'Culture of Community',
             description:
-                'We hire the top 1% creative talent around the world, to give you access to the highest standard of work possible.',
+                'Connections are our inspiration. We build human-centric, inclusive tech that bridges gaps and opens new collaborative frontiers.',
         },
         {
             iconPath: '/assets/img/icons/ic_inside_bk.svg',
-            title: 'Inside Beurokrat',
+            title: 'Free-Thinking',
             description:
-                "Solving the world's problems through technology wouldn't be possible without our most important invention.",
+                'Our ethos is simple—observe the patterns of life and deliver creative, purpose-driven solutions for real-world challenges.',
         },
         {
-            iconPath: '/assets/img/icons/ic_inside_bk.svg',
-            title: 'Inside Beurokrat',
-            description: 'Next-generation AI, security and storage solutions, find the answer to your business challenge.',
+            iconPath: '/assets/img/icons/ic_bk_team.svg',
+            title: 'Beyond Boundaries',
+            description:
+                'Our outlook knows no borders. We’re globally built and universally inspired, building tech shaped by diverse minds to solve real-world gaps.',
         },
     ]
     return (

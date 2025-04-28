@@ -9,7 +9,7 @@ function ClientStaisfaction(props: Props) {
 
     return (
         <Container>
-            <div className="flex flex-row items-center w-full md:h-[594px] mb-[30px] rounded-[24px] bg-[#15171A]">
+            <div className="mt-[30px] flex flex-row items-center w-full md:h-[594px] mb-[30px] rounded-[24px] bg-[#15171A]">
                 <Image height={450} width={80} alt="beurokrat vector" src={'/assets/img/home_client_vector.png'} />
                 <div className="flex flex-col">
                     <h1 className="text-[#EAEAEA] sm:text-[32px] md:text-[64px] my-[50px]">Ready to achieve ambitious goals?</h1>

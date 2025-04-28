@@ -18,7 +18,7 @@ function Work(props: Props) {
             <Container>
                 <div className="flex flex-col">
                     <div className="md:border-b-2 md:border-[#E8EDED] w-full md:py-[35px] sm:py-[15px]">
-                        <h1 className="sm:text-[32px] md:text-[60px] md:leading-[63px] md:w-[70%]">
+                        <h1 className="sm:text-3xl md:text-5xl md:leading-[63px] md:w-[70%]">
                             Inspiring creatives and working beyond boundaries.
                         </h1>
                         <p className="md:hidden text-[17px] leading-[29px]">

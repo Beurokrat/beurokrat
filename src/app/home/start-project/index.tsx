@@ -27,7 +27,7 @@ const StartProject = () => {
                 duration: 0.9,
                 stagger: 0.5,
                 ease: 'expo.in',
-            },
+            }
         )
     }, [])
 
@@ -43,7 +43,7 @@ const StartProject = () => {
             >
                 <div className="flex flex-col py-[10px] md:px-10 mt-10">
                     <div className="rounded-xl md:p-6 md:w-full text-left text-white">
-                        <h1 className="fade-in-text sm:p-[28px] md:p-5 mt-3 sm:text-3xl md:text-6xl">
+                        <h1 className="fade-in-text w-1/2 sm:p-[28px] md:p-5 mt-3 sm:text-3xl md:text-5xl">
                             We deliver customized digital products tailored to your needs
                         </h1>
                         <div className="fade-in-text flex mt-5 w-full sm:pl-[28px] md:justify-center text-black">

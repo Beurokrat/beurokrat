@@ -15,7 +15,7 @@ function VisionSection() {
                         commitment to those we serve.
                     </h1>
                 </div>
-                <div className="flex sm:flex-col md:flex-row mt-[100px] w-full gap-5">
+                <div className="flex sm:flex-col md:flex-row mt-[30px] w-full gap-5">
                     <div className="flex flex-col p-[30px] md:w-1/2 sm:h-fit md:h-[690px]  justify-between rounded-[38px] bg-cover bg-center bg-[url('/assets/img/homepage_vision_bg.png')] text-white">
                         <p className="sm:w-full md:w-[90%] sm:text-[20px] md:text-[35px] sm:mt-[48px] md:mt-[100px] md:leading-[60px]">
                             Insights, unlocked through the power of applied intelligence.
