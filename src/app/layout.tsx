@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 //components
 import Navbar from './_components/navbar'
 import Footer from './_components/footer'
+import Analytics from './_components/google-analytics'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Navbar />
                 {children}
                 <Footer />
+                <Analytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ''} />
             </body>
         </html>
     )
