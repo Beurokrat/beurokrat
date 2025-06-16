@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import { AspectRatio } from '@/app/_components/shadui/aspect-ratio';
+import { Metadata } from 'next';
+import Blog from '@/models/blog';
 
 interface BlogPost {
     id: string;
@@ -10,12 +12,44 @@ interface BlogPost {
     blogImage?: string; // Optional cover image for the blog
 }
 
+interface BlogPostPageProps {
+    params: { id: string };
+}
+
+export async function generateStaticParams() {
+    const blogs = await Blog.findAll();
+    return blogs.map((blog: any) => ({
+        id: blog.id.toString(),
+    }));
+}
+
+
+
+export async function generateMetadata({
+    params: { id },
+}: BlogPostPageProps): Promise<Metadata> {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/client/blogs/${id}`);
+    const post: BlogPost = await response.json();
+
+    return {
+        title: post.title,
+        description: post.content,
+        openGraph: {
+            images: [
+                {
+                    url: post.blogImage || '',
+                    width: 1200,
+                    height: 630,
+                }
+            ]
+        }
+    };
+}
+
 // Fetch blog post data on the server
 async function fetchBlogPost(id: string): Promise<BlogPost | null> {
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/client/blogs/${id}`, {
-            cache: 'no-store', // Disable caching for fresh data
-        });
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/client/blogs/${id}`);
 
         if (!response.ok) {
             throw new Error('Failed to fetch blog post');
@@ -54,6 +88,7 @@ export default async function BlogPostPage({ params }: { params: { id: string } 
                             className="w-full object-cover rounded-lg shadow-md"
                             fill
                             loading="lazy"
+                            priority={false}
                         />
                     </AspectRatio>
                 </div>

@@ -10,7 +10,10 @@ import Analytics from './_components/google-analytics'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-    title: 'Beurokrat',
+    title: {
+        default: "Beurokrat",
+        template: "Beurokrat - %s",
+    },
     description: 'Reprogramming the future',
     icons: {
         icon: [
@@ -29,6 +32,14 @@ export const metadata: Metadata = {
                 url: '/android-chrome-512x512.png',
             },
         ],
+    },
+    openGraph: {
+        title: " Beurokrat - Reprogramming the future with Beurokrat ",
+        description: 'Beurokrat is redefining digital transformation by delivering cutting-edge solutions across industries.', // <-- Add real content
+        url: 'https://www.beurokrat.com',
+        siteName: 'Beurokrat',
+        locale: 'en_US',
+        type: 'website',
     },
 }
 
