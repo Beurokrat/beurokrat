@@ -15,6 +15,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         '/contact',
     ]
 
+    const slugify = (text: string) =>
+        text
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-') // replace non-alphanumerics with hyphen
+            .replace(/(^-|-$)+/g, '')     // remove leading/trailing hyphens
+
+
     const routeEntries = staticRoutes.map(route => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),
@@ -27,7 +34,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     try {
         const blogs = await Blogs.findAll()
         blogEntries = blogs.map((post: any) => ({
-            url: `${baseUrl}/blog/${post.id}`,
+            url: `${baseUrl}/blog/${post.id}-${slugify(post.title)}`,
             lastModified: post.updatedAt ? new Date(post.updatedAt) : new Date(),
             changeFrequency: 'monthly' as const,
             priority: 0.6,
@@ -37,32 +44,32 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
 
     // Work entries
-    let workEntries: MetadataRoute.Sitemap = []
-    try {
-        const works = await Works.findAll()
-        workEntries = works.map((project: any) => ({
-            url: `${baseUrl}/work/${project.id}`,
-            lastModified: project.updatedAt ? new Date(project.updatedAt) : new Date(),
-            changeFrequency: 'monthly' as const,
-            priority: 0.7,
-        }))
-    } catch (error) {
-        console.error('Failed to fetch work items:', error)
-    }
+    // let workEntries: MetadataRoute.Sitemap = []
+    // try {
+    //     const works = await Works.findAll()
+    //     workEntries = works.map((project: any) => ({
+    //         url: `${baseUrl}/work/${slugify(project.title)}`,
+    //         lastModified: project.updatedAt ? new Date(project.updatedAt) : new Date(),
+    //         changeFrequency: 'monthly' as const,
+    //         priority: 0.7,
+    //     }))
+    // } catch (error) {
+    //     console.error('Failed to fetch work items:', error)
+    // }
 
     // Career entries
-    let careerEntries: MetadataRoute.Sitemap = []
-    try {
-        const careers = await Careers.findAll()
-        careerEntries = careers.map((career: any) => ({
-            url: `${baseUrl}/careers/${career.id}`,
-            lastModified: career.updatedAt ? new Date(career.updatedAt) : new Date(),
-            changeFrequency: 'monthly' as const,
-            priority: 0.7,
-        }))
-    } catch (error) {
-        console.error('Failed to fetch careers:', error)
-    }
+    // let careerEntries: MetadataRoute.Sitemap = []
+    // try {
+    //     const careers = await Careers.findAll()
+    //     careerEntries = careers.map((career: any) => ({
+    //         url: `${baseUrl}/careers/${slugify(career.title)}`,
+    //         lastModified: career.updatedAt ? new Date(career.updatedAt) : new Date(),
+    //         changeFrequency: 'monthly' as const,
+    //         priority: 0.7,
+    //     }))
+    // } catch (error) {
+    //     console.error('Failed to fetch careers:', error)
+    // }
 
-    return [...routeEntries, ...blogEntries, ...workEntries, ...careerEntries]
+    return [...routeEntries, ...blogEntries]
 }

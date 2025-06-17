@@ -34,7 +34,7 @@ export const metadata: Metadata = {
         ],
     },
     openGraph: {
-        title: " Beurokrat - Reprogramming the future with Beurokrat ",
+        title: " Beurokrat - Reprogramming the future",
         description: 'Beurokrat is redefining digital transformation by delivering cutting-edge solutions across industries.', // <-- Add real content
         url: 'https://www.beurokrat.com',
         siteName: 'Beurokrat',
